@@ -1,108 +1,799 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<h1 align="center" id = "introduction">
+     <a href="" target="_blank"><img src="" alt="Blank!"/></a>
+     Project Kingsland
+</h1>
 
-Welcome USER_NAME,
+<h2 align="center">
+    <a href="" target="_blank">Kingsland Website</a>
+</h2>
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+<div>
+*Kingsland Design*, a website to provide logo design services.
+<br>
+The site is to help the user be able to provide an idea of what kind of logo they are considering and depending on the type of package these are created and uploaded for the customer to download.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+This is the fourth project of a four module Full Stack Developer course provided by the [Code Institute](https://codeinstitute.net/).
+Main requirements are to build a full stack site to help users manage a common dataset using HTML, CSS, JavaScript, Python+Django, Relational database (recommending MySQL or Postgres), Stripe payments and any additional libraries and API’s.
+Value provisions:
+1. By authenticating on the site and paying for some of its services, users can advance their own goals. Before authenticating, the site makes it clear how those goals
+would be furthered by the site.
+2. The site owner is able to make money by providing this set of services to the users.There is no way for a regular user to bypass the site's mechanisms and derive all of
+the value available to paid users without paying.
+</div>
 
-## Gitpod Reminders
+## Contents
+1. [UX](#UX)
+    - [Aims](#Aims)
+    - [Demographic](#Demographic-both-current-and-potential)
+    - [User Stories](#User-stories)
+        - [Browsers](#Browsers)
+        - [Customers](#Customers)
+        - [Designer](#Designer)
+        - [Web developer](#Web-Developer)
+    - [Development](#Development-Plan)
+        - [Strategy](#Strategy)
+            - [Demographic](#Demographic)
+            - [Audience](#Understanding-the-audience)
+            - [Requirements](#User-requirements)
+            - [Importance levels](#Levels-of-importance)
+        - [Design and Scope](#Design-and-Scope)
+            - [Influence](#Influence)
+            - [Imagery](#Imagery)
+            - [Pages](#Page-sections)
+            - [Structure](#Structure)
+    - [Wireframe](#Wireframe)
+2. [Features](#Features)
+    - [Database](#Database)
+    - [Consistency](#Consistency)
+    - [Home](#Home-page)
+    - [Login](#Login-page)
+    - [Registration](#Registration-page)
+    - [Profile](#Profile-page)
+    - [Order Details](#Order-Details)
+    - [Order Form](#Order-Form)
+    - [Service and Contact](#Service-and-Contact-page)
+    - [Browse](#Browse-page)
+    - [Recipe view from browse page](#Recipe-view-from-browse-page)
+    - [Recipe view from profile page](#Recipe-view-from-profile-page)
+3. [Technologies Used](#Technologies-Used)
+4. [Testing](#Testing) / [Test detail file](https://github.com/TezBaydu/Milestone-Project-4-GraphicDesign/blob/main/TEST.md)
+    - [Commits](#Commits)
+    - [Code testing](#Code-testing)
+    - [Element testing](#Element-testing)
+    - [Device testing](#Device-testing)
+    - [Colour blindness Testing](#Colour-blindness-testing)
+    - [Browser testing](#Browser-testing)
+    - [User testing](#User-testing)
+5. [Deployment](#Deployment)
+    - [Gitpod commits](#Gitpod-to-GitHub-commits)
+    - [Deploying via GitHub Pages or Heroku](#Deploying-via-GitHub-Pages-/-Heroku)
+        - [Heroku deployment](#Heroku-deployment)
+        - [GitHub deployment](#GitHub-deployment)
+    - [Forking](#Forking-repository)
+    - [Cloning](#Cloning-a-repository)
+6. [Credits and Acknowledgements](#Credits-and-Acknowledgements)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+***
+![Responsiveness]()
+***
 
-`python3 -m http.server`
+## UX
 
-A blue button should appear to click: _Make Public_,
+### Aims
 
-Another blue button should appear to click: _Open Browser_.
+1. Clear understanding of site and business service with interactive features.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+2. Easy navigation.
 
-A blue button should appear to click: _Make Public_,
+3. Responsive to all screens, sizes and browsers.
 
-Another blue button should appear to click: _Open Browser_.
+4. Comfortable understanding of data storage capability.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+5. Safe and Secure payment function
 
-To log into the Heroku toolbelt CLI:
+6. Database management allowing for upload and download capability.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+### Demographic both current and potential
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+* Businesses looking for logo design ideas.
+* Users who want to have a place to store/log their purchases and order history.
+* Intermediary businesses utilising the service to sell onto other businesses.
+* Developers.
 
-------
+### User stories
 
-## Release History
+#### Browsers
+The user is wanting to design ideas for logos.
+*   This user wants to:
+1. Be able to navigate through the website easily.
+2. Easily view designs and case studies of design impact.
+3. Be able to navigate to relevant social links.
+4. Be able to make contact for queries.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+#### Customers
+The user is wanting to make a purchase to obtain a business logo
+*   This user wants to:
+1. Be able to navigate through the website easily.
+2. Easily view designs and case studies of design impact.
+3. Be able to navigate to relevant social links.
+4. Be able to make contact for queries.
+5. Be able to create a profile which is editable and deleteable.
+6. Be able to view order history.
+7. Be able to donload purchases from website.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+#### Designer
+This user is the site owner (or could be employed by the site owner to produce logo designs)
+* The user wants to:
+1. Receive notification of orders with purchase confirmation.
+2. Have some detail on what is being requested to be designed.
+3. Be able to upload designs onto database and assign to customer.
+4. Be able to provide notification when service has been complete.
+5. Be able to receive notification of contact queries directly from website.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+#### Web Developer
+This user is looking for imagery or influence for another project.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+* They want to be able to:
+1. Have easy navigation.
+2. Find how the website was created.
+3. Be able to see sources for design.
+4. Be able to make contact with Developer/Site Owner.
+5. Have an opportunity to clone site if wanting to use content.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+[Back to top ⇧](#introduction)
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+### Development Plan
+Development decisions based on user story capabilities in line with interactivity with a database (AWS).
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+[Back to top ⇧](#introduction)
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+#### Strategy
+Identifying target audience.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+##### Demographic
+1. People wanting to have a logo designed
+    * 25-60 years old
+    * Business Owners
+    * Intermediary businesses making purchase and acting as a service provider on behalf of businesses
+2. Web developers
+    * 4th stage students with basic HTML, CSS, Javascript, JQuery, Python+Django, AWS knowledge
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+##### Understanding the audience
+1. Personality
+    * Business owners
+        - Start up businesses
+        - Businesses who want a change in logo design   
+    * Creatives
+        - Designers wanting inspiration or ideas  
+2. Lifestyle
+    * Earnings variable.
+    * Small, Medium and large businesses
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+##### User requirements
+1. User
+    * Search site for case studies.
+    * Understand service steps.
+    * Register or login to profile.
+    * Able to create, read, update and delete an order and their profile.
+    * Make contact directly or through social sites.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+2. Developer
+    * Develop online presence through interactive actions on website.
+    * Provide logo design ideas.
+    * Receive notifications of orders.
+    * Able to upload designs to website and store on secure database.
+    * Confidently ensure logo designs are accessible by Developer and owner only.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+##### Levels of importance
+Below are areas considered for levels of importance and viability
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+<u>Importance</u>
+1. High
+    * Online presence
+    * Imagery
+    * Interactivity
+    * Contact portal
+    * Profile registration and logging
+    * Sales
+    * Order creation, read, update and delete function
+2. Medium
+    * Links to social sites
+3. Low
+    * Search function
 
-------
+<u>Viability</u>
+1. High
+    * Imagery.
+    * Links to social sites
+    * Interactivity
+    * Sales
+    * Contact Portal
+    * Order creation, read, update and delete function
+2. Medium
+    * Contact portal
+    * Profile registration and logging
+3. Low
+    * Online presence
+    * Search function
 
-## FAQ about the uptime script
+[Back to top ⇧](#introduction)
 
-**Why have you added this script?**
+### Design and Scope
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+#### Influence
+1. A couple of friends who are graphic designers.
+2. Image of logo from 1st Milestone project (Council Culture):
+    * ![Council Culture]()
 
-**How will this affect me?**
+#### Imagery
+1. Colours
+    *   Contrasting bold colours to not take away imagery.
+2. Imagery
+    * Associations to:
+        * Creativity
+        * Business
+        * Modern style with no curving corners of buttons or iamges
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+#### Page sections
+1. Home
+2. Login
+3. Registration
+4. Profile
+5. Services
+    * includes Contact form
+6. Case Studies
+7. Order form
+8. Confirmation and payment form
+9. Profile order details
+    * To have download options
+*  Potential pages to develop
+    1. Other services
+        - Stationary
+        - Website design
+        - Clothes printing
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+#### Structure
 
-**So….?**
+Hierarchical structure design for easy user navigation dependant on whether they are or are not registered:
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+![Site Structure]()
 
-**Can I opt out?**
+[Back to top ⇧](#introduction)
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
 
-**Anything more?**
+### Wireframe
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+- Designed in [Figma](https://www.figma.com/file/wkePLtYpYVOdgXG6sFYKue/GraphicDesign?node-id=0%3A1)
 
----
+- Desktop version
+![Desktop wireframe]()
 
-Happy coding!
+- Mobile version
+![Mobile wireframe]()
+
+
+
+[Back to top ⇧](#introduction)
+
+## Features
+This site has several pages for user to easily identify section associated. Navigation menu dependancy on user being or not being registered. Front end association to back end database and back end association to website for Designer/Developer.
+
+### [Database](AWS)
+- AWS used to store data under database name ""
+    * Collections to store specific data:
+        * 
+
+
+### Consistency
+
+- Design with navigation menu placed in the same position at top.
+    * Fixed position for consistent access.
+    * A logo which leads the user back to 'Home' when clicked.
+    * To have associated selections dependant on user being registered or non-registered.
+    * Links to associated pages.
+
+- Logo linking to home page in every page.
+
+- Footer with links to social media and logo linking to Home page.
+
+- Consistent font:
+    * Poppins
+    * Inter
+    * to use additional in case Poppins or Inter isn't available for users:
+        * Arial & sans serif
+
+- Colours (although may vary to suit):
+    * black
+        * #000000 / #000 / hsl(0,0%,0%) / rgb(0,0,0)
+    * midnight blue
+        * #252060 / #226 / hsl(244,50%,25%) / rgb(37,32,96)
+    * snow / white
+        * #fffcff / #fff / hsl(300,100%,99%) / rgb(255,252,255)
+    * steel teal / slategray
+        * #668586 / #688 / hsl(181,13%,46%) / rgb(102,133,134)
+    * ochre / chocolate
+        * #dc7000 / #e70 / hsl(30,100%,43%) / rgb(220,112,0)
+
+*![Kingsland Palette]()
+
+[Back to top ⇧](#introduction)
+
+### Home page
+1. Hero image
+2. Synopsis
+    - Description of service on offer.
+3. Navigation menu
+    - Leading non-member to
+        * Login
+        * Register
+        * Case Studies
+        * Service
+        * Contact
+        * Order form
+    - Leading member to
+        * Case Studies
+        * Service
+        * Contact
+        * Profile
+        * Order form
+
+### Login page
+1. Hero image
+
+2. Input fields
+    - Email
+    - Password
+
+3. Forgotten password link
+    - Ability to have password reset option
+    - If email is recognised a link is sent to email with temporary password set to be used
+
+4. Login button
+    - Data read by database and if correct allows user access
+    - If incorrect a warning is flashed to state email or password is incorrect
+
+5. If in wrong section, description to direct to registration.
+
+6. If already logged in this option is to not be available in Navigation menu.
+
+
+[Back to top ⇧](#introduction)
+
+### Registration page
+1. Hero image
+
+2. Input fields.
+    - Full name
+    - Email (to be used as unique username)
+    - Password
+
+3. Register button if details correct.
+    - Data is passed through to AWS
+
+4. Warning if detail format incorrect.
+
+5. If already registered, warning to state so and to direct user to Login page.
+
+
+### Profile page
+1. For members logged in only, non members will not be able to view.
+
+2. Welcome flash description.
+
+3. Profile details - associated to database.
+    - Edit account function
+        * This to include ability to update password
+    - Delete account function
+
+4. Orders - associated to database.
+    - Historic orders
+        * Summary of orders
+    - Ability to create a new order
+
+### Order Details
+1. For members logged in only, non members will not be able to view.
+
+2. Welcome flash description.
+
+3. Orders - associated to database.
+    - Historic orders
+        * shows detailed requests
+        * If completed images of logos
+        * Download options
+    - Ability to create a new order
+
+[Back to top ⇧](#introduction)
+
+### Order Form
+1. Data obtained from form updates.
+
+2. Package selections made here.
+
+3. Submit button
+    * If registered, directs to confirmation and payment page.
+    * If not registered, directs to registration page.
+
+[Back to top ⇧](#introduction)
+    
+### Service and Contact page
+1. Hero-image
+
+2. Steps on how to use service
+
+3. Contact section
+    - Full name
+    - Email
+    - Subject
+    - Message
+    - Submit button
+
+2. Associated to EmailJS ---- ? ------
+
+3. Email to Developer/Designer and Customer Auto Reply with appropriate message and link to site.
+
+--------------------- - to update --------------------------
+
+### Browse page
+1. Search function.
+    - Search bar for particular foods
+        * To have ability to find foods using text
+    - Filter buttons for particular recipe types as associated by recipe creators(Memebers)
+        * Recipe Types
+            * Breakfast
+            * Lunch
+            * Dinner
+            * Dessert
+            * Snack
+
+2. Recipe summary cards.
+    - Several recipes listed either based on search or categories.
+    - Details to show:
+        * Image
+        * Name of recipe
+        * Recipe Description
+        * Ready time
+
+3. Menu
+    - Leading non-member to
+        * Home
+        * Register
+        * Browse
+        * Contact
+        * Login
+    - Leading member to
+        * Home
+        * Browse
+        * Contact
+        * Profile
+        * Logout
+
+[Back to top ⇧](#introduction)
+
+### Recipe view from browse page
+1. Search function - This so the user can re-search at current page.
+    - Search bar for particular foods
+        * To have ability to find foods using text
+    - Filter buttons for particular recipe types as associated by recipe creators(Memebers)
+        * Recipe Types
+            * Breakfast
+            * Lunch
+            * Dinner
+            * Dessert
+            * Snack
+
+2. Recipe selection - Details provided by members who have shared publicly or via recipe shared database.
+    - Name
+    - Image
+    - Description
+    - Serves
+    - Ready in Time
+    - Cooking Time
+    - Prep Time
+    - Ingredients
+    - Method
+
+3. Back to Search link
+
+4. Menu
+    - Leading non-member to
+        * Home
+        * Register
+        * Browse
+        * Contact
+        * Login
+    - Leading member to
+        * Home
+        * Browse
+        * Contact
+        * Profile
+        * Logout
+
+[Back to top ⇧](#introduction)
+
+### Recipe view from profile page
+1. For members logged in only, non members will not be able to view.
+
+2. Search function - This so the member can re-search at current page.
+    - Search bar for particular foods
+        * To have ability to find foods using text
+    - Filter buttons for particular recipe types as associated by recipe creators(Memebers)
+        * Recipe Types
+            * Breakfast
+            * Lunch
+            * Dinner
+            * Dessert
+            * Snack
+
+3. Recipe selection - Details provided by members who have shared publicly or via recipe shared database.
+    - Name
+    - Image
+    - Description
+    - Serves
+    - Ready in Time
+    - Cooking Time
+    - Prep Time
+    - Ingredients
+    - Method
+
+4. Back to Profile link
+
+5. Menu
+    * Home
+    * Browse
+    * Contact
+    * Profile
+    * Logout
+
+[Back to top ⇧](#introduction)
+
+## Technologies Used
+
+- HTML5
+    * Code used to provide content to the website
+
+- CSS3
+    * Code used to style content
+
+- Javascript
+    * Code used to provide interactive attributes
+
+- [JQuery](https://code.jquery.com)
+    * Code used to provide interactive attributes
+
+- [Python](https://www.python.org)
+    * Code used to provide interactive attributes
+
+- Flask
+    * Micro web framework written in Python
+
+- [MongoDB](https://www.mongodb.com)
+
+- [Heroku](https://www.heroku.com)
+
+- [Coolors - colour collage](https://coolors.co)
+
+- [Picjumbo](https://picjumbo.com)
+
+- [Freeimges](https://www.freeimages.com)
+
+- [Clipartmax](https://www.clipartmax.com)
+
+- [Github](https://github.com)
+
+- [Gitpod](https://www.gitpod.io)
+
+- [Bootstrap](https://getbootstrap.com)
+
+- [MDBootstrap version 4](https://mdbootstrap.com)
+
+- [Google fonts](https://fonts.google.com)
+
+- [Figma]()
+    * [project wireframe]
+
+- [Random Key Generator](https://randomkeygen.com)
+
+- [Font Awesome](https://fontawesome.com)
+
+- [Bootstrapcdn](https://www.bootstrapcdn.com)
+
+- [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x)
+
+- [cdnjs](https://cdnjs.com)
+
+- [EmailJS](https://www.emailjs.com)
+
+- [Codepen](https://codepen.io)
+
+- [Am I responsive](http://ami.responsivedesign.is)
+
+- [HTML code checker](https://validator.w3.org)
+
+- [CSS code checker](https://jigsaw.w3.org/css-validator)
+
+- [JS Hint JavaScript validator](https://jshint.com/)
+
+- [PEP8](http://pep8online.com/)
+
+- [Gif Compessor](https://www.freeconvert.com/gif-compressor)
+
+- [Browser site testing - BrowserStack](http://browserstack.com)
+
+- [RGBlind chrome extension]
+
+- [Eye Dropper extension]
+
+[Back to top ⇧](#introduction)
+
+
+## Testing 
+-   ### View [TEST.md file](https://github.com/TezBaydu/Milestone-Project-4-GraphicDesign/blob/main/TEST.md)
+
+### Commits
+
+- Over 130 commits
+
+### Code Testing
+- HTML 
+- CSS
+- JavaScript
+- JQuery
+- Python
+
+### Element testing
+- Ensure elements behave as expected
+   
+### Device testing
+
+- [Am I responsive](http://ami.responsivedesign.is)
+
+### Colour blindness testing
+
+- RGBlind Chrome extensions
+
+### Browser testing
+
+- Chrome
+    - main area of testing
+- Firefox
+- Microsoft Edge
+- Safari
+
+### User Testing
+
+- Friends & Family testing
+
+[Back to top ⇧](#introduction)
+
+## Deployment
+
+### Gitpod to GitHub commits
+
+To help with controlling versions you can commit to GitHub via Gitpod.
+Once you are able to view the repository in Gitpod this is done by:
+
+1. Access the control terminal
+    - Usually found at bottom of project in "workspace" section.
+2. Next to gitpod/workspace/(name of project)
+    - Type "git add (and name of document you wish to commit to GitHub)".
+    - If you want to find all that could be committed then you can type "git add ."
+3. Type "git status"
+    - This will help show what files have been modified, added or deleted for a pre-check prior to committing.
+4. Type "git commit -m ("and then a brief description of latest updates in quotation marks")"
+5. Type "git push"
+6. Log into GitHub
+    - Locate repository
+    - You should be able to see the latest and history of commits in code section at top right of table of files list.
+    * ![git-commits](assets/readme/readme-images/githubCommits.JPG)
+    
+
+### Deploying via GitHub Pages / Heroku
+
+#### Heroku dependancies
+
+- In order to deploy to Heroku initial files need to be set up to run the app.
+    1. Applications
+        * requirements.txt-  Lists the requirements to deploy to Flask
+        * Procfile (capital P)
+
+#### Heroku deployment
+
+- An account will need to be registered with Heroku to deploy projects and create applications.To begin deployment:
+    1. Once registered you can select "Create new app".
+    2. Provide a unique app name in all lowercase letters but individual words are to be separated with a "-" and no spaces.
+    3. Select region closest to you, in this case Europe.
+    4. Automatic deployment can be done via the GitHub repository where this project is stored.
+    5. Select connect to GitHub button and when pressed make sure your GitHub profile is displayed and then add your repository name in "repo-name" field and click search.
+    6. Once the repository is found, click "Connect" to connect to this app.
+    7. For thie project DO NOT PRESS "ENABLE AUTOMATIC DEPLOYS" YET !!
+        - This is because there are sections in files not deployed to GITHUB that need to be manually enabled first.
+    8. Select "Settings".
+    9. Select "Reveal Config Vars".
+    10. Sections within env.py file are added to this section.
+    11. WARNING: Ensure requirements.txt & Procfile are added to repository prior to Heroku deployment or Heroku will not see these when connecting.
+    12. Within Heroku you should now be able to safely press the "Enable Automatic Deploys" button. Select Deploy section to view.
+    13. Select "ENABLE AUTOMATIC DEPLOYS".
+    14. Select "Deploy Branch" after selecting which version you wish to deploy. Then Wait for Heroku to load all files.
+    15. Once done you should see "Your app was successfully deployed" and a "View" button.
+    16.  Select "View" button to launch the app.
+    17. As this is connected to GitHub, Heroku will obtain changes when these are pushed to the GitHub repository.
+
+#### DEBUG
+- Ensure within app.py change "debug=True" to "debug=False"
+
+### GitHub deployment
+- Not attempted for this site but referenced here in case required in future
+
+1. Log into GitHub and look for [https://github.com/TezBaydu/Milestone-Project-4-GraphicDesign] or create an account.
+2. Click on settings and ensure repository name is selected to Milestone-Project-4-GraphicDesign.
+3. Select 'Pages' in menu section and ensure Branch is 'Master' and folder is 'root'.
+4. Click save and wait for site to be published.
+5. Click link in GitHub Pages section to view published site.
+
+### Forking repository
+
+Forking a repository in GitHub is used to make a copy of a repository which you do not have rights access to. Once you have forked a repository you will be able to make changes without affecting the original. It can also be used to suggest changes of an original project and/or propose a project as starting point.
+
+Steps on Forking a repository:
+1. Log into GitHub and look for [https://github.com/TezBaydu/Milestone-Project-4-GraphicDesign] or create an account.
+2. At the top right hand corner of the page select "Fork".
+3. You should now have a copy of the original repository to work with on your account without affecting the original.
+
+### Cloning a repository
+
+Cloning a repository in GitHub allows you to make a copy of your own repository which will affect the original repository.
+If you wish to make changes which do not affect the original then this should be forked.
+
+Steps to Clone a repository
+1. Log into GitHub and look for [https://github.com/TezBaydu/Milestone-Project-4-GraphicDesign] or create an account.
+2. Ensure "Code" has been selected in menu.
+3. Select code on top right of table.
+4. Select either HTTPS, SSH or CLI.
+5. You can either download ZIP for static files and utilise in GitHub or open with GitHub desktop.
+6. If opening with GitHub Desktop then select. If not downloaded this will need to be to utilise benefits.
+7. Once opened with GitHub Desktop select "File".
+8. Select "Clone repository".
+9. Select GitHub and the name of the GitHub repository. (URL can also be selected and the URL applied)
+10. Select repository from the sources.
+11. Click "Choose".
+12. Click "Clone".
+
+For further help and info you can select [Cloning and Forking repositories](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/cloning-and-forking-repositories-from-github-desktop)
+
+[Back to top ⇧](#introduction)
+
+## Credits and Acknowledgements
+
+- [Code Institute](https://codeinstitute.net/)
+    * Tutor Support have been amazing !!
+    * Seun Owoni Koko for her enthusiasm, guidance and support
+    * Slack channel
+
+- [Codepen](https://codepen.io/)
+    * Excellent source to view and test code
+
+- [Stack overflow](https://stackoverflow.com/)
+    * For the general queries that have happpened and the various solutions as guidance
+
+- Website Designers
+    * For their help in testing Mac version and advice on design
+
+- Friends and Family
+    * For their patience, advice and support
+
+[Back to top ⇧](#introduction)
+
+
+#
+
+
+
+
+
+
+
+
+
