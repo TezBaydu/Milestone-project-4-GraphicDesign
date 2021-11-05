@@ -43,6 +43,7 @@ the value available to paid users without paying.
             - [Structure](#Structure)
     - [Wireframe](#Wireframe)
 2. [Features](#Features)
+    - [Django Framework](#Django-Framework)
     - [Database](#Database)
     - [Consistency](#Consistency)
     - [Home](#Home-page)
@@ -280,6 +281,20 @@ Hierarchical structure design for easy user navigation dependant on whether they
 
 ## Features
 This site has several pages for user to easily identify section associated. Navigation menu dependancy on user being or not being registered. Front end association to back end database and back end association to website for Designer/Developer.
+
+### Django Framework
+- pip (stands for pip install packages) can be used all kinds of tools within gitpod workspaces. This is used to install the Django framework into this workspace by typing "pip3 install django" into the Terminal. Note pip3 is installing Django for python version 3.
+- To create a project "django-admin startproject kingsland_design ." was pushed from the terminal
+    - This creates project in the current directory with files:
+        * __init__.py - Directory to which files can be imported from
+        * settings.py - Contains global setting for django project including which database to connect to
+        * urls.py - Contains routing informatyion to type a specific url into address bar and will trigger python function
+        * wsgi.py - Contains code to connect python with webserver application
+- Migrations
+    * code used to migrate "python3 manage.py migrate
+
+- Superuser / admin creation
+    * code to create an admin / superuser: "python3 manage.py createsuperuser" and then supplying a username, email address and a password
 
 ### [Database](AWS)
 - AWS used to store data under database name ""
