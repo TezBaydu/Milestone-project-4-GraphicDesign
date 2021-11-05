@@ -528,7 +528,7 @@ This site has several pages for user to easily identify section associated. Navi
 
 - [Gitpod](https://www.gitpod.io)
 
-- [Bootstrap](https://getbootstrap.com)
+- [Bootstrap v4.4](https://getbootstrap.com)
 
 - [MDBootstrap version 4](https://mdbootstrap.com)
 
