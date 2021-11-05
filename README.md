@@ -56,7 +56,7 @@ the value available to paid users without paying.
     - [Recipe view from browse page](#Recipe-view-from-browse-page)
     - [Recipe view from profile page](#Recipe-view-from-profile-page)
 3. [Technologies Used](#Technologies-Used)
-4. [Testing](#Testing) / [Test detail file](https://github.com/TezBaydu/Milestone-Project-4-GraphicDesign/blob/main/TEST.md)
+4. [Testing](#Testing) / [Test detail file](https://github.com/TezBaydu/Milestone-project-4-GraphicDesign/blob/main/TEST.md)
     - [Commits](#Commits)
     - [Code testing](#Code-testing)
     - [Element testing](#Element-testing)
@@ -266,7 +266,7 @@ Hierarchical structure design for easy user navigation dependant on whether they
 
 ### Wireframe
 
-- Designed in [Figma](https://www.figma.com/file/wkePLtYpYVOdgXG6sFYKue/GraphicDesign?node-id=0%3A1)
+- Designed in [Figma]()
 
 - Desktop version
 ![Desktop wireframe]()
@@ -317,6 +317,8 @@ This site has several pages for user to easily identify section associated. Navi
     * ochre / chocolate
         * #dc7000 / #e70 / hsl(30,100%,43%) / rgb(220,112,0)
 
+- Back to top button when scrolling passed top point
+
 *![Kingsland Palette]()
 
 [Back to top ⇧](#introduction)
@@ -339,6 +341,12 @@ This site has several pages for user to easily identify section associated. Navi
         * Contact
         * Profile
         * Order form
+4. Projects
+    - Images of previous projects displayed
+        * These lead to case studies page when selected
+5. Testimonials
+    - List of testimonials of previous projects
+
 
 ### Login page
 1. Hero image
@@ -381,7 +389,7 @@ This site has several pages for user to easily identify section associated. Navi
 ### Profile page
 1. For members logged in only, non members will not be able to view.
 
-2. Welcome flash description.
+2. Welcome flash message.
 
 3. Profile details - associated to database.
     - Edit account function
@@ -396,7 +404,7 @@ This site has several pages for user to easily identify section associated. Navi
 ### Order Details
 1. For members logged in only, non members will not be able to view.
 
-2. Welcome flash description.
+2. Welcome flash message.
 
 3. Orders - associated to database.
     - Historic orders
@@ -405,7 +413,6 @@ This site has several pages for user to easily identify section associated. Navi
         * Download options
     - Ability to create a new order
 
-[Back to top ⇧](#introduction)
 
 ### Order Form
 1. Data obtained from form updates.
@@ -434,118 +441,29 @@ This site has several pages for user to easily identify section associated. Navi
 
 3. Email to Developer/Designer and Customer Auto Reply with appropriate message and link to site.
 
---------------------- - to update --------------------------
 
-### Browse page
-1. Search function.
-    - Search bar for particular foods
-        * To have ability to find foods using text
-    - Filter buttons for particular recipe types as associated by recipe creators(Memebers)
-        * Recipe Types
-            * Breakfast
-            * Lunch
-            * Dinner
-            * Dessert
-            * Snack
+### Case Studies page
+1. Leads from images selected in Home Page
 
-2. Recipe summary cards.
-    - Several recipes listed either based on search or categories.
-    - Details to show:
-        * Image
-        * Name of recipe
-        * Recipe Description
-        * Ready time
+2. Images of logo associations to company
 
-3. Menu
-    - Leading non-member to
-        * Home
-        * Register
-        * Browse
-        * Contact
-        * Login
-    - Leading member to
-        * Home
-        * Browse
-        * Contact
-        * Profile
-        * Logout
+3. Description of how each were designed
 
-[Back to top ⇧](#introduction)
+4. Option to create order
 
-### Recipe view from browse page
-1. Search function - This so the user can re-search at current page.
-    - Search bar for particular foods
-        * To have ability to find foods using text
-    - Filter buttons for particular recipe types as associated by recipe creators(Memebers)
-        * Recipe Types
-            * Breakfast
-            * Lunch
-            * Dinner
-            * Dessert
-            * Snack
 
-2. Recipe selection - Details provided by members who have shared publicly or via recipe shared database.
-    - Name
-    - Image
-    - Description
-    - Serves
-    - Ready in Time
-    - Cooking Time
-    - Prep Time
-    - Ingredients
-    - Method
+### Payment page
+1. Hero image
+    - highlighting safety and secure purchase
 
-3. Back to Search link
+2. Confirmation of order details being submitted.
+    - Edit button option if incorrect leading user back to order creation section
 
-4. Menu
-    - Leading non-member to
-        * Home
-        * Register
-        * Browse
-        * Contact
-        * Login
-    - Leading member to
-        * Home
-        * Browse
-        * Contact
-        * Profile
-        * Logout
+3. Confirmation of order package being purchased
+    - Option to select another package if incorrect
 
-[Back to top ⇧](#introduction)
-
-### Recipe view from profile page
-1. For members logged in only, non members will not be able to view.
-
-2. Search function - This so the member can re-search at current page.
-    - Search bar for particular foods
-        * To have ability to find foods using text
-    - Filter buttons for particular recipe types as associated by recipe creators(Memebers)
-        * Recipe Types
-            * Breakfast
-            * Lunch
-            * Dinner
-            * Dessert
-            * Snack
-
-3. Recipe selection - Details provided by members who have shared publicly or via recipe shared database.
-    - Name
-    - Image
-    - Description
-    - Serves
-    - Ready in Time
-    - Cooking Time
-    - Prep Time
-    - Ingredients
-    - Method
-
-4. Back to Profile link
-
-5. Menu
-    * Home
-    * Browse
-    * Contact
-    * Profile
-    * Logout
+4. Form to obtain payment details
+    - Submit button to lead to Stripe payment process
 
 [Back to top ⇧](#introduction)
 
@@ -566,10 +484,10 @@ This site has several pages for user to easily identify section associated. Navi
 - [Python](https://www.python.org)
     * Code used to provide interactive attributes
 
-- Flask
-    * Micro web framework written in Python
+- Django
+    * A high level web framework used to encourage rapid development and pragmatic design
 
-- [MongoDB](https://www.mongodb.com)
+- [AWS-Amazon Web Service)](https://aws.amazon.com/)
 
 - [Heroku](https://www.heroku.com)
 
@@ -577,9 +495,7 @@ This site has several pages for user to easily identify section associated. Navi
 
 - [Picjumbo](https://picjumbo.com)
 
-- [Freeimges](https://www.freeimages.com)
-
-- [Clipartmax](https://www.clipartmax.com)
+- [Unsplash](https://unsplash.com/)
 
 - [Github](https://github.com)
 
@@ -630,11 +546,11 @@ This site has several pages for user to easily identify section associated. Navi
 
 
 ## Testing 
--   ### View [TEST.md file](https://github.com/TezBaydu/Milestone-Project-4-GraphicDesign/blob/main/TEST.md)
+-   ### View [TEST.md file](https://github.com/TezBaydu/Milestone-project-4-GraphicDesign/blob/main/TEST.md)
 
 ### Commits
 
-- Over 130 commits
+- Over --?-- commits
 
 ### Code Testing
 - HTML 
@@ -657,7 +573,6 @@ This site has several pages for user to easily identify section associated. Navi
 ### Browser testing
 
 - Chrome
-    - main area of testing
 - Firefox
 - Microsoft Edge
 - Safari
@@ -687,8 +602,7 @@ Once you are able to view the repository in Gitpod this is done by:
 6. Log into GitHub
     - Locate repository
     - You should be able to see the latest and history of commits in code section at top right of table of files list.
-    * ![git-commits](assets/readme/readme-images/githubCommits.JPG)
-    
+    * ![git-commits]()
 
 ### Deploying via GitHub Pages / Heroku
 
@@ -696,7 +610,7 @@ Once you are able to view the repository in Gitpod this is done by:
 
 - In order to deploy to Heroku initial files need to be set up to run the app.
     1. Applications
-        * requirements.txt-  Lists the requirements to deploy to Flask
+        * requirements.txt-  Lists the requirements to deploy
         * Procfile (capital P)
 
 #### Heroku deployment
@@ -718,7 +632,7 @@ Once you are able to view the repository in Gitpod this is done by:
     13. Select "ENABLE AUTOMATIC DEPLOYS".
     14. Select "Deploy Branch" after selecting which version you wish to deploy. Then Wait for Heroku to load all files.
     15. Once done you should see "Your app was successfully deployed" and a "View" button.
-    16.  Select "View" button to launch the app.
+    16. Select "View" button to launch the app.
     17. As this is connected to GitHub, Heroku will obtain changes when these are pushed to the GitHub repository.
 
 #### DEBUG
@@ -727,8 +641,8 @@ Once you are able to view the repository in Gitpod this is done by:
 ### GitHub deployment
 - Not attempted for this site but referenced here in case required in future
 
-1. Log into GitHub and look for [https://github.com/TezBaydu/Milestone-Project-4-GraphicDesign] or create an account.
-2. Click on settings and ensure repository name is selected to Milestone-Project-4-GraphicDesign.
+1. Log into GitHub and look for [https://github.com/TezBaydu/Milestone-project-4-GraphicDesign] or create an account.
+2. Click on settings and ensure repository name is selected to Milestone-project-4-GraphicDesign.
 3. Select 'Pages' in menu section and ensure Branch is 'Master' and folder is 'root'.
 4. Click save and wait for site to be published.
 5. Click link in GitHub Pages section to view published site.
@@ -738,7 +652,7 @@ Once you are able to view the repository in Gitpod this is done by:
 Forking a repository in GitHub is used to make a copy of a repository which you do not have rights access to. Once you have forked a repository you will be able to make changes without affecting the original. It can also be used to suggest changes of an original project and/or propose a project as starting point.
 
 Steps on Forking a repository:
-1. Log into GitHub and look for [https://github.com/TezBaydu/Milestone-Project-4-GraphicDesign] or create an account.
+1. Log into GitHub and look for [https://github.com/TezBaydu/Milestone-project-4-GraphicDesign] or create an account.
 2. At the top right hand corner of the page select "Fork".
 3. You should now have a copy of the original repository to work with on your account without affecting the original.
 
@@ -748,7 +662,7 @@ Cloning a repository in GitHub allows you to make a copy of your own repository 
 If you wish to make changes which do not affect the original then this should be forked.
 
 Steps to Clone a repository
-1. Log into GitHub and look for [https://github.com/TezBaydu/Milestone-Project-4-GraphicDesign] or create an account.
+1. Log into GitHub and look for [https://github.com/TezBaydu/Milestone-project-4-GraphicDesign] or create an account.
 2. Ensure "Code" has been selected in menu.
 3. Select code on top right of table.
 4. Select either HTTPS, SSH or CLI.
