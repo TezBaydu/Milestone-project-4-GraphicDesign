@@ -295,6 +295,18 @@ This site has several pages for user to easily identify section associated. Navi
 
 - Superuser / admin creation
     * code to create an admin / superuser: "python3 manage.py createsuperuser" and then supplying a username, email address and a password
+    * Admin access allows view of all django admin sites, emails, groups, orders, scoial accounts, etc .... in effect all apps imported from [django allauth documentation](https://django-allauth.readthedocs.io/en/latest/installation.html)
+
+- Application Templates
+    * These can be installed via Settings.py to bring in various templates created in Django.
+    * This project uses user authenticaiton and model backend uploads for superusers.
+
+- Django allauth
+    * Install command: pip3 install django-allauth
+    * provides apps for allowing user logins either directly or via social media sites for this project. It can also allow for easier payment, e.g. apple or google pay to make user experience smoother. ---- check this has been done in time for project submission, otherwise caveat this has been installed but not utilised for this project -----
+
+- Email authentication
+    Allauth account allows for email verification but as created using superuser the verification has to be done via admin account in django.
 
 ### [Database](AWS)
 - AWS used to store data under database name ""
