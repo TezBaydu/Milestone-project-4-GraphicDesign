@@ -1,6 +1,10 @@
 from django.db import models
 
 class Company(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Companies'
+        
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
 
