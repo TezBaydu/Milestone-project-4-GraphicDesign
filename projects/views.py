@@ -1,6 +1,14 @@
 from django.shortcuts import render
+from .models import Project
 
 
-def projects(request):
+def all_projects(request):
     """ A view to show Case Studies """
-    return render(request, 'projects/projects.html')
+
+    projects = Project.objects.all()
+
+    context = {
+        'projects': projects,
+    }
+
+    return render(request, 'projects/projects.html', context)
