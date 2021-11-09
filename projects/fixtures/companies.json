@@ -1,0 +1,8 @@
+[
+    {"pk": 1, "model": "projects.company", "fields": {"name": "austin_james", "friendly_name": "Austin James"}}, 
+    {"pk": 2, "model": "projects.company", "fields": {"name": "baby_baby", "friendly_name": "Baby Baby"}}, 
+    {"pk": 3, "model": "projects.company", "fields": {"name": "button_queen", "friendly_name": "The Button Queen"}}, 
+    {"pk": 4, "model": "projects.company", "fields": {"name": "council_culture", "friendly_name": "Council Culture"}}, 
+    {"pk": 5, "model": "projects.company", "fields": {"name": "optimum_par", "friendly_name": "Optimum Par"}}, 
+    {"pk": 6, "model": "projects.company", "fields": {"name": "west_two_wine", "friendly_name": "West Two Wine"}}
+]
