@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Project
+from .models import Project, Company
 
 
 def all_projects(request):
