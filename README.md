@@ -746,6 +746,10 @@ For further help and info you can select [Cloning and Forking repositories](http
     * superuser will also be deleted so you will need to re-create the superuser
         1. python3 manage.py createsuperuser
 
+- To create through Django
+    * in terminal type: python3 manage.py startapp (name of folder)
+    * add into settings.py of main project name
+
 
 
 
