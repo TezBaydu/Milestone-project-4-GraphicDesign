@@ -19,6 +19,7 @@ class CompanyAdmin(admin.ModelAdmin):
         'friendly_name',
         'name',
         'description',
+        'logoimage',
     )
 
     ordering = ('name',)
