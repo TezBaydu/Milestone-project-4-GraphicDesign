@@ -18,6 +18,7 @@ class CompanyAdmin(admin.ModelAdmin):
     list_display = (
         'friendly_name',
         'name',
+        'description',
     )
 
     ordering = ('name',)

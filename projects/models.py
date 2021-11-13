@@ -8,6 +8,7 @@ class Company(models.Model):
 
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
+    description = models.TextField()
 
     def __str__(self):
         return self.name
@@ -17,7 +18,8 @@ class Company(models.Model):
 
 
 class Project(models.Model):
-    company = models.ForeignKey('Company', null=True, blank=True, on_delete=models.SET_NULL)
+    company = models.ForeignKey(
+        'Company', null=True, blank=True, on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     image = models.ImageField(null=True, blank=True)

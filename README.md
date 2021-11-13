@@ -731,6 +731,20 @@ For further help and info you can select [Cloning and Forking repositories](http
 # Bugs & Issues
 - base.css: suddenly not working....?!! project-header in project.html not giving a margin-top?
 
+- JSON migrations: Best to plan what is to be migrated in advance. This to save the deletion of JSON files and migrations and starting over as I had not updated descriptions for companies:
+    * Done by
+        1. Delete db.sqlite3 file in DATABASE.md
+        2. Delete all files in migrations folder except __init__.py
+        3. python3 manage.py makemigrations --dry-run
+        if ok
+        4. python3 manage.py makemigrations
+        if ok
+        5. python3 manage.py migrate
+        6. python3 manage.py loaddata companies.json and then projects.json
+    * superuser will also be deleted so you will need to re-create the superuser
+        1. python3 manage.py createsuperuser
+
+
 
 
 

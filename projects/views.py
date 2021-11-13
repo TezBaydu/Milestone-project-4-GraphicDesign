@@ -11,12 +11,12 @@ def all_projects(request):
     if request.GET:
         if 'company' in request.GET:
             companies = request.GET['company']
-            projects = projects.filter(company__name__in=companies)
-            companies = Company.objects.filter(name__in=companies)
+            projects = projects.filter(company__name=companies)
+            company = Company.objects.filter(name=companies)[0]
 
     context = {
         'projects': projects,
-        'current_companies': companies,
+        'company': company,
     }
 
     return render(request, 'projects/projects.html', context)
