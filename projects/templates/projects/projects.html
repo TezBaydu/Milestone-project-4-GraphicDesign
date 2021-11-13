@@ -3,74 +3,6 @@
 
 {% block content %}
 
-<!-- <div class="container pb-5 carousel-projects">
-    <div id="carouselProjectCaptions" class="carousel slide" data-ride="carousel">
-        <a class="carousel-control-prev-projects" href="#carouselProjectCaptions" role="button" data-slide="prev">
-            <i class="fas fa-chevron-circle-left"></i>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next-projects" href="#carouselProjectCaptions" role="button" data-slide="next">
-            <i class="fas fa-chevron-circle-right"></i>
-            <span class="sr-only">Next</span>
-        </a>
-        <div class="carousel-inner">
-            {% for project in projects %}
-                <div class="carousel-item active">
-                    <div class="container mt-5">
-                        <div class="row">
-                            <div class="col">
-                                <img src="/media/aj-1.1.jpg" class="w-50" alt="Autin James company logo"/>
-                            </div>
-                        </div>
-                        <div class="row row-cols-3">
-                            <div class="col pb-5">
-                                <img src="{{ project.image }}" class="w-100" alt="Austin James Business card">
-                            </div>
-                            <div class="col">
-                                <img src="/media/testimonial-aj.jpg" class="w-100" alt="Austin James Business card">
-                            </div>
-                            <div class="col">
-                                <img src="/media/testimonial-aj.jpg" class="w-100" alt="Austin James Business card">
-                            </div>
-                            <div class="col">
-                                <img src="/media/testimonial-aj.jpg" class="w-100" alt="Austin James Business card">
-                            </div>
-                            <div class="col">
-                                <img src="/media/testimonial-aj.jpg" class="w-100" alt="Austin James Business card">
-                            </div>
-                            <div class="col">
-                                <img src="/media/testimonial-aj.jpg" class="w-100" alt="Austin James Business card">
-                            </div>
-                        </div>
-                        <div class="d-sm-block text-dark row mt-5">
-                            <h5>West Two Wine</h5>
-                            <p>" Some great ideas that helped shape our store image "</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="/media/testimonial-bb.jpg" class="d-block w-75" alt="Baby Baby company tag">
-                        <div class="carousel-caption d-sm-block text-white">
-                            <h5>Baby Baby</h5>
-                            <p>" Great to work with and helped every step of the way "</p>
-                        </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="row">
-                        <div class="col">
-                            <img src="/media/testimonial-ww.jpg" class="w-75" alt="West 2 Wine Business card">
-                        </div>
-                    </div>
-                    <div class="d-sm-block text-dark row mt-5">
-                        <h5>West Two Wine</h5>
-                        <p>" Some great ideas that helped shape our store image "</p>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-    </div>
-</div> -->
-
 <div class="container pt-5">
     
 </div>
@@ -83,18 +15,18 @@
 </div>
 
 <form method="GET" action="{% url 'projects' %}">
-    <div class="container col-9 offset-1 mb-5">
+    <div class="container col-8 offset-2 mb-5">
         <div class="row pt-5">
             <div class="col">
-                <div class="list-group list-group-horizontal-md text-center">
-                    <a href="{% url 'projects' %}?company=austin_james" class="list-group-item list-group-item-action active">
+                <div class="list-group list-group-horizontal-md text-center" role="group">
+                    <a class="list-group-item list-group-item-action btn" href="{% url 'projects' %}?company=austin_james" role="button" aria-pressed="true">
                     Austin James
                     </a>
-                    <a href="{% url 'projects' %}?company=baby_baby" class="list-group-item list-group-item-action">Baby Baby</a>
-                    <a href="{% url 'projects' %}?company=button_queen" class="list-group-item list-group-item-action">The Button Queen</a>
-                    <a href="{% url 'projects' %}?company=council_culture" class="list-group-item list-group-item-action">Council Culture</a>
-                    <a href="{% url 'projects' %}?company=optimum_par" class="list-group-item list-group-item-action">Optimum Par</a>
-                    <a href="{% url 'projects' %}?company=west_two_wine" class="list-group-item list-group-item-action">West Two Wine</a>
+                    <a class="list-group-item list-group-item-action btn" href="{% url 'projects' %}?company=baby_baby" role="button">Baby Baby</a>
+                    <a class="list-group-item list-group-item-action btn" href="{% url 'projects' %}?company=button_queen" role="button">The Button Queen</a>
+                    <a class="list-group-item list-group-item-action btn" href="{% url 'projects' %}?company=council_culture" role="button">Council Culture</a>
+                    <a class="list-group-item list-group-item-action btn" href="{% url 'projects' %}?company=optimum_par" role="button">Optimum Par</a>
+                    <a class="list-group-item list-group-item-action btn" href="{% url 'projects' %}?company=west_two_wine" role="button">West Two Wine</a>
                 </div>
             </div>
         </div>
@@ -112,7 +44,7 @@
 
     </div>
     <div class="row">
-        <div class="product-container col-9 offset-1">
+        <div class="product-container col-8 offset-2">
             <div class="row mt-1 mb-2"></div>
             <div class="row justify-content-between">
                 {% for project in projects %}
@@ -144,7 +76,7 @@
 <div class="container my-5">
     <div class="row text-center">
         <div class="col">
-            <h5>Click <a href="">here</a> for the perfect logo</h5>
+            <h5>Click <a href="">here</a> for logo creation request</h5>
         </div>
     </div>
 </div>
