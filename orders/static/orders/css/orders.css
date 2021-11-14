@@ -5,3 +5,10 @@
     background-size: cover;
     padding-top: 11em;
 }
+
+/* checkout order page */
+.checkout-hero-image {
+    background: url('/media/pay-lightbulb.jpg') no-repeat center center fixed;
+    background-size: cover;
+    padding-top: 11em;
+}

@@ -29,7 +29,7 @@ class Order(models.Model):
     what_company_does = models.TextField()
     colours = models.TextField()
     look_feel = models.TextField()
-    price_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
+    price_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False)
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
     phone_number = models.CharField(max_length=20, null=False, blank=False)

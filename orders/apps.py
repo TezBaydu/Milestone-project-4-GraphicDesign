@@ -7,3 +7,5 @@ class OrdersConfig(AppConfig):
 
     def ready(self):
         import orders.signals
+
+
