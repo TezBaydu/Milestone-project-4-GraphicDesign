@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="container-fluid home-hero-image">
+        <div class="row">
+            <div class="col-lg-6 col-md-8 col-sm-11 my-auto pt-md-3">
+                <h2 class="text-uppercase text-white pt-5">Kingsland <span class="text-muted text-uppercase">Design</span></h2>
+                <h1 class="display-2 text-white font-weight-bold py-5">Logo designs for your business</h1>
+                <p class="my-5 text-white">Kingsland Design produce high quality logos to fit your specific business needs. Over 7 years of high quality logos produced for extremely satisfied customers, we are confident we can work with you to create a logo that is specific and unique to you and your business.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                {{ packages }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
