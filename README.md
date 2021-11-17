@@ -737,18 +737,27 @@ For further help and info you can select [Cloning and Forking repositories](http
         2. Delete db.sqlite3 file in DATABASE.md
         3. Delete all files in migrations folder except __init__.py
         4. Ensure you update JSON files, views.py, models.py and amdin.py prior to actions below
-        5. python3 manage.py makemigrations --dry-run
+        5. python3 manage.py makemigrations --dry-run: This is useful to see if there are any requirements i.e. install pillow for images.
         if ok
         6. python3 manage.py makemigrations
         if ok
-        7. python3 manage.py migrate
-        8. python3 manage.py loaddata companies.json and then projects.json
+        7. python3 manage.py migrate --plan: This is useful to see and make sure you are only migrating app in particular, otherwise state the file after to ensure this is the only one captured.
+        if ok
+        8. python3 manage.oy migrate (name of file if applicable)
+        9. python3 manage.py loaddata companies.json and then projects.json
     * superuser will also be deleted so you will need to re-create the superuser
         1. python3 manage.py createsuperuser
 
 - To create through Django
     * in terminal type: python3 manage.py startapp (name of folder)
     * add into settings.py of main project name
+
+- Structure workflow not quite working as expected and advised through Tutorship to utilise Packages as Orders and they can be placed into a bag under order detail.
+    * Having to remove code and re-work migrations in this format
+
+#To Do
+    - Initiate pacakge app in line for use similar to bag
+
 
 
 
