@@ -202,5 +202,10 @@ body {
     margin-top: 5%;
 }
 
+/* package page */
 
-
+.package-hero-image {
+    background: url('/media/form-think.jpg') no-repeat top center fixed;
+    background-size: cover;
+    padding-top: 11em;
+}

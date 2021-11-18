@@ -755,6 +755,13 @@ For further help and info you can select [Cloning and Forking repositories](http
 - Structure workflow not quite working as expected and advised through Tutorship to utilise Packages as Orders and they can be placed into a bag under order detail.
     * Having to remove code and re-work migrations in this format
 
+- css not showing images
+    * When this occurs, ensure cache is cleared as a pimary check: windows ctrl-f5
+
+- extra css not locating
+    * python manage.py findstatic --verbosity 2 packages.css: code to see if is looking in appropriate directory
+    issue with packages extra css not being found. To update base.css to ensure this doesn't delay project any further.
+
 #To Do
     - Initiate pacakge app in line for use similar to bag
 
