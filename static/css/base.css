@@ -209,3 +209,24 @@ body {
     background-size: cover;
     padding-top: 11em;
 }
+
+.btn-orange {
+    color: #fff;
+    background-color: #dc7000;
+    border-color: #dc7000;
+}
+
+.bg-grey {
+    background-color: #668586 !important;
+    width: 20rem;
+}
+
+.bg-black {
+    background-color: #000 !important;
+    width: 20rem;
+}
+
+.bg-blue {
+    background-color: #252060 !important;
+    width: 20rem;
+}

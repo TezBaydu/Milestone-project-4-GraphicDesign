@@ -2,27 +2,59 @@
 {% load static %}
 
 {% block content %}
-    <div class="container-fluid package-hero-image">
-        <div class="row">
-            <div class="col-lg-6 col-md-8 col-sm-11 my-auto pt-md-3">
-                <h2 class="text-uppercase text-dark pt-5">Kingsland <span class="text-muted text-uppercase">Design</span></h2>
-                <h1 class="display-2 text-dark font-weight-bold py-5">Logo designs for your business</h1>
-                <p class="my-5 text-dark">Kingsland Design produce high quality logos to fit your specific business needs. Over 7 years of high quality logos produced for extremely satisfied customers, we are confident we can work with you to create a logo that is specific and unique to you and your business.</p>
-            </div>
+<div class="container-fluid package-hero-image h-75">
+    <div class="row">
+        <div class="col-12 col-md-6 my-auto pt-md-3 text-center">
+            <h4 class="text-light font-weight-bold py-5">“Concision in style, precision in thought, decision in life.”
+            </h4>
+            <p class="text-light text-right mb-5">Victor Hugo</p>
         </div>
     </div>
-    <div class="row justify-content-center mt-5 w-100">
-        <h5>Projects</h5>
-    </div>
-    <div class="row justify-content-center w-100">
-        <p>Just some of the logos produced</p>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                {{ packages }}
-            </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center my-5">
+            <h4 class="text-dark font-weight-semibold">Choose your package</h4>
         </div>
     </div>
-    
+</div>
+
+<div class="container text-white">
+    <div class="row justify-content-around my-5">
+        {% for package in packages %}
+            {% if package.name == "lite" %}
+                <div class="card bg-grey px-1 pt-3 my-3 mx-3">
+            {% elif package.name == "plus" %}
+                <div class="card bg-black px-1 pt-3 my-3 mx-3">
+            {% elif package.name == "premium" %}
+                <div class="card bg-blue px-1 pt-3 my-3 mx-3">
+            {% endif %}
+            <div class="row">
+                <div class="col-4">
+                    <img src="{{ package.image.url }}" class="card-img-top w-75 pt-1 mb-3" alt="Chess piece">
+                </div>
+                <div class="col-8">
+                    <h5 class="card-title mt-3 ml-n5">{{ package.friendly_name }}</h5>
+                </div>
+            </div>
+            <div class="card-body">
+                <h6 class="card-text font-weight-light mb-4">What You'll Get</h6>
+                <ul class="pl-0">
+                    <li class="list-unstyled mb-2"><i class="fas fa-check-circle"></i>  {{ package.logo_count_request }} Custom-made Logo Designs</li>
+                    <li class="list-unstyled mb-2"><i class="fas fa-check-circle"></i>  {{ package.quality_request }}</li>
+                    <li class="list-unstyled mb-2"><i class="fas fa-check-circle"></i>  {{ package.support_request }}</li>
+                    <li class="list-unstyled mb-2"><i class="fas fa-check-circle"></i>  {{ package.production_days }} Days Production</li>
+                </ul>
+                <hr class="bg-white"/>
+                <h6 class="my-3">£{{ package.price }}</h6>
+                <div class="row justify-content-center">
+                    <a href="#" class="btn btn-orange w-100 rounded-0">Choose</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
 {% endblock %}
