@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container-fluid package-hero-image">
+    <div class="row">
+        <div class="col-12 col-md-6 my-auto pt-md-3 text-center">
+            <h4 class="text-light font-weight-bold py-5">“Concision in style, precision in thought, decision in life.”
+            </h4>
+            <p class="text-light text-right mb-5">Victor Hugo</p>
+        </div>
+    </div>
+</div>
+
+<div class="overlay"></div>
+    <div class="container mb-2">
+        <div class="row">
+            <div class="col">
+                <hr>
+                <h2 class="logo-font mb-4">Logo Requests</h2>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                {% if bag_items %}
+                    <div class="table-responsive rounded"></div>
+                {% else %}
+                    <p class="lead mb-5">You have no stored requests.</p>
+                    <a href="{% url 'packages' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                        <span class="icon">
+                            <i class="fas fa-chevron-left"></i>
+                        </span>
+                        <span class="text-uppercase">Choose a package</span>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
