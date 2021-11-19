@@ -16,14 +16,13 @@
 <div class="container">
     <div class="row">
         <div class="col-12 text-center my-5">
-            <h4 class="text-dark font-weight-semibold">Choose your package</h4>
+            <h4 class="text-dark font-weight-semibold">Your chosen package</h4>
         </div>
     </div>
 </div>
 
 <div class="container text-white">
     <div class="row justify-content-around my-5">
-        {% for package in packages %}
             {% if package.name == "lite" %}
                 <div class="card bg-grey px-1 pt-3 my-3 mx-3">
             {% elif package.name == "plus" %}
@@ -49,12 +48,8 @@
                 </ul>
                 <hr class="bg-white"/>
                 <h6 class="my-3">£{{ package.price }}</h6>
-                <div class="row justify-content-center">
-                    <a href="{% url 'package_detail' package.id %}" class="btn btn-orange w-100 rounded-0">Choose</a>
-                </div>
             </div>
         </div>
-        {% endfor %}
     </div>
 </div>
 
