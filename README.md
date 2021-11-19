@@ -766,8 +766,19 @@ For further help and info you can select [Cloning and Forking repositories](http
     * A text was too long for styling and although passed over via JSON this has been amended in Admin
         * quality-request change from "Downloadable" High Quality content to "Download" High Quality content
 
-#To Do
+# To Do
     - Initiate pacakge app in line for use similar to bag
+
+# Re-Plan:
+    - Choose Package (choice fo 3)
+    - pushes to package detail
+        * This could contain a form for details
+        * On submit it pushes to a bag area
+        * This allows for several selections if required
+            - for any interim sales companies who may have several clients they may represent
+    - Package detail to have push to checkout
+        * checkout to have payment details and personal details
+        
 
 
 
