@@ -13,6 +13,7 @@ def all_packages(request):
 
     return render(request, 'packages/packages.html', context)
 
+
 def package_detail(request, package_id):
     """ A view to show individual package details """
 
