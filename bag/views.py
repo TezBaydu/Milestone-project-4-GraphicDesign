@@ -18,23 +18,6 @@ def add_to_bag(request, item_id):
     redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
 
-    if item_id in list(bag.keys()):
-        bag[item_id] += [
-            company_name,
-            company_slogan,
-            company_description,
-            company_colors,
-            company_look,
-        ]
-    else:
-        bag[item_id] = [
-            company_name,
-            company_slogan,
-            company_description,
-            company_colors,
-            company_look,
-        ]
-
     request.session['bag'] = bag
     print(request.session['bag'])
 

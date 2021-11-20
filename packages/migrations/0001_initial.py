@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
                 ('quality_request', models.TextField(blank=True, null=True)),
                 ('support_request', models.TextField(blank=True, null=True)),
                 ('production_days', models.IntegerField()),
-                ('price', models.DecimalField(decimal_places=2, max_digits=6)),
+                ('price', models.DecimalField(max_digits=6, decimal_places=2)),
                 ('image', models.ImageField(blank=True, null=True, upload_to='')),
             ],
         ),

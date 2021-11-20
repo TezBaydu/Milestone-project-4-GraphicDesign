@@ -766,6 +766,9 @@ For further help and info you can select [Cloning and Forking repositories](http
     * A text was too long for styling and although passed over via JSON this has been amended in Admin
         * quality-request change from "Downloadable" High Quality content to "Download" High Quality content
 
+- Object set not serializable
+    *packages list created but as there was more than one object to pull a list had to be created. This had to sit in [] to be serializable not {} !!
+
 # To Do
     - Initiate pacakge app in line for use similar to bag
 
