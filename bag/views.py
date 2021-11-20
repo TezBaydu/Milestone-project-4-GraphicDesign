@@ -19,21 +19,21 @@ def add_to_bag(request, item_id):
     bag = request.session.get('bag', {})
 
     if item_id in list(bag.keys()):
-        bag[item_id] += {
+        bag[item_id] += [
             company_name,
             company_slogan,
             company_description,
             company_colors,
-            company_look
-        }
+            company_look,
+        ]
     else:
-        bag[item_id] = {
+        bag[item_id] = [
             company_name,
             company_slogan,
             company_description,
             company_colors,
-            company_look
-        }
+            company_look,
+        ]
 
     request.session['bag'] = bag
     print(request.session['bag'])
