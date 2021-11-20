@@ -3,17 +3,16 @@
 
 {% block content %}
 
-<div class="container-fluid package-hero-image">
+<div class="container bag-hero-image h-100">
     <div class="row">
         <div class="col-12 col-md-6 my-auto pt-md-3 text-center">
-            <h4 class="text-light font-weight-bold py-5">“Concision in style, precision in thought, decision in life.”
-            </h4>
-            <p class="text-light text-right mb-5">Victor Hugo</p>
+            <h2 class="text-light font-weight-bold py-5">This is Your Bag
+            </h2>
+            <p class="text-light text-right mb-5"></p>
         </div>
     </div>
 </div>
 
-<div class="overlay"></div>
     <div class="container mb-2">
         <div class="row">
             <div class="col">
@@ -26,8 +25,78 @@
         <div class="row">
             <div class="col">
                 {% if bag_items %}
-                    <div class="table-responsive rounded">
-                        {{ bag_items }}
+                    <div class="table-responsive-sm rounded">
+                        <table class="table table-sm table-borderless">
+                            <thead class="text-black">
+                                <tr>
+                                    <th scope="col">Package Info</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for item in bag_items %}
+                                <tr class="mobile-bag-grid">
+                                    <td colspan="1" class="py-3">
+                                        <p class="my-0"><strong>Item ID: {{ item.item_id }}</strong></p>
+                                        <p class="my-1 text-muted">Company Name: {{ item.company_name|upper }}</p>
+                                        <p class="my-1 text-muted">Company Slogan or Strapline: {{ item.company_slogan|upper }}</p>
+                                        <p class="my-1 text-muted">Company Description: {{ item.company_description|upper }}</p>
+                                        <p class="my-1 text-muted">Logo Colours: {{ item.company_colors|upper }}</p>
+                                        <p class="my-1 text-muted">Logo Look and Feel: {{ item.company_look|upper }}</p>
+                                    </td>
+
+                                    <td colspan="1" class="w-25">
+                                            {% if item.package.name == "lite" %}
+                                                <div class="card bg-grey text-white">
+                                            {% elif item.package.name == "plus" %}
+                                                <div class="card bg-black text-white">
+                                            {% elif item.package.name == "premium" %}
+                                                <div class="card bg-blue text-white">
+                                            {% endif %}
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <img src="{{ item.package.image.url }}" class="card-img-top w-75 pt-1 mb-3" alt="Chess piece">
+                                                </div>
+                                                <div class="col-5">
+                                                    <h5 class="card-title mt-3 ml-n4">{{ item.package.friendly_name }}</h5>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <h6 class="card-text font-weight-light mb-4">What You'll Get</h6>
+                                                <ul class="pl-0">
+                                                    <li class="list-unstyled mb-2"><i class="fas fa-check-circle"></i>  {{ item.package.logo_count_request }} Custom-made Logo Designs</li>
+                                                    <li class="list-unstyled mb-2"><i class="fas fa-check-circle"></i>  {{ item.package.quality_request }}</li>
+                                                    <li class="list-unstyled mb-2"><i class="fas fa-check-circle"></i>  {{ item.package.support_request }}</li>
+                                                    <li class="list-unstyled mb-2"><i class="fas fa-check-circle"></i>  {{ item.package.production_days }} Days Production</li>
+                                                </ul>
+                                                <hr class="bg-white"/>
+                                                <h6 class="my-3">£{{ item.package.price }}</h6>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            <tr class="mobile-bag-grid">
+                                <td colspan="2" class="pt-5 text-center">
+                                    <h5 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h5>
+                                </td>
+                            </tr>
+                            <tr class="mobile-bag-grid">
+                                <td colspan="2" class="text-center">
+                                    <a href="{% url 'packages' %}" class="btn btn-outline-black rounded-0">
+                                        <span class="icon">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </span>
+                                        <span class="text-uppercase">Keep Shopping</span>
+                                    </a>
+                                    <a href="" class="btn btn-black rounded-0">
+                                        <span class="text-uppercase">Secure Checkout</span>
+                                        <span class="icon">
+                                            <i class="fas fa-lock"></i>
+                                        </span>
+                                    </a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                 {% else %}
                     <p class="lead mb-5">You have no stored requests.</p>
