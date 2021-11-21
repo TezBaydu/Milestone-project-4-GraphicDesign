@@ -802,7 +802,7 @@ For further help and info you can select [Cloning and Forking repositories](http
         * click inspect
         * select Application
         * select Storage
-        * right hnd pane select 'Clear site data'
+        * right hand pane select 'Clear site data'
 
         
 

@@ -23,6 +23,7 @@ def add_to_bag(request, item_id):
     
     if not bag.keys():
         bag[item_id] = {}
+        messages.success(request, f"Added {item.package.name}to your bag")
     else:
         messages.error(request, "You already have an item in the bag and can only order one at a time. Please edit your bag or if details are good proceed to purchase. ")
         return redirect('view_bag')
