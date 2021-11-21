@@ -33,6 +33,7 @@
                             </thead>
                             <tbody>
                             {% for item in bag_items %}
+                            <form class="form update-form" method="POST" action="">
                                 <tr class="mobile-bag-grid">
                                     <td colspan="1" class="py-3">
                                         <p class="my-0"><strong>Item ID: {{ item.item_id }}</strong></p>
@@ -44,6 +45,7 @@
                                     </td>
 
                                     <td colspan="1" class="w-25">
+                                        {% csrf_token %}
                                             {% if item.package.name == "lite" %}
                                                 <div class="card bg-grey text-white">
                                             {% elif item.package.name == "plus" %}
@@ -69,8 +71,16 @@
                                                 </ul>
                                                 <hr class="bg-white"/>
                                                 <h6 class="my-3">£{{ item.package.price }}</h6>
+                                            </div>
                                     </td>
                                 </tr>
+                            </form>
+                            <tr>
+                                <td colspan="1" class="pt-5 text-right">
+                                    <a class="update-link text-info px-3"><small>Edit Details</small></a>
+                                    <a class="remove-item text-danger float-right px-3" id="remove_{{ item.item_id }}"><small>Remove</small></a>
+                                </td>
+                            </tr>   
                             {% endfor %}
                             <tr class="mobile-bag-grid">
                                 <td colspan="2" class="pt-5 text-center">
