@@ -781,6 +781,15 @@ For further help and info you can select [Cloning and Forking repositories](http
             - for any interim sales companies who may have several clients they may represent
     - Package detail to have push to checkout
         * checkout to have payment details and personal details
+
+# Session detail delete
+    - To delete data as part of testing this can be done by selecting:
+        * right click screen
+        * click inspect
+        * select Applciation
+        * select Cookies
+        * Right click session ID
+        * select delete
         
 
 

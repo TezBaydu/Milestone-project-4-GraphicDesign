@@ -17,7 +17,7 @@ def bag_contents(request):
             'item_id': item_id,
             'package': package,
             'package.price': package.price,
-            "company_name": details[0],
+            'company_name': details[0],
             "company_slogan": details[1],
             "company_description": details[2],
             "company_colors": details[3],

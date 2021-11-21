@@ -9,7 +9,7 @@ def view_bag(request):
 
 def add_to_bag(request, item_id):
     """ Add company detail requests to specified package to bag """
-
+    
     company_name = request.POST.get('company_name')
     company_slogan = request.POST.get('company_slogan')
     company_description = request.POST.get('company_description')
@@ -19,5 +19,5 @@ def add_to_bag(request, item_id):
     bag = request.session.get('bag', {})
 
     request.session['bag'] = bag
-
+    print(request.session['bag'])
     return redirect(redirect_url)
