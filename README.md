@@ -773,7 +773,11 @@ For further help and info you can select [Cloning and Forking repositories](http
     * Once cleared it was identificed there was a requirement to update add_to_bag and contexts.py, however another issue arrived where you could only add one of each package at a time. This would confuse user and so site re-design so only 1 package and purchse can be created, edited, deleted at a time. But one purchased it is stored as unique.
 
 # To Do
-    - Initiate pacakge app in line for use similar to bag
+    - Initiate pacakge app in line for use similar to bag - Done
+    - Update edit and remove from bag links
+        * potential to create a new template for edit attempted but failed, need help
+        * Remove package fail when using pop
+
 
 # Re-Plan:
     - Choose Package (choice fo 3)
@@ -789,10 +793,17 @@ For further help and info you can select [Cloning and Forking repositories](http
     - To delete data as part of testing this can be done by selecting:
         * right click screen
         * click inspect
-        * select Applciation
+        * select Application
         * select Cookies
         * Right click session ID
         * select delete
+    - To delete storagte from site datae
+        * right click screen
+        * click inspect
+        * select Application
+        * select Storage
+        * right hnd pane select 'Clear site data'
+
         
 
 

@@ -12,7 +12,7 @@ def view_bag(request):
 
 def add_to_bag(request, item_id):
     """ Add company detail requests to specified package to bag """
-    print('add to bag triggered')
+
     company_name = request.POST.get('company_name')
     company_slogan = request.POST.get('company_slogan')
     company_description = request.POST.get('company_description')
