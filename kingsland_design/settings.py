@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'projects',
     'packages',
     'bag',
+    'responsive',
 
     # Other
     'crispy_forms',
@@ -59,6 +60,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+MIDDLEWARE_CLASSES = [
+    'responsive.middleware.ResponsiveMiddleware',
 ]
 
 ROOT_URLCONF = 'kingsland_design.urls'
@@ -88,6 +93,11 @@ TEMPLATES = [
         },
     },
 ]
+
+TEMPLATE_CONTEXT_PROCESSORS = {
+    'django.core.context_processors.request',
+    'responsive.context_processors.device',
+}
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 

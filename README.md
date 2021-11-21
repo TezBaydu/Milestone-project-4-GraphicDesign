@@ -804,6 +804,13 @@ For further help and info you can select [Cloning and Forking repositories](http
         * select Storage
         * right hand pane select 'Clear site data'
 
+# Django responsive design
+    - django-responsive2 0.1.3 installed for responsive s=designs using django
+        * pip3 install django-responsive2
+[django-responsive2](https://django-responsive2.readthedocs.io/en/latest/readme.html#)
+        * Applied and adjusted into settings but responsive adjustment not working
+        * worth a try....!
+
         
 
 

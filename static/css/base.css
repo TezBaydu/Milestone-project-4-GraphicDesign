@@ -327,3 +327,22 @@ body {
     }
 }
 
+/* login page */
+
+.login-hero-image {
+    background: url('/media/login.jpg');
+    background-size: cover;
+}
+
+.login-container {
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.login label {
+    display: block;
+}
+
+.primaryAction {
+    width: 75%;
+}
