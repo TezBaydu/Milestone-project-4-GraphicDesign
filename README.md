@@ -767,7 +767,10 @@ For further help and info you can select [Cloning and Forking repositories](http
         * quality-request change from "Downloadable" High Quality content to "Download" High Quality content
 
 - Object set not serializable
-    *packages list created but as there was more than one object to pull a list had to be created. This had to sit in [] to be serializable not {} !!
+    * packages list created but as there was more than one object to pull a list had to be created. This had to sit in [] to be serializable not {} !!
+    * even so this wasn't actually needed and was removed altogether and the call made in contexts.py
+    * This caused further issues as now no detail was being called and being pulled into bag. Previous calls were stored in session and this was being called instead.
+    * Once cleared it was identificed there was a requirement to update add_to_bag and contexts.py, however another issue arrived where you could only add one of each package at a time. This would confuse user and so site re-design so only 1 package and purchse can be created, edited, deleted at a time. But one purchased it is stored as unique.
 
 # To Do
     - Initiate pacakge app in line for use similar to bag

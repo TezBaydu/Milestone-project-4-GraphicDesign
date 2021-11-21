@@ -17,11 +17,11 @@ def bag_contents(request):
             'item_id': item_id,
             'package': package,
             'package.price': package.price,
-            'company_name': details[0],
-            "company_slogan": details[1],
-            "company_description": details[2],
-            "company_colors": details[3],
-            "company_look": details[4],
+            'company_name': details["company_name"],
+            "company_slogan": details["company_slogan"],
+            "company_description": details["company_description"],
+            "company_colors": details["company_colors"],
+            "company_look": details["company_look"],
         })
 
         grand_total += package.price

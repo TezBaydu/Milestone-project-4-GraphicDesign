@@ -35,6 +35,23 @@ body {
     border: 1px solid black !important;
 }
 
+/* messages */
+
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 999999999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 10px;
+}
+
 /* footer */
 
 .social-links li a i {
