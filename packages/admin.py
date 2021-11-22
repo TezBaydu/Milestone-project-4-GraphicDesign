@@ -17,4 +17,5 @@ class PackageAdmin(admin.ModelAdmin):
 
     ordering = ('sku',)
 
+
 admin.site.register(Package, PackageAdmin)

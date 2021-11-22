@@ -811,6 +811,14 @@ For further help and info you can select [Cloning and Forking repositories](http
         * Applied and adjusted into settings but responsive adjustment not working
         * worth a try....!
 
+# Mentor questions
+- django responsiveness?
+- Edit bag and delete bag
+    - edit bag, should this just be a new template with iem.id elements overwriteable?
+    - delete function not working...?
+- advice on user profile where images re to be loaded into django admin and this pulls into user profile
+
+
         
 
 
