@@ -13,7 +13,7 @@ def view_bag(request):
 def add_to_bag(request, item_id):
     """ Add company detail requests to specified package to bag """
 
-    # package = get_object_or_404(Package, pk=item_id)
+    package = get_object_or_404(Package, pk=item_id)
     company_name = request.POST.get('company_name')
     company_slogan = request.POST.get('company_slogan')
     company_description = request.POST.get('company_description')
@@ -21,7 +21,8 @@ def add_to_bag(request, item_id):
     company_look = request.POST.get('company_look')
     bag = request.session.get('bag', {})
     # package = request.session.get('package', {})
-    
+    # package = request.POST.get('friendly_name')
+
     if not bag.keys():
         bag[item_id] = {}
         messages.success(request, f'Added {package.friendly_name} to bag')
