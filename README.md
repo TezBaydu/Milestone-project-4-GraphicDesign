@@ -777,6 +777,31 @@ For further help and info you can select [Cloning and Forking repositories](http
     - Update edit and remove from bag links
         * potential to create a new template for edit attempted but failed, need help
         * Remove package fail when using pop
+    - Stripe initiation
+[Temp email site](https://temp-mail.org/en/)
+        * Temp mail used: renenag259@latovic.com
+        * Temp password
+    - Servcies app
+        * Contact details and form
+    - Profile app
+    - Deploy to heroku
+    - Email notifications
+        * To customer
+        * To Admin for order update and action
+    - Admin upload images to Django admin and onto user profile
+    - Package select when not signed in, redirect to package page after logging in.
+    - Use local storage/session storage for package details if they go back to select another package
+        * first get the bag + item in the bag
+        * iterate over the keys and get the values of the various keys that you set (when the bag was created)
+        * render a template with a form, and prepopulate the form with those values
+        * user inputs changes, and submits form which gets the bag, iterates over the keys in the bag and updates their values with the values submitted in the request.POST
+        * Consider updating into models of Order if wanting to parse into Admin...!
+            - This will mean removing package_details page and all fits into checkout.....
+                * Potentially this may not be required to update...need to test once checkout is applied with payment method
+    - bag views.py add DEf remove for remove javascript to function
+    - Messages not appearing when pushing items into bag...?! have been thorugh and updated Package, bag-item association not working in views.py....?
+
+
 
 
 # Re-Plan:

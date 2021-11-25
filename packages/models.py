@@ -2,8 +2,8 @@ from django.db import models
 
 
 class Package(models.Model):
-    sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
+    sku = models.CharField(max_length=254, null=True, blank=True)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
     logo_count_request = models.IntegerField()
     quality_request = models.TextField(null=True, blank=True)
