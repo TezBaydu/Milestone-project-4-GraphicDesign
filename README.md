@@ -790,6 +790,7 @@ For further help and info you can select [Cloning and Forking repositories](http
         * To Admin for order update and action
     - Admin upload images to Django admin and onto user profile
     - Package select when not signed in, redirect to package page after logging in.
+
     - Use local storage/session storage for package details if they go back to select another package
         * first get the bag + item in the bag
         * iterate over the keys and get the values of the various keys that you set (when the bag was created)
@@ -799,7 +800,11 @@ For further help and info you can select [Cloning and Forking repositories](http
             - This will mean removing package_details page and all fits into checkout.....
                 * Potentially this may not be required to update...need to test once checkout is applied with payment method
     - bag views.py add DEf remove for remove javascript to function
-    - Messages not appearing when pushing items into bag...?! have been thorugh and updated Package, bag-item association not working in views.py....?
+    - Messages not appearing when pushing items into bag...?! have been thorugh and updated Package, bag-item association not working in views.py....?   
+
+    - Initially set up Package and PackageDetails in Package models, however was advised this to be seoarated and placed into bag.
+        * Have since been advised this initial approach was correct in order for better coding architecture going forward and have to re address project !!!
+        * Feel like a whole weeks work has been wasted and very frustrated at lack of clarity advised.
 
 
 

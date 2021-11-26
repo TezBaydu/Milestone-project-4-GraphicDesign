@@ -21,6 +21,11 @@ def package_detail(request, package_id):
 
     context = {
         'package': package,
+        'company_name': company_name,
+        'company_slogan': company_slogan,
+        'company_description': company_description,
+        'company_colors': company_colors,
+        'company_look': company_look,
     }
 
     return render(request, 'packages/package_detail.html', context)

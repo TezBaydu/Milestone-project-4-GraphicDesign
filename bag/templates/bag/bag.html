@@ -33,7 +33,7 @@
                             </thead>
                             <tbody>
                             {% for item in bag_items %}
-                            <form class="form update-form" method="POST" action="">
+                            <form class="form update-form" method="POST" action="{% url 'edit_bag' item.item_id %}">
                                 <tr class="mobile-bag-grid">
                                     <td colspan="1" class="py-3">
                                         <p class="my-0"><strong>Item ID: {{ item.item_id }}</strong></p>
@@ -77,7 +77,7 @@
                             </form>
                             <tr>
                                 <td class="pt-5 text-center">
-                                    <a href="" class="update-link text-info px-5">Edit Details</a>
+                                    <a href="{% url 'package_detail' item.item_id %}" class="update-link text-info px-5">Edit Details</a>
                                     <a class="remove-item text-danger px-5" id="remove_{{ item.item_id }}">Remove</a>
                                 </td>
                             </tr>   
@@ -119,4 +119,30 @@
         </div>
     </div>
 
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+
+<script type="text/javascript">
+    // Update quantity on click
+    $('.update-link').click(function(e) {
+        console.log("Edit function working");
+        var form = $(this).prev('.update-form');
+        form.submit();
+    })
+
+    // Remove item and reload on click
+    $('.remove-item').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var url = `/bag/remove/${itemId}/`;
+        var details = {'csrfmiddlewaretoken': csrfToken,};
+
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    })
+</script>
 {% endblock %}

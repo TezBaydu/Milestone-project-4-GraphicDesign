@@ -17,3 +17,15 @@ class Package(models.Model):
 
     def get_friendly_name(self):
         return self.friendly_name
+
+
+class PackageDetails(models.Model):
+    package_details = models.ForeignKey(Package, null=False, blank=False, on_delete=models.CASCADE)
+    company_name = models.CharField(max_length=100, null=False, blank=False, default=0)
+    company_slogan = models.CharField(max_length=200, null=False, blank=False, default=0)
+    company_description = models.CharField(max_length=500, null=False, blank=False, default=0)
+    company_colors = models.CharField(max_length=100, null=False, blank=False, default=0)
+    company_look = models.CharField(max_length=100, null=False, blank=False, default=0)
+
+    def __str__(self):
+        return self.package_details

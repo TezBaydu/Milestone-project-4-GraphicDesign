@@ -23,7 +23,6 @@ def bag_contents(request):
             "company_colors": details["company_colors"],
             "company_look": details["company_look"],
         })
-        print(bag)
         grand_total += package.price
 
     context = {
