@@ -37,13 +37,26 @@
                                 <tr class="mobile-bag-grid">
                                     <td colspan="1" class="py-3">
                                         <p class="my-0"><strong>Item ID: {{ item.item_id }}</strong></p>
-                                        <p class="my-1 text-muted">Company Name: {{ item.company_name|upper }}
-                                            <!-- <input class="form-control" type="text" name="company_name" data-item_id="{{ package.id }}" id="company_name_{{ package.id }}" value="{{ item.company_name|upper }}"> -->
+                                        <p class="my-1 text-muted">Company Name: 
+                                            <!-- {{ item.company_name|upper }} -->
+                                            <input class="form-control" type="text" name="company_name" data-item_id="{{ package.id }}" id="company_name_{{ package.id }}" value="{{ item.company_name|upper }}">
                                         </p>
-                                        <p class="my-1 text-muted">Company Slogan or Strapline: {{ item.company_slogan|upper }}</p>
-                                        <p class="my-1 text-muted">Company Description: {{ item.company_description|upper }}</p>
-                                        <p class="my-1 text-muted">Logo Colours: {{ item.company_colors|upper }}</p>
-                                        <p class="my-1 text-muted">Logo Look and Feel: {{ item.company_look|upper }}</p>
+                                        <p class="my-1 text-muted">Company Slogan or Strapline: 
+                                            <!-- {{ item.company_slogan|upper }} -->
+                                            <input class="form-control" type="text" name="company_slogan" data-item_id="{{ package.id }}" id="company_slogan_{{ package.id }}" value="{{ item.company_slogan|upper }}">
+                                        </p>
+                                        <p class="my-1 text-muted">Company Description: 
+                                            <!-- {{ item.company_description|upper }} -->
+                                            <textarea class="form-control" name="company_description" data-item_id="{{ package.id }}" id="company_description_{{ package.id }}" value="{{ item.company_description|upper }}" placeholder="{{ item.company_description|upper }}"></textarea>
+                                        </p>
+                                        <p class="my-1 text-muted">Logo Colours: 
+                                            <!-- {{ item.company_colors|upper }} -->
+                                            <input class="form-control" type="text" name="company_colors" data-item_id="{{ package.id }}" id="company_colors_{{ package.id }}" value="{{ item.company_colors|upper }}">
+                                        </p>
+                                        <p class="my-1 text-muted">Logo Look and Feel: 
+                                            <!-- {{ item.company_look|upper }} -->
+                                            <input class="form-control" type="text" name="company_look" data-item_id="{{ package.id }}" id="company_look_{{ package.id }}" value="{{ item.company_look|upper }}">
+                                        </p>
                                     </td>
 
                                     <td colspan="1" class="w-25">
@@ -79,7 +92,7 @@
                             </form>
                             <tr>
                                 <td class="pt-5 text-center">
-                                    <a class="update-link text-info px-5">Update Details</a>
+                                    <a type="submit" class="update-link text-info px-5">Update Details</a>
                                     <a class="remove-item text-danger px-5" id="remove_{{ item.item_id }}">Remove</a>
                                 </td>
                             </tr>   
