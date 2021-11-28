@@ -1,3 +1,5 @@
+import uuid
+
 from django.db import models
 
 
@@ -21,6 +23,7 @@ class Package(models.Model):
 
 class CompanyDetails(models.Model):
     sku = models.CharField(max_length=254, null=True, blank=True)
+    logo_request_number = models.CharField(max_length=32, null=False, editable=False)
     company_name = models.CharField(
         max_length=100, null=False, blank=False, default=0)
     company_slogan = models.CharField(
@@ -32,5 +35,11 @@ class CompanyDetails(models.Model):
     company_look = models.CharField(
         max_length=100, null=False, blank=False, default=0)
 
+    def _logo_request_number(self):
+        """
+        Generate a random, unique order number using UUID
+        """
+        return uuid.uuid4().hex.upper()
+    
     def __str__(self):
         return self.company_name

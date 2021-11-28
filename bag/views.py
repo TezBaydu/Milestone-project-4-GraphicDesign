@@ -40,10 +40,11 @@ def add_to_bag(request, item_id):
     bag[item_id]['company_colors'] = company_colors
     bag[item_id]['company_look'] = company_look
 
-    # details = CompanyDetails(
-    #     company_name=company_name, company_slogan=company_slogan,
-    #     company_description=company_description, company_colors=company_colors, company_look=company_look)
-    # details.save()
+    details = CompanyDetails(
+        company_name=company_name, company_slogan=company_slogan,
+        company_description=company_description, company_colors=company_colors,
+        company_look=company_look)
+    details.save()
 
     request.session['bag'] = bag
 
@@ -53,7 +54,7 @@ def add_to_bag(request, item_id):
 def adjust_bag(request, item_id):
     """ Edit company detail requests and re-apply package to bag """
 
-    package = get_object_or_404(Package, pk=item_id)
+    # package = get_object_or_404(Package, pk=item_id)
     # company_details = get_object_or_404(CompanyDetails, pk=item_id)
     company_name = request.POST.get('company_name')
     company_slogan = request.POST.get('company_slogan')
@@ -64,11 +65,6 @@ def adjust_bag(request, item_id):
     # package = request.session.get('package', {})
     # package = request.POST.get('friendly_name')
 
-    details = CompanyDetails(
-        company_name=company_name, company_slogan=company_slogan,
-        company_description=company_description, company_colors=company_colors, company_look=company_look)
-    details.save()
-
     # bag[item_id]['package'] = package
     bag[item_id]['company_name'] = company_name
     bag[item_id]['company_slogan'] = company_slogan
@@ -76,9 +72,15 @@ def adjust_bag(request, item_id):
     bag[item_id]['company_colors'] = company_colors
     bag[item_id]['company_look'] = company_look
 
+    details = CompanyDetails(
+        company_name=company_name, company_slogan=company_slogan,
+        company_description=company_description, company_colors=company_colors,
+        company_look=company_look)
+    details.save()
+
     request.session['bag'] = bag
 
-    return redirect("view_bag")
+    return redirect(reverse, ("view_bag"))
 
 
 def remove_from_bag(request, item_id):

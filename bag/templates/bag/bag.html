@@ -92,7 +92,7 @@
                             </form>
                             <tr>
                                 <td class="pt-5 text-center">
-                                    <a type="submit" class="update-link text-info px-5">Update Details</a>
+                                    <a class="update-link text-info px-5">Update Details</a>
                                     <a class="remove-item text-danger px-5" id="remove_{{ item.item_id }}">Remove</a>
                                 </td>
                             </tr>   
@@ -142,7 +142,6 @@
 <script type="text/javascript">
     // Update quantity on click
     $('.update-link').click(function(e) {
-        console.log("Edit function working");
         var form = $(this).prev('.update-form');
         form.submit();
     })

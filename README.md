@@ -800,11 +800,16 @@ For further help and info you can select [Cloning and Forking repositories](http
             - This will mean removing package_details page and all fits into checkout.....
                 * Potentially this may not be required to update...need to test once checkout is applied with payment method
     - bag views.py add DEf remove for remove javascript to function
-    - Messages not appearing when pushing items into bag...?! have been thorugh and updated Package, bag-item association not working in views.py....?   
+    - Messages not appearing when pushing items into bag...?! have been thorugh and updated Package, bag-item association not working in views.py
+        * Resolved after updated to Package and clearing site data and re-applying
 
     - Initially set up Package and PackageDetails in Package models, however was advised this to be seoarated and placed into bag.
         * Have since been advised this initial approach was correct in order for better coding architecture going forward and have to re address project !!!
         * Feel like a whole weeks work has been wasted and very frustrated at lack of clarity advised.
+
+- CompanyDetails
+    - Sku not appearing in Admin?
+        * Attempted adding uuid logo_request_number but not appearing?
 
 
 
