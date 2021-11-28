@@ -19,13 +19,18 @@ class Package(models.Model):
         return self.friendly_name
 
 
-class PackageDetails(models.Model):
-    package_details = models.ForeignKey(Package, null=False, blank=False, on_delete=models.CASCADE)
-    company_name = models.CharField(max_length=100, null=False, blank=False, default=0)
-    company_slogan = models.CharField(max_length=200, null=False, blank=False, default=0)
-    company_description = models.CharField(max_length=500, null=False, blank=False, default=0)
-    company_colors = models.CharField(max_length=100, null=False, blank=False, default=0)
-    company_look = models.CharField(max_length=100, null=False, blank=False, default=0)
+class CompanyDetails(models.Model):
+    sku = models.CharField(max_length=254, null=True, blank=True)
+    company_name = models.CharField(
+        max_length=100, null=False, blank=False, default=0)
+    company_slogan = models.CharField(
+        max_length=200, null=False, blank=False, default=0)
+    company_description = models.CharField(
+        max_length=500, null=False, blank=False, default=0)
+    company_colors = models.CharField(
+        max_length=100, null=False, blank=False, default=0)
+    company_look = models.CharField(
+        max_length=100, null=False, blank=False, default=0)
 
     def __str__(self):
-        return self.package_details
+        return self.company_name

@@ -33,11 +33,13 @@
                             </thead>
                             <tbody>
                             {% for item in bag_items %}
-                            <form class="form update-form" method="POST" action="{% url 'edit_bag' item.item_id %}">
+                            <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
                                 <tr class="mobile-bag-grid">
                                     <td colspan="1" class="py-3">
                                         <p class="my-0"><strong>Item ID: {{ item.item_id }}</strong></p>
-                                        <p class="my-1 text-muted">Company Name: {{ item.company_name|upper }}</p>
+                                        <p class="my-1 text-muted">Company Name: {{ item.company_name|upper }}
+                                            <!-- <input class="form-control" type="text" name="company_name" data-item_id="{{ package.id }}" id="company_name_{{ package.id }}" value="{{ item.company_name|upper }}"> -->
+                                        </p>
                                         <p class="my-1 text-muted">Company Slogan or Strapline: {{ item.company_slogan|upper }}</p>
                                         <p class="my-1 text-muted">Company Description: {{ item.company_description|upper }}</p>
                                         <p class="my-1 text-muted">Logo Colours: {{ item.company_colors|upper }}</p>
@@ -77,7 +79,7 @@
                             </form>
                             <tr>
                                 <td class="pt-5 text-center">
-                                    <a href="{% url 'package_detail' item.item_id %}" class="update-link text-info px-5">Edit Details</a>
+                                    <a class="update-link text-info px-5">Update Details</a>
                                     <a class="remove-item text-danger px-5" id="remove_{{ item.item_id }}">Remove</a>
                                 </td>
                             </tr>   

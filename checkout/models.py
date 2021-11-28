@@ -19,8 +19,10 @@ class Order(models.Model):
     street_address2 = models.CharField(max_length=80, null=True, blank=True)
     county = models.CharField(max_length=80, null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
-    order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
-    grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
+    order_total = models.DecimalField(
+        max_digits=10, decimal_places=2, null=False, default=0)
+    grand_total = models.DecimalField(
+        max_digits=10, decimal_places=2, null=False, default=0)
 
     def _generate_order_number(self):
         """
@@ -33,8 +35,10 @@ class Order(models.Model):
         Update grand total each time a line item is added,
         accounting for delivery costs.
         """
-        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum']
-        self.grand_total = self.order_total.aggregate(Sum('order_total'))['order_total__sum']
+        self.order_total = self.lineitems.aggregate(
+            Sum('lineitem_total'))['lineitem_total__sum']
+        self.grand_total = self.order_total.aggregate(
+            Sum('order_total'))['order_total__sum']
         self.save()
 
     def save(self, *args, **kwargs):
@@ -51,14 +55,24 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
-    order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
-    package = models.ForeignKey(Package, null=False, blank=False, on_delete=models.CASCADE)
-    lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
-    company_name = models.CharField(max_length=100, null=False, blank=False, default=0)
-    company_slogan = models.CharField(max_length=200, null=False, blank=False, default=0)
-    company_description = models.CharField(max_length=500, null=False, blank=False, default=0)
-    company_colors = models.CharField(max_length=100, null=False, blank=False, default=0)
-    company_look = models.CharField(max_length=100, null=False, blank=False, default=0)
+    order = models.ForeignKey(
+        Order, null=False, blank=False,
+        on_delete=models.CASCADE, related_name='lineitems')
+    package = models.ForeignKey(
+        Package, null=False, blank=False, on_delete=models.CASCADE)
+    lineitem_total = models.DecimalField(
+        max_digits=6, decimal_places=2,
+        null=False, blank=False, editable=False)
+    company_name = models.CharField(
+        max_length=100, null=False, blank=False, default=0)
+    company_slogan = models.CharField(
+        max_length=200, null=False, blank=False, default=0)
+    company_description = models.CharField(
+        max_length=500, null=False, blank=False, default=0)
+    company_colors = models.CharField(
+        max_length=100, null=False, blank=False, default=0)
+    company_look = models.CharField(
+        max_length=100, null=False, blank=False, default=0)
 
     def save(self, *args, **kwargs):
         """
