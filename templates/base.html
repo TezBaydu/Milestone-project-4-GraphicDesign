@@ -40,7 +40,6 @@
     {% endblock %}
   </head>
   <body>
-    {% block body %}
       <header id="topnav" class="container-fluid fixed-top">
         <nav class="row bg-white pt-lg-2 d-none d-lg-flex">
           <div class="col-2 my-auto py-1 py-lg-0">
@@ -271,15 +270,16 @@
         </div>
       </footer>
 
-      {% block postload_js %}
-      <script type="text/javascript">
-        $('.toast').toast('show');
-      </script>
-      {% endblock %}
 
+    {% block postload_js %}
+    <script type="text/javascript">
+      $('.toast').toast('show');
+    </script>
     {% endblock %}
 
-    {% block extra_body %}
-    {% endblock %}
+    
+
+  {% block extra_body %}
+  {% endblock %}
   </body>
 </html>
