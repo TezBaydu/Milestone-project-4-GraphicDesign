@@ -21,18 +21,17 @@ class PackageAdmin(admin.ModelAdmin):
 admin.site.register(Package, PackageAdmin)
 
 
-
 class CompanyDetailsAdmin(admin.ModelAdmin):
     list_display = (
-        'sku',
-        'company_name', 
+        'logo_request_number',
+        'company_name',
         'company_slogan',
         'company_description',
         'company_colors',
-        'company_look', 
+        'company_look',
     )
 
-    ordering = ('sku',)
+    ordering = ('company_name',)
 
 
 admin.site.register(CompanyDetails, CompanyDetailsAdmin)

@@ -22,10 +22,13 @@ class Package(models.Model):
 
 
 class CompanyDetails(models.Model):
-    sku = models.CharField(max_length=254, null=True, blank=True)
+
+    class Meta:
+        verbose_name_plural = 'Company Details'
+
     logo_request_number = models.CharField(max_length=32, null=False, editable=False)
     company_name = models.CharField(
-        max_length=100, null=False, blank=False, editable=False, default=0)
+        max_length=100, null=False, blank=False, default=0)
     company_slogan = models.CharField(
         max_length=200, null=False, blank=False, default=0)
     company_description = models.CharField(
@@ -42,4 +45,16 @@ class CompanyDetails(models.Model):
         return uuid.uuid4().hex.upper()
 
     def __str__(self):
+        return self.logo_request_number
+
+    def _company_name(self):
         return self.company_name
+
+    def save(self, *args, **kwargs):
+        """
+        Override the original save method to set the order number
+        if it hasn't been set already.
+        """
+        if not self.logo_request_number:
+            self.logo_request_number = self._logo_request_number()
+        super().save(*args, **kwargs)

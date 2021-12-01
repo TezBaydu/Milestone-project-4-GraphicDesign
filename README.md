@@ -772,10 +772,22 @@ For further help and info you can select [Cloning and Forking repositories](http
     * This caused further issues as now no detail was being called and being pulled into bag. Previous calls were stored in session and this was being called instead.
     * Once cleared it was identificed there was a requirement to update add_to_bag and contexts.py, however another issue arrived where you could only add one of each package at a time. This would confuse user and so site re-design so only 1 package and purchse can be created, edited, deleted at a time. But one purchased it is stored as unique.
 
+- Messages not appearing when pushing items into bag...?! have been thorugh and updated Package, bag-item association not working in views.py
+    * Resolved after updated to Package and clearing site data and re-applying
+
+- Adjust Bag
+    - Advised to use local storage session for package details
+            - New template created for edit but failed help requested from tutor Support
+            - Advised to set up CompanyDetails in packages models in order to identify companyu details intialised and if adjusted these can be compared to for update
+            - Subsequently advised other approach to iterate over bag local storage session could have worked
+            - Code has become very complex for bag view and feels like a week and a half of work has been wasted
+
+- CompanyDetails
+    - Sku not appearing in Admin?
+        * Attempted adding uuid logo_request_number but not appearing - Done - applied def save function in packages models
+
 # To Do
     - Initiate pacakge app in line for use similar to bag - Done
-    - Update edit and remove from bag links
-        * potential to create a new template for edit attempted but failed, need help
         * Remove package fail when using pop
     - Stripe initiation
 [Temp email site](https://temp-mail.org/en/)
@@ -790,28 +802,6 @@ For further help and info you can select [Cloning and Forking repositories](http
         * To Admin for order update and action
     - Admin upload images to Django admin and onto user profile
     - Package select when not signed in, redirect to package page after logging in.
-
-    - Use local storage/session storage for package details if they go back to select another package
-        * first get the bag + item in the bag
-        * iterate over the keys and get the values of the various keys that you set (when the bag was created)
-        * render a template with a form, and prepopulate the form with those values
-        * user inputs changes, and submits form which gets the bag, iterates over the keys in the bag and updates their values with the values submitted in the request.POST
-        * Consider updating into models of Order if wanting to parse into Admin...!
-            - This will mean removing package_details page and all fits into checkout.....
-                * Potentially this may not be required to update...need to test once checkout is applied with payment method
-    - bag views.py add DEf remove for remove javascript to function
-    - Messages not appearing when pushing items into bag...?! have been thorugh and updated Package, bag-item association not working in views.py
-        * Resolved after updated to Package and clearing site data and re-applying
-
-    - Initially set up Package and PackageDetails in Package models, however was advised this to be seoarated and placed into bag.
-        * Have since been advised this initial approach was correct in order for better coding architecture going forward and have to re address project !!!
-        * Feel like a whole weeks work has been wasted and very frustrated at lack of clarity advised.
-
-- CompanyDetails
-    - Sku not appearing in Admin?
-        * Attempted adding uuid logo_request_number but not appearing?
-
-
 
 
 # Re-Plan:
@@ -849,8 +839,8 @@ For further help and info you can select [Cloning and Forking repositories](http
 # Mentor questions
 - django responsiveness?
 - Edit bag and delete bag
-    - edit bag, should this just be a new template with iem.id elements overwriteable?
     - delete function not working...?
+    - bag views.py add def remove for remove javascript to function
 - advice on user profile where images re to be loaded into django admin and this pulls into user profile
 
 

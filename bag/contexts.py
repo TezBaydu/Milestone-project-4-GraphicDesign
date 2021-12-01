@@ -11,8 +11,6 @@ def bag_contents(request):
     grand_total = 0
     bag = request.session.get('bag', {})
 
-    # print(bag)
-
     for item_id, details in bag.items():
         package = get_object_or_404(Package, pk=item_id)
         # company_details = get_object_or_404(CompanyDetails, pk=item_id)

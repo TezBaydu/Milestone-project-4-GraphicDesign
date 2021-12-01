@@ -46,6 +46,8 @@ def add_to_bag(request, item_id):
         company_look=company_look)
     details.save()
 
+    bag[item_id]['logo_request_number'] = details.logo_request_number
+
     request.session['bag'] = bag
 
     return redirect("view_bag")
@@ -54,29 +56,15 @@ def add_to_bag(request, item_id):
 def adjust_bag(request, item_id):
     """ Edit company detail requests and re-apply package to bag """
 
-    package = get_object_or_404(Package, pk=item_id)
+    # package = get_object_or_404(Package, pk=item_id)
+    # details = get_object_or_404(CompanyDetails, company_name=item_id)
+    logo_request_number = request.POST.get('logo_request_number')
     company_name = request.POST.get('company_name')
     company_slogan = request.POST.get('company_slogan')
     company_description = request.POST.get('company_description')
     company_colors = request.POST.get('company_colors')
     company_look = request.POST.get('company_look')
     bag = request.session.get('bag', {})
-    print(company_slogan)
-
-    # company_name = CompanyDetails.objects.get(company_name='company_name')
-    # company_name.save()
-
-    # company_slogan = CompanyDetails.objects.get(company_slogan='company_slogan')
-    # company_slogan.save()
-
-    # company_description = CompanyDetails.objects.get(company_description='company_description')
-    # company_description.save()
-
-    # company_colors = CompanyDetails.objects.get(company_colors='company_colors')
-    # company_colors.save()
-
-    # company_look = CompanyDetails.objects.get(company_look='company_look')
-    # company_look.save()
 
     bag[item_id]['company_name'] = company_name
     bag[item_id]['company_slogan'] = company_slogan
@@ -84,29 +72,63 @@ def adjust_bag(request, item_id):
     bag[item_id]['company_colors'] = company_colors
     bag[item_id]['company_look'] = company_look
 
-    details = get_object_or_404(CompanyDetails, company_name=company_name)
+    # bag[item_id]['logo_request_number'] = logo_request_number
+    logo_request_number = bag[item_id]['logo_request_number']
 
-    # details = CompanyDetails.objects.get(
-    #     company_name=company_name, company_slogan=company_slogan,
-    #     company_description=company_description, company_colors=company_colors,
-    #     company_look=company_look)
-    # details.save()
+    details = get_object_or_404(
+        CompanyDetails, logo_request_number=logo_request_number)
 
-    details.company_slogan = company_slogan
-    print(details.company_slogan)
+    bag[item_id]['logo_request_number'] = details.logo_request_number
 
-    if bag.keys():
-        bag[item_id] = {}
-        messages.success(
-            request, f'Edited {package.friendly_name} details to your bag')
+    # details.company_slogan = company_slogan
+    # print('details-slogan:', details.company_slogan)
+    # details.company_description = company_description
+    # details.company_colors = company_colors
+    # details.company_look = company_look
+
+    if company_name == details.company_name and company_slogan == \
+            details.company_slogan and company_description == \
+            details.company_description and company_colors == \
+            details.company_colors and company_look == \
+            details.company_look:
+        messages.error(request, 'No changes have been made.')
+
     else:
-        messages.error(
-            request, "No changes have been made.")
-        return redirect('view_bag')
+        details = CompanyDetails(
+            company_name=company_name, company_slogan=company_slogan,
+            company_description=company_description, company_colors=company_colors,
+            company_look=company_look)
+        details.save()
+        messages.success(request, 'Edited Logo request details to your bag')
 
-    request.session['bag'] = bag
+    # if company_name != details.company_name or company_slogan != \
+    #         details.company_slogan or company_description != \
+    #         details.company_description or company_colors != \
+    #         details.company_colors or company_look != details.company_look:
+    #     details = CompanyDetails(
+    #         company_name=company_name, company_slogan=company_slogan,
+    #         company_description=company_description, company_colors=company_colors,
+    #         company_look=company_look)
+    #     details.save()
+    #     messages.success(request, 'Edited Logo request details to your bag')
 
-    return redirect(reverse, ("view_bag"))
+    #     if details.company_name != details.company_name or details.company_slogan != \
+    #         details.company_slogan or details.company_description != \
+    #         details.company_description or details.company_colors != \
+    #         details.company_colors or details.company_look != details.company_look:
+    #         details = CompanyDetails(
+    #             company_name=company_name, company_slogan=company_slogan,
+    #             company_description=company_description, company_colors=company_colors,
+    #             company_look=company_look)
+    #         details.save()
+    #     messages.success(request, 'Edited Logo request details to your bag')
+
+    # else:
+    #     messages.error(request, 'No changes have been made.')
+
+    # request.session['bag'] = bag
+
+    return redirect(reverse("view_bag"))
 
 
 def remove_from_bag(request, item_id):
