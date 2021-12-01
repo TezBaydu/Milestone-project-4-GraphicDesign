@@ -781,6 +781,7 @@ For further help and info you can select [Cloning and Forking repositories](http
             - Advised to set up CompanyDetails in packages models in order to identify companyu details intialised and if adjusted these can be compared to for update
             - Subsequently advised other approach to iterate over bag local storage session could have worked
             - Code has become very complex for bag view and feels like a week and a half of work has been wasted
+    - Highlighting an already edited bag can be re-edited and this adds to the Company Details admin. This is not a major issue as the function to edit is workable and potential this can be looked into but have spent over 1 and a half weeks just on this...potential coding to improve.
 
 - CompanyDetails
     - Sku not appearing in Admin?
