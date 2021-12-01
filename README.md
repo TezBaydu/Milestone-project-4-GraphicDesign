@@ -727,9 +727,41 @@ For further help and info you can select [Cloning and Forking repositories](http
 
 [Back to top ⇧](#introduction)
 
+# Re-Plan:
+    - Choose Package (choice fo 3)
+    - pushes to package detail
+        * This could contain a form for details
+        * On submit it pushes to a bag area
+        * This allows for several selections if required
+            - for any interim sales companies who may have several clients they may represent
+    - Package detail to have push to checkout
+        * checkout to have payment details and personal details
+
+# Session detail delete
+    - To delete data as part of testing this can be done by selecting:
+        * right click screen
+        * click inspect
+        * select Application
+        * select Cookies
+        * Right click session ID
+        * select delete
+    - To delete storagte from site datae
+        * right click screen
+        * click inspect
+        * select Application
+        * select Storage
+        * right hand pane select 'Clear site data'
+
+# Django responsive design
+    - django-responsive2 0.1.3 installed for responsive s=designs using django
+        * pip3 install django-responsive2
+[django-responsive2](https://django-responsive2.readthedocs.io/en/latest/readme.html#)
+        * Applied and adjusted into settings but responsive adjustment not working
+        * worth a try....!
 
 # Bugs & Issues
-- base.css: suddenly not working....?!! project-header in project.html not giving a margin-top?
+- base.css: not working - project-header in project.html not giving a margin-top - associated to Base.html not in allauth
+    - Has been applied
 
 - JSON migrations: Best to plan what is to be migrated in advance. This to save the deletion of JSON files and migrations and starting over as I had not updated descriptions for companies:
     * Done by
@@ -787,9 +819,10 @@ For further help and info you can select [Cloning and Forking repositories](http
     - Sku not appearing in Admin?
         * Attempted adding uuid logo_request_number but not appearing - Done - applied def save function in packages models
 
-# To Do
     - Initiate pacakge app in line for use similar to bag - Done
-        * Remove package fail when using pop
+    - Remove package - Done - Improvements to have an extra warning to remove but not covered
+
+# To Do
     - Stripe initiation
 [Temp email site](https://temp-mail.org/en/)
         * Temp mail used: renenag259@latovic.com
@@ -803,39 +836,6 @@ For further help and info you can select [Cloning and Forking repositories](http
         * To Admin for order update and action
     - Admin upload images to Django admin and onto user profile
     - Package select when not signed in, redirect to package page after logging in.
-
-
-# Re-Plan:
-    - Choose Package (choice fo 3)
-    - pushes to package detail
-        * This could contain a form for details
-        * On submit it pushes to a bag area
-        * This allows for several selections if required
-            - for any interim sales companies who may have several clients they may represent
-    - Package detail to have push to checkout
-        * checkout to have payment details and personal details
-
-# Session detail delete
-    - To delete data as part of testing this can be done by selecting:
-        * right click screen
-        * click inspect
-        * select Application
-        * select Cookies
-        * Right click session ID
-        * select delete
-    - To delete storagte from site datae
-        * right click screen
-        * click inspect
-        * select Application
-        * select Storage
-        * right hand pane select 'Clear site data'
-
-# Django responsive design
-    - django-responsive2 0.1.3 installed for responsive s=designs using django
-        * pip3 install django-responsive2
-[django-responsive2](https://django-responsive2.readthedocs.io/en/latest/readme.html#)
-        * Applied and adjusted into settings but responsive adjustment not working
-        * worth a try....!
 
 # Mentor questions
 - django responsiveness?
