@@ -759,6 +759,17 @@ For further help and info you can select [Cloning and Forking repositories](http
         * Applied and adjusted into settings but responsive adjustment not working
         * worth a try....!
 
+# Stripe
+[TempMail](https://temp-mail.org/ ) 
+- Email : gekil23029@tinydef.com
+- Full Name: ge kil
+- Country: United Kingdom
+- password: c0d%5Tr16E
+
+* Stripe is a digital platform to allow for payments on eCommerce stores
+    * JS code is applied to base.html to allow for Stripes fraud detection features
+    * API Keys are required
+
 # Bugs & Issues
 - base.css: not working - project-header in project.html not giving a margin-top - associated to Base.html not in allauth
     - Has been applied

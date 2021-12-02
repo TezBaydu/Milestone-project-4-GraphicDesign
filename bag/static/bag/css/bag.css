@@ -18,6 +18,21 @@
     height: calc(3.5em + 0.75rem + 2px);
 }
 
+.bg-grey {
+    background-color: #668586 !important;
+    width: 20rem;
+}
+
+.bg-black {
+    background-color: #000 !important;
+    width: 20rem;
+}
+
+.bg-blue {
+    background-color: #252060 !important;
+    width: 20rem;
+}
+
 @media (max-width: 767px) {
     .mobile-bag-grid {
         display: grid;
