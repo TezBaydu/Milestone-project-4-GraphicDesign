@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'packages/css/packages.css' %}">
+{% endblock %}
+
 {% block content %}
 
 <div class="container-fluid package-hero-image">

@@ -793,6 +793,8 @@ For further help and info you can select [Cloning and Forking repositories](http
 - extra css not locating
     * python manage.py findstatic --verbosity 2 packages.css: code to see if is looking in appropriate directory
     issue with packages extra css not being found. To update base.css to ensure this doesn't delay project any further.
+        - Have since found base.html not in allauth and have updated.
+            * Issue to note - when updating css in static folders these may not at first appear. Requires either a clear cache command (CTRL+F5) or stop server and re-run it.
 
 - Package description
     * A text was too long for styling and although passed over via JSON this has been amended in Admin
