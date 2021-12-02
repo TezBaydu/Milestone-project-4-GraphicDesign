@@ -8,3 +8,18 @@
     color: #000;
     border: 1px solid #000;
 }
+
+.bg-grey {
+    background-color: #668586 !important;
+    width: 20rem;
+}
+
+.bg-black {
+    background-color: #000 !important;
+    width: 20rem;
+}
+
+.bg-blue {
+    background-color: #252060 !important;
+    width: 20rem;
+}

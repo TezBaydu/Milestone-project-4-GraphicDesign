@@ -6,6 +6,9 @@ from packages.models import Package, CompanyDetails
 
 def view_bag(request):
     """ A view to render bag contents page"""
+    bag = request.session.get('bag', {})
+
+    request.session['bag'] = bag
 
     return render(request, 'bag/bag.html')
 

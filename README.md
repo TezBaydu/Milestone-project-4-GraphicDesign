@@ -824,6 +824,10 @@ For further help and info you can select [Cloning and Forking repositories](http
     - Initiate pacakge app in line for use similar to bag - Done
     - Remove package - Done - Improvements to have an extra warning to remove but not covered
 
+- Bag session store
+    - Even when applying a model for CompanyDetails (The details associated to each logo request) the details do not store in bag when the user signs out.
+        * Potential improvement to make to site in future
+
 # To Do
     - Stripe initiation
 [Temp email site](https://temp-mail.org/en/)
