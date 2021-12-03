@@ -71,8 +71,6 @@ def add_to_bag(request, item_id):
     bag[item_id]['company_colors'] = company_colors
     bag[item_id]['company_look'] = company_look
 
-
-
     bag[item_id]['logo_request_number'] = details.logo_request_number
 
     request.session['bag'] = bag

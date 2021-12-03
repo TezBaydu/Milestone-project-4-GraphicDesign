@@ -13,7 +13,6 @@ def bag_contents(request):
 
     for item_id, details in bag.items():
         package = get_object_or_404(Package, pk=item_id)
-        # company_details = get_object_or_404(CompanyDetails, pk=item_id)
         bag_items.append({
             'item_id': item_id,
             'package': package,

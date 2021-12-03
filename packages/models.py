@@ -4,6 +4,7 @@ from django.db import models
 
 
 class Package(models.Model):
+
     name = models.CharField(max_length=254)
     sku = models.CharField(max_length=254, null=True, blank=True)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
@@ -26,7 +27,8 @@ class CompanyDetails(models.Model):
     class Meta:
         verbose_name_plural = 'Company Details'
 
-    logo_request_number = models.CharField(max_length=32, null=False, editable=False)
+    logo_request_number = models.CharField(max_length=32, null=False,
+                                           editable=False)
     company_name = models.CharField(
         max_length=100, null=False, blank=False, default=0)
     company_slogan = models.CharField(
