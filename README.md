@@ -770,6 +770,11 @@ For further help and info you can select [Cloning and Forking repositories](http
     * JS code is applied to base.html to allow for Stripes fraud detection features
     * API Keys STRIPE_PUBLIC_KEY  and STRIPE_SECRET_KEY - are required and are applied in Gitpod workspace variables
 
+* Remember pip3 install stripe when coming back into project
+
+# Requirements file
+- To Freeze into file: pip3 freeze > requirements.txt
+
 # Bugs & Issues
 - base.css: not working - project-header in project.html not giving a margin-top - associated to Base.html not in allauth
     - Has been applied
@@ -838,6 +843,9 @@ For further help and info you can select [Cloning and Forking repositories](http
 - Bag session store
     - Even when applying a model for CompanyDetails (The details associated to each logo request) the details do not store in bag when the user signs out.
         * Potential improvement to make to site in future
+
+- Getting lots of errors which may stem from settings
+    * had run pip3 freeze > requirements.txt and this has pulled a much larger list from somewhere....? but hve no idea....could be because of the amount of times this file hs been shared.
 
 # To Do
     - Stripe initiation
