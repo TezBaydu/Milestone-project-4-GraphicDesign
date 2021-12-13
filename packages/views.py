@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Package, CompanyDetails
+from .models import Package
 
 
 def all_packages(request):

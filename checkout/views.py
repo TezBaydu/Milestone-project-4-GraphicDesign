@@ -4,7 +4,7 @@ from django.conf import settings
 
 from .forms import OrderForm
 from .models import Order, OrderLineItem
-from packages.models import CompanyDetails
+# from packages.models import CompanyDetails
 from bag.contexts import bag_contents
 
 # import stripe
@@ -71,6 +71,7 @@ def checkout(request):
                     # })
                     # grand_total += package.price
                     # order_line_item.save()
+<<<<<<< HEAD
     else:
         bag = request.session.get('bag', {})
         if not bag:
@@ -85,6 +86,22 @@ def checkout(request):
         #     amount=stripe_total,
         #     currency=settings.STRIPE_CURRENCY,
         # )
+=======
+    # else:
+    #     bag = request.session.get('bag', {})
+    #     if not bag:
+    #         messages.error(request, "You currently have no orders")
+    #         return redirect(reverse('packages'))
+
+    #     current_bag = bag_contents(request)
+    #     total = current_bag['grand_total']
+    #     stripe_total = round(total * 100)
+    #     stripe.api_key = stripe_secret_key
+    #     intent = stripe.PaymentIntent.create(
+    #         amount=stripe_total,
+    #         currency=settings.STRIPE_CURRENCY,
+    #     )
+>>>>>>> 45c01d28b6e9efe2d05870335c15ee2444f6bfac
 
         # order_form = OrderForm()
 

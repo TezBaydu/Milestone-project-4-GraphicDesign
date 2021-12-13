@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Package, CompanyDetails
+from .models import Package
 
 
 class PackageAdmin(admin.ModelAdmin):
@@ -13,16 +13,6 @@ class PackageAdmin(admin.ModelAdmin):
         'quality_request',
         'support_request',
         'production_days',
-    )
-
-    ordering = ('sku',)
-
-
-admin.site.register(Package, PackageAdmin)
-
-
-class CompanyDetailsAdmin(admin.ModelAdmin):
-    list_display = (
         'logo_request_number',
         'company_name',
         'company_slogan',
@@ -31,7 +21,23 @@ class CompanyDetailsAdmin(admin.ModelAdmin):
         'company_look',
     )
 
-    ordering = ('company_name',)
+    ordering = ('sku',)
 
 
-admin.site.register(CompanyDetails, CompanyDetailsAdmin)
+admin.site.register(Package, PackageAdmin)
+
+
+# class CompanyDetailsAdmin(admin.ModelAdmin):
+#     list_display = (
+#         'logo_request_number',
+#         'company_name',
+#         'company_slogan',
+#         'company_description',
+#         'company_colors',
+#         'company_look',
+#     )
+
+#     ordering = ('company_name',)
+
+
+# admin.site.register(CompanyDetails, CompanyDetailsAdmin)
