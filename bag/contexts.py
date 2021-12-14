@@ -2,7 +2,7 @@ from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 
-from packages.models import Package
+from packages.models import Package, CompanyDetails
 
 
 def bag_contents(request):

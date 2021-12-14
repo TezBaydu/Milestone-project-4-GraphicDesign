@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Package
+from .models import Package, CompanyDetails
 
 
 def all_packages(request):
@@ -18,7 +18,7 @@ def package_detail(request, package_id):
     """ A view to show individual package details """
 
     package = get_object_or_404(Package, pk=package_id)
-    # company_details = CompanyDetails.objects.all()
+    company_details = CompanyDetails.objects.all()
 
     context = {
         'package': package,

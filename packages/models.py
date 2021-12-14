@@ -14,6 +14,19 @@ class Package(models.Model):
     production_days = models.IntegerField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     image = models.ImageField(null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
+    def get_friendly_name(self):
+        return self.friendly_name
+
+
+class CompanyDetails(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Company Details'
+
     company_name = models.CharField(
         max_length=100, null=False, blank=False, default=0)
     company_slogan = models.CharField(
@@ -27,30 +40,17 @@ class Package(models.Model):
     logo_request_number = models.CharField(max_length=32, null=False,
                                            editable=False)
 
-    def __str__(self):
-        return self.name
-
-    def get_friendly_name(self):
-        return self.friendly_name
-
-
-# class CompanyDetails(models.Model):
-
-#     class Meta:
-#         verbose_name_plural = 'Company Details'
-
-
     def _logo_request_number(self):
         """
         Generate a random, unique order number using UUID
         """
         return uuid.uuid4().hex.upper()
 
-    # def __str__(self):
-    #     return self.logo_request_number
+    def __str__(self):
+        return self.logo_request_number
 
-    def _company_name(self):
-        return self.company_name
+    # def _company_name(self):
+    #     return self.company_name
 
     def save(self, *args, **kwargs):
         """

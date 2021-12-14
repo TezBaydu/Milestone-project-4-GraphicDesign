@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
 from django.contrib import messages
 
-from packages.models import Package
+from packages.models import Package, CompanyDetails
 
 
 def view_bag(request):
