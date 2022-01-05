@@ -847,6 +847,9 @@ For further help and info you can select [Cloning and Forking repositories](http
 - Getting lots of errors which may stem from settings
     * had run pip3 freeze > requirements.txt and this has pulled a much larger list from somewhere....? but hve no idea....could be because of the amount of times this file hs been shared.
 
+- django install
+    When installing django, ensure it is done using command pips install django==3.2.9, django 3.4 version isn't applicable to **KWARGS.
+
 # To Do
     - Stripe initiation
 [Temp email site](https://temp-mail.org/en/)
