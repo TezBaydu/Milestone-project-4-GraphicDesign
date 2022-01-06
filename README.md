@@ -855,6 +855,13 @@ For further help and info you can select [Cloning and Forking repositories](http
 
 [Deleting migrations](https://simpleisbetterthancomplex.com/tutorial/2016/07/26/how-to-reset-migrations.html)
 
+- checkout_success error
+    - TypeError at /checkout/
+Field 'id' expected a number but got ('1', {'company_name': 'Checkout success Test5', 'company_slogan': 'Checkout success Test5', 'company_description': 'Checkout success Test5', 'company_colors': 'Checkout success Test5', 'company_look': 'Checkout success Test5', 'logo_request_number': '8D715DB6E62E436596DF4C963C372C82'}).
+    - /workspace/Milestone-project-4-GraphicDesign/checkout/views.py, line 36, in checkout
+                    package = Package.objects.get(id=item_id) 
+    - contexts.py appends logo detail (CompanyDetail) onto bag_items and when called into OrderLineItem in Checkout as company_details it looks like it is appending this detail to the field id causing an error....Potential aim to use Logo Request Number in CompanyDetails or is this barking up the wrong tree....?
+
 # To Do
     - Stripe initiation
 [Temp email site](https://temp-mail.org/en/)

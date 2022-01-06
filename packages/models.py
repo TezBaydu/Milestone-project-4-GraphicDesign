@@ -27,6 +27,8 @@ class CompanyDetails(models.Model):
     class Meta:
         verbose_name_plural = 'Company Details'
 
+    logo_request_number = models.CharField(max_length=32, null=False,
+                                           editable=False)
     company_name = models.CharField(
         max_length=100, null=False, blank=False, default=0)
     company_slogan = models.CharField(
@@ -37,8 +39,7 @@ class CompanyDetails(models.Model):
         max_length=100, null=False, blank=False, default=0)
     company_look = models.CharField(
         max_length=100, null=False, blank=False, default=0)
-    logo_request_number = models.CharField(max_length=32, null=False,
-                                           editable=False)
+
 
     def _logo_request_number(self):
         """
