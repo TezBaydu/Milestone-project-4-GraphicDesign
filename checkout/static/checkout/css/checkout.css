@@ -36,6 +36,14 @@
     border: 1px solid #000;
 }
 
+.bag-hero-image {
+  background: url('/media/pay-lightbulb.jpg') no-repeat center top fixed;
+  background-size: contain;
+  padding-top: 11em;
+  height: 75%;
+}
+
+
 .bg-grey {
     background-color: #668586 !important;
     width: 20rem;
@@ -49,4 +57,10 @@
 .bg-blue {
     background-color: #252060 !important;
     width: 20rem;
+}
+
+@media (max-width: 767px) {
+  .bag-hero-image {
+    height: 24em;
+  }
 }
