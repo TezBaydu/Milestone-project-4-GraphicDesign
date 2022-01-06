@@ -850,6 +850,11 @@ For further help and info you can select [Cloning and Forking repositories](http
 - django install
     When installing django, ensure it is done using command pips install django==3.2.9, django 3.4 version isn't applicable to **KWARGS. Boutique Ado project states django version used is 3.3.
 
+- django install after initial access
+    * Slack solution : Run 'pip install -r requirements.txt' in terminal
+
+[Deleting migrations](https://simpleisbetterthancomplex.com/tutorial/2016/07/26/how-to-reset-migrations.html)
+
 # To Do
     - Stripe initiation
 [Temp email site](https://temp-mail.org/en/)

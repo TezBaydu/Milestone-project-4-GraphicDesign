@@ -47,7 +47,7 @@ class CompanyDetails(models.Model):
         return uuid.uuid4().hex.upper()
 
     def __str__(self):
-        return self.logo_request_number
+        return self.company_name
 
     # def _company_name(self):
     #     return self.company_name
