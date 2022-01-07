@@ -851,7 +851,7 @@ For further help and info you can select [Cloning and Forking repositories](http
     When installing django, ensure it is done using command pips install django==3.2.9, django 3.4 version isn't applicable to **KWARGS. Boutique Ado project states django version used is 3.3.
 
 - django install after initial access
-    * Slack solution : Run 'pip install -r requirements.txt' in terminal
+    * Slack solution : Run 'pip3 install -r requirements.txt' in terminal
 
 [Deleting migrations](https://simpleisbetterthancomplex.com/tutorial/2016/07/26/how-to-reset-migrations.html)
 
@@ -861,6 +861,9 @@ Field 'id' expected a number but got ('1', {'company_name': 'Checkout success Te
     - /workspace/Milestone-project-4-GraphicDesign/checkout/views.py, line 36, in checkout
                     package = Package.objects.get(id=item_id) 
     - contexts.py appends logo detail (CompanyDetail) onto bag_items and when called into OrderLineItem in Checkout as company_details it looks like it is appending this detail to the field id causing an error....Potential aim to use Logo Request Number in CompanyDetails or is this barking up the wrong tree....?
+
+- settings.py Django SECRET_KEY
+    - Ensure Secret key is placed into gitpod environment to call prior to submission
 
 # To Do
     - Stripe initiation
