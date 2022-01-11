@@ -41,6 +41,7 @@ def view_bag(request):
 def add_to_bag(request, item_id):
     """ Add package and company detail requests to specified package to bag """
 
+    # get package details, post company details and get empty bag
     package = get_object_or_404(Package, pk=item_id)
     company_name = request.POST.get('company_name')
     company_slogan = request.POST.get('company_slogan')
@@ -49,7 +50,7 @@ def add_to_bag(request, item_id):
     company_look = request.POST.get('company_look')
     bag = request.session.get('bag', {})
 
-
+    # if bag item is empty then apply company details and save to bag
     if not bag.keys():
         bag[item_id] = {}
         details = CompanyDetails(
@@ -67,6 +68,8 @@ def add_to_bag(request, item_id):
                  at a time. Please edit your bag or if details are good,\
                       proceed to purchase. ")
         return redirect('view_bag')
+
+    # associate company details to bag's item_id
 
     # bag[item_id]['details'] = details
     bag[item_id]['company_name'] = company_name
