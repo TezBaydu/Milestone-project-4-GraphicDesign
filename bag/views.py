@@ -57,8 +57,9 @@ def add_to_bag(request, item_id):
             company_name=company_name, company_slogan=company_slogan,
             company_description=company_description, company_colors=company_colors,
             company_look=company_look)
-        # details = get_object_or_404(CompanyDetails, pk=company_name)
         details.save()
+        # company_details = details.objects.filter(item_id=details)
+        # company_details.save()
         print(details.id)
         messages.success(
             request, f'Added {package.friendly_name} Logo Package to your bag')

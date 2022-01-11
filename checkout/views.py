@@ -60,7 +60,6 @@ def checkout(request):
                     order_line_item = OrderLineItem(
                         order=order,
                         package=package,
-
                     )
                     order_line_item.save()
                 except Package.DoesNotExist:

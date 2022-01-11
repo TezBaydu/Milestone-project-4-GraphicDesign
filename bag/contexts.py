@@ -11,10 +11,12 @@ def bag_contents(request):
     grand_total = 0
     bag = request.session.get('bag', {})
 
+    print(bag)
 
     for item_id, details in bag.items():
 
         package = get_object_or_404(Package, pk=item_id)
+        print(item_id)
         bag_items.append({
             'item_id': item_id,
             'package': package,
@@ -27,6 +29,10 @@ def bag_contents(request):
             'company_look': details["company_look"],
         })
         grand_total += package.price
+
+        print(details)
+
+        print(bag)
 
     context = {
         'bag_items': bag_items,
