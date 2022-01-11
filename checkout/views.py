@@ -53,12 +53,14 @@ def checkout(request):
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
             order.save()
-            for item_id in bag.items():
+            for item_id, details in bag.items():
                 try:
                     package = Package.objects.get(id=item_id)
+                    details = get_object_or_404(CompanyDetails, pk=details)
                     order_line_item = OrderLineItem(
                         order=order,
                         package=package,
+
                     )
                     order_line_item.save()
                 except Package.DoesNotExist:
@@ -95,7 +97,7 @@ def checkout(request):
         messages.warning(request, 'Stripe public key is missing. \
             Did you forget to set it in the environment?')
 
-    template = 'checkout/checkout.html'
+    template = 'checkout.html'
     context = {
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,

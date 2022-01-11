@@ -49,13 +49,16 @@ def add_to_bag(request, item_id):
     company_look = request.POST.get('company_look')
     bag = request.session.get('bag', {})
 
+
     if not bag.keys():
         bag[item_id] = {}
         details = CompanyDetails(
             company_name=company_name, company_slogan=company_slogan,
             company_description=company_description, company_colors=company_colors,
             company_look=company_look)
+        # details = get_object_or_404(CompanyDetails, pk=company_name)
         details.save()
+        print(details.id)
         messages.success(
             request, f'Added {package.friendly_name} Logo Package to your bag')
     else:
@@ -65,6 +68,7 @@ def add_to_bag(request, item_id):
                       proceed to purchase. ")
         return redirect('view_bag')
 
+    # bag[item_id]['details'] = details
     bag[item_id]['company_name'] = company_name
     bag[item_id]['company_slogan'] = company_slogan
     bag[item_id]['company_description'] = company_description
