@@ -865,6 +865,11 @@ Field 'id' expected a number but got ('1', {'company_name': 'Checkout success Te
 - settings.py Django SECRET_KEY
     - Ensure Secret key is placed into gitpod environment to call prior to submission
 
+- Site Overhaul
+    - When attempting to checkout the following error occurs due to the field id being treated as a list: TypeError: Field 'id' expected a number but got {'company_name': 'Company change', 'company_slogan': 'Company change', 'company_description': 'Company change', 'company_colors': 'Company change', 'company_look': 'Company change', 'logo_request_number': 'AE5594F2C61345EB937B926DBB079AA9'}
+    - After several Tutor discussions and student discussion the conclusion is due to wanting to update CompanyDetails in the bag and then pulling this thorugh into checkout. As the company_details are in the bag so is updatable it appends it onto the field 'id' and therefore as it is looking for a number it is not identifiable to pull through to checkout_success. However Stripe is accepting the data as is the Admin...it just doesn't push through to the checkout_success page.
+    - Due to time constraints I am forced to overlook having a form which is updateable separate to Package and going to revert to omitting CompanyDetails model. This is at commit 88 as a start as I think this is a feature I'd like to resolve in the future.
+
 # To Do
     - Stripe initiation
 [Temp email site](https://temp-mail.org/en/)
