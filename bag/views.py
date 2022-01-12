@@ -1,39 +1,11 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
 from django.contrib import messages
 
-from packages.models import Package, CompanyDetails
+from packages.models import Package
 
 
 def view_bag(request):
     """ A view to render bag contents page"""
-
-    # package = get_object_or_404(Package, pk=item_id)
-    # company_name = request.POST.get('company_name')
-    # company_slogan = request.POST.get('company_slogan')
-    # company_description = request.POST.get('company_description')
-    # company_colors = request.POST.get('company_colors')
-    # company_look = request.POST.get('company_look')
-    # bag = request.session.get('bag', {})
-
-    # if bag.keys():
-    #     bag[item_id] = {}
-    #     messages.success(
-    #         request, f'Your {package.friendly_name} Logo Package in your bag')
-    #     return redirect("view_bag")
-    # else:
-    #     messages.error(
-    #         request, "You have nothing in your bag. ")
-    #     return redirect('view_bag')
-
-    # bag[item_id]['company_name'] = company_name
-    # bag[item_id]['company_slogan'] = company_slogan
-    # bag[item_id]['company_description'] = company_description
-    # bag[item_id]['company_colors'] = company_colors
-    # bag[item_id]['company_look'] = company_look
-
-    # bag[item_id]['logo_request_number'] = details.logo_request_number
-
-    # request.session['bag'] = bag
 
     return render(request, 'bag/bag.html')
 
@@ -43,23 +15,11 @@ def add_to_bag(request, item_id):
 
     # get package details, post company details and get empty bag
     package = get_object_or_404(Package, pk=item_id)
-    company_name = request.POST.get('company_name')
-    company_slogan = request.POST.get('company_slogan')
-    company_description = request.POST.get('company_description')
-    company_colors = request.POST.get('company_colors')
-    company_look = request.POST.get('company_look')
     bag = request.session.get('bag', {})
 
     # if bag item is empty then apply company details and save to bag
     if not bag.keys():
         bag[item_id] = {}
-        details = CompanyDetails(
-            company_name=company_name, company_slogan=company_slogan,
-            company_description=company_description, company_colors=company_colors,
-            company_look=company_look)
-        details.save()
-        # company_details = details.objects.filter(item_id=details)
-        # company_details.save()
         print(details.id)
         messages.success(
             request, f'Added {package.friendly_name} Logo Package to your bag')
@@ -70,16 +30,7 @@ def add_to_bag(request, item_id):
                       proceed to purchase. ")
         return redirect('view_bag')
 
-    # associate company details to bag's item_id
 
-    # bag[item_id]['details'] = details
-    bag[item_id]['company_name'] = company_name
-    bag[item_id]['company_slogan'] = company_slogan
-    bag[item_id]['company_description'] = company_description
-    bag[item_id]['company_colors'] = company_colors
-    bag[item_id]['company_look'] = company_look
-
-    bag[item_id]['logo_request_number'] = details.logo_request_number
 
     request.session['bag'] = bag
 
@@ -90,40 +41,7 @@ def adjust_bag(request, item_id):
     """ Edit company detail requests and re-apply package to bag """
 
     logo_request_number = request.POST.get('logo_request_number')
-    company_name = request.POST.get('company_name')
-    company_slogan = request.POST.get('company_slogan')
-    company_description = request.POST.get('company_description')
-    company_colors = request.POST.get('company_colors')
-    company_look = request.POST.get('company_look')
     bag = request.session.get('bag', {})
-
-    bag[item_id]['company_name'] = company_name
-    bag[item_id]['company_slogan'] = company_slogan
-    bag[item_id]['company_description'] = company_description
-    bag[item_id]['company_colors'] = company_colors
-    bag[item_id]['company_look'] = company_look
-
-    logo_request_number = bag[item_id]['logo_request_number']
-
-    details = get_object_or_404(
-        CompanyDetails, logo_request_number=logo_request_number)
-
-    bag[item_id]['logo_request_number'] = details.logo_request_number
-
-    if company_name == details.company_name and company_slogan == \
-            details.company_slogan and company_description == \
-            details.company_description and company_colors == \
-            details.company_colors and company_look == \
-            details.company_look:
-        messages.error(request, 'No changes have been made.')
-
-    else:
-        details = CompanyDetails(
-            company_name=company_name, company_slogan=company_slogan,
-            company_description=company_description, company_colors=company_colors,
-            company_look=company_look)
-        details.save()
-        messages.success(request, 'Edited Logo request details to your bag')
 
     return redirect(reverse("view_bag"))
 

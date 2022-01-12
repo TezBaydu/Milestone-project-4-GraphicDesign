@@ -728,7 +728,7 @@ For further help and info you can select [Cloning and Forking repositories](http
 [Back to top ⇧](#introduction)
 
 # Re-Plan:
-    - Choose Package (choice fo 3)
+    - Choose Package (choice of 3)
     - pushes to package detail
         * This could contain a form for details
         * On submit it pushes to a bag area

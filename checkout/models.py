@@ -6,7 +6,7 @@ from django.conf import settings
 
 from django_countries.fields import CountryField
 
-from packages.models import Package, CompanyDetails
+from packages.models import Package
 
 
 class Order(models.Model):
@@ -63,8 +63,6 @@ class OrderLineItem(models.Model):
         on_delete=models.CASCADE, related_name='lineitems')
     package = models.ForeignKey(
         Package, null=False, blank=False, on_delete=models.CASCADE)
-    company_details = models.ForeignKey(
-        CompanyDetails, null=False, blank=False, on_delete=models.CASCADE)
     lineitem_total = models.DecimalField(
         max_digits=6, decimal_places=2,
         null=False, blank=False, editable=False)
