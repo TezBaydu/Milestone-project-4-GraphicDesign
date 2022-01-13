@@ -57,45 +57,11 @@
     </div>
 </div>
 <div class="container mb-5">
-    <div class="row">
-        <div class="col-12 text-center my-5">
-            <h4 class="text-dark font-weight-semibold">Tell us your Story</h4>
-            <p class="text-dark mt-3">Complete the form below to give us ideas of what you want from your logo</p>
-        </div>
-    </div>
+
     <form class="form" action="{% url 'add_to_bag' package.id %}" method="POST">
         {% csrf_token %}
         <div class="form-row">
-            <div class="col-12">
-                <p class="mt-3"><strong>Company Name</strong></p>
-                <div class="input-group">
-                    <input class="form-control" type="text" name="company_name" data-item_id="{{ package.id }}" id="company_name_{{ package.id }}" required>
-                </div>
-            </div>
-            <div class="col-12">
-                <p class="mt-3"><strong>Strapline or Slogan</strong></p>
-                <div class="input-group">
-                    <input class="form-control" type="text" name="company_slogan" data-item_id="{{ package.id }}" id="company_slogan_{{ package.id }}" required>
-                </div>
-            </div>
-            <div class="col-12">
-                <p class="mt-3"><strong>What does your company do?</strong></p>
-                <div class="input-group">
-                    <textarea class="form-control" rows="3" name="company_description" data-item_id="{{ package.id }}" id="company_description_{{ package.id }}" required></textarea>
-                </div>
-            </div>
-            <div class="col-12">
-                <p class="mt-3"><strong>Any colours in specific?</strong></p>
-                <div class="input-group">
-                    <input class="form-control" type="text" name="company_colors" data-item_id="{{ package.id }}" id="company_colors_{{ package.id }}" required>
-                </div>
-            </div>
-            <div class="col-12">
-                <p class="mt-3"><strong>What sort of look and feel?</strong></p>
-                <div class="input-group">
-                    <input class="form-control" type="text" name="company_look" data-item_id="{{ package.id }}" id="company_look_{{ package.id }}" placeholder="Contemporary / Traditional / Modern / Minimal / Fun / Cartoon / etc " required>
-                </div>
-            </div>
+
             <div class="col-12 text-center">
                 <input type="submit" class="btn btn-black text-uppercase mt-5 rounded-0" value="Add to Bag">
             </div>

@@ -42,27 +42,6 @@
                                     <tr class="mobile-bag-grid">
                                         <td colspan="1" class="py-3">
                                             <p class="my-0"><strong>Item ID: {{ item.item_id }}</strong></p>
-                                            <p class="my-1 text-muted">Company Name: 
-                                                <!-- {{ item.company_name|upper }} -->
-                                                {{ item.company_name }}
-                                                <input class="form-control" type="text" name="company_name" data-item_id="{{ item.package.company_name }}" id="company_name_{{ item.package.company_name }}" value="{{ item.package.company_name }}">
-                                            </p>
-                                            <p class="my-1 text-muted">Company Slogan or Strapline: 
-                                                <!-- {{ item.company_slogan|upper }} -->
-                                                <input class="form-control" type="text" name="company_slogan" data-item_id="{{ item.package.company_slogan }}" id="company_slogan_{{ item.package.company_slogan }}" value="{{ item.package.company_slogan }}">
-                                            </p>
-                                            <p class="my-1 text-muted">Company Description: 
-                                                <!-- {{ item.company_description|upper }} -->
-                                                <input class="form-control bag-desc" name="company_description" data-item_id="{{ item.package.company_description }}" id="company_description_{{ item.package.company_description }}" value="{{ item.package.company_description }}">
-                                            </p>
-                                            <p class="my-1 text-muted">Logo Colours: 
-                                                <!-- {{ item.company_colors|upper }} -->
-                                                <input class="form-control" type="text" name="company_colors" data-item_id="{{ item.package.company_colors }}" id="company_colors_{{ item.package.company_colors }}" value="{{ item.package.company_colors }}">
-                                            </p>
-                                            <p class="my-1 text-muted">Logo Look and Feel: 
-                                                <!-- {{ item.company_look|upper }} -->
-                                                <input class="form-control" type="text" size=45 name="company_look" data-item_id="{{ item.package.company_look }}" id="company_look_{{ item.package.company_look }}" value="{{ item.package.company_look }}">
-                                            </p>
                                         </td>
 
                                         <td colspan="1" class="w-25">
@@ -97,7 +76,6 @@
                                 </form>
                                     <tr>
                                         <td class="pt-5 text-center">
-                                            <a class="update-link text-info px-5">Update Details</a>
                                             <a class="remove-item text-danger px-5" id="remove_{{ item.item_id }}">Remove</a>
                                         </td>
                                     </tr>
@@ -146,13 +124,6 @@
 {{ block.super }}
 
 <script type="text/javascript">
-    // Update quantity on click
-    $('.update-link').click(function(e) {
-        var form = $('.update-form');
-        console.log(form);
-        form.submit();
-
-    })
 
     // Remove item and reload on click
     $('.remove-item').click(function(e) {
