@@ -12,16 +12,6 @@ class Package(models.Model):
     production_days = models.IntegerField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     image = models.ImageField(null=True, blank=True)
-    company_name = models.CharField(
-        max_length=100, null=True, blank=True, default='Company Name required')
-    company_slogan = models.CharField(
-        max_length=200, null=True, blank=True, default='Company Slogan required')
-    company_description = models.CharField(
-        max_length=500, null=True, blank=True, default='Company Description required')
-    company_colors = models.CharField(
-        max_length=100, null=True, blank=True, default='Company Colors required')
-    company_look = models.CharField(
-        max_length=100, null=True, blank=True, default='Company Look required')
 
     def __str__(self):
         return self.name

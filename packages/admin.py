@@ -13,11 +13,6 @@ class PackageAdmin(admin.ModelAdmin):
         'quality_request',
         'support_request',
         'production_days',
-        'company_name',
-        'company_slogan',
-        'company_description',
-        'company_colors',
-        'company_look',
     )
 
     ordering = ('sku',)

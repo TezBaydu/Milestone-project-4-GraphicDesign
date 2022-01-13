@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import (
+    render, redirect, reverse, get_object_or_404, HttpResponse)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -45,6 +46,11 @@ def checkout(request):
             'county': request.POST['county'],
             'postcode': request.POST['postcode'],
             'country': request.POST['country'],
+            'company_name': request.POST['company_name'],
+            'company_slogan': request.POST['company_slogan'],
+            'company_description': request.POST['company_description'],
+            'company_colors': request.POST['company_colors'],
+            'company_look': request.POST['company_look'],
         }
         order_form = OrderForm(form_data)
         if order_form.is_valid():
@@ -56,7 +62,7 @@ def checkout(request):
             for item_id, item_data in bag.items():
                 try:
                     package = Package.objects.get(id=item_id)
-                    if(item_data):
+                    if item_data:
                         order_line_item = OrderLineItem(
                             order=order,
                             package=package,
@@ -72,7 +78,8 @@ def checkout(request):
                     return redirect(reverse('view_bag'))
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse(
+                'checkout_success', args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')

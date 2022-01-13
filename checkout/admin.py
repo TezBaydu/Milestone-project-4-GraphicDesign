@@ -17,10 +17,15 @@ class OrderAdmin(admin.ModelAdmin):
               'email', 'phone_number', 'street_address1',
               'street_address2', 'town_or_city',
               'postcode',  'county', 'country',
-              'order_total', 'grand_total',)
+              'order_total', 'grand_total',
+              'company_name', 'company_slogan',
+              'company_description', 'company_colors',
+              'company_look',
+              )
 
     list_display = ('order_number', 'date', 'full_name',
-                    'order_total', 'grand_total',)
+                    'company_name', 'order_total', 
+                    'grand_total',)
 
     ordering = ('-date',)
 

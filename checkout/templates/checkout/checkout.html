@@ -23,40 +23,35 @@
                         <tr class="mobile-bag-grid">
                             <td colspan="1" class="py-3">
                                 <p class="my-0"><strong>Item ID: {{ item.item_id }}</strong></p>
-                                <p class="my-1 text-muted">Company Name:<br> <span class="text-black">{{ item.company_name|upper }}</span></p>
-                                <p class="my-1 text-muted">Company Slogan or Strapline:<br> <span class="text-black"> {{ item.company_slogan|upper }}</span></p>
-                                <p class="my-1 text-muted">Company Description:<br> <span class="text-black"> {{ item.company_description|upper }}</span></p>
-                                <p class="my-1 text-muted">Logo Colours:<br> <span class="text-black"> {{ item.company_colors|upper }}</span></p>
-                                <p class="my-1 text-muted">Logo Look and Feel:<br> <span class="text-black"> {{ item.company_look|upper }}</span></p>
                             </td>
 
                             <td colspan="1" class="w-25">
-                                    {% if item.package.name == "lite" %}
-                                        <div class="card bg-grey text-white">
-                                    {% elif item.package.name == "plus" %}
-                                        <div class="card bg-black text-white">
-                                    {% elif item.package.name == "premium" %}
-                                        <div class="card bg-blue text-white">
-                                    {% endif %}
-                                    <div class="row">
-                                        <div class="col-4">
-                                            <img src="{{ item.package.image.url }}" class="card-img-top w-75 pt-1 mb-3" alt="Chess piece">
-                                        </div>
-                                        <div class="col-5">
-                                            <h5 class="card-title mt-3 ml-n4">{{ item.package.friendly_name }}</h5>
-                                        </div>
+                                {% if item.package.name == "lite" %}
+                                    <div class="card bg-grey text-white">
+                                {% elif item.package.name == "plus" %}
+                                    <div class="card bg-black text-white">
+                                {% elif item.package.name == "premium" %}
+                                    <div class="card bg-blue text-white">
+                                {% endif %}
+                                <div class="row">
+                                    <div class="col-4">
+                                        <img src="{{ item.package.image.url }}" class="card-img-top w-75 pt-1 mb-3" alt="Chess piece">
                                     </div>
-                                    <div class="card-body">
-                                        <h6 class="card-text font-weight-light mb-4">What You'll Get</h6>
-                                        <ul class="pl-0">
-                                            <li class="list-unstyled mb-2"><i class="fas fa-check-circle"></i>  {{ item.package.logo_count_request }} Custom-made Logo Designs</li>
-                                            <li class="list-unstyled mb-2"><i class="fas fa-check-circle"></i>  {{ item.package.quality_request }}</li>
-                                            <li class="list-unstyled mb-2"><i class="fas fa-check-circle"></i>  {{ item.package.support_request }}</li>
-                                            <li class="list-unstyled mb-2"><i class="fas fa-check-circle"></i>  {{ item.package.production_days }} Days Production</li>
-                                        </ul>
-                                        <hr class="bg-white"/>
-                                        <h6 class="my-3">£{{ item.package.price }}</h6>
+                                    <div class="col-5">
+                                        <h5 class="card-title mt-3 ml-n4">{{ item.package.friendly_name }}</h5>
                                     </div>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="card-text font-weight-light mb-4">What You'll Get</h6>
+                                    <ul class="pl-0">
+                                        <li class="list-unstyled mb-2"><i class="fas fa-check-circle"></i>  {{ item.package.logo_count_request }} Custom-made Logo Designs</li>
+                                        <li class="list-unstyled mb-2"><i class="fas fa-check-circle"></i>  {{ item.package.quality_request }}</li>
+                                        <li class="list-unstyled mb-2"><i class="fas fa-check-circle"></i>  {{ item.package.support_request }}</li>
+                                        <li class="list-unstyled mb-2"><i class="fas fa-check-circle"></i>  {{ item.package.production_days }} Days Production</li>
+                                    </ul>
+                                    <hr class="bg-white"/>
+                                    <h6 class="my-3">£{{ item.package.price }}</h6>
+                                </div>
                             </td>
                         </tr>
                     </div>
@@ -78,6 +73,14 @@
                 <p class="text-muted">Please fill out the form below to complete your order</p>
                 <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                     {% csrf_token %}
+                    <fieldset class="rounded py-3 mb-5">
+                        <legend class="fieldset-label regular text-black px-2 w-auto">Logo Request Details</legend>
+                        {{ order_form.company_name | as_crispy_field }}
+                        {{ order_form.company_slogan | as_crispy_field }}
+                        {{ order_form.company_description | as_crispy_field }}
+                        {{ order_form.company_colors | as_crispy_field }}
+                        {{ order_form.company_look | as_crispy_field }}
+                    </fieldset>
                     <fieldset class="rounded px-3 mb-5">
                         <legend class="fieldset-label regular text-black px-2 w-auto">Details</legend>
                         {{ order_form.full_name | as_crispy_field }}

@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (
+    render, redirect, reverse, get_object_or_404, HttpResponse)
 from django.contrib import messages
 
 from packages.models import Package
@@ -35,13 +36,6 @@ def add_to_bag(request, item_id):
     request.session['bag'] = bag
     print(bag)
     return redirect('view_bag')
-
-
-def adjust_bag(request, item_id):
-    """ Edit company detail requests and re-apply package to bag """
-
-    bag = request.session.get('bag', {})
-    return redirect(reverse("view_bag"))
 
 
 def remove_from_bag(request, item_id):

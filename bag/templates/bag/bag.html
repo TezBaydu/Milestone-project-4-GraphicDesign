@@ -37,8 +37,6 @@
                             </thead>
                             <tbody>
                                 {% for item in bag_items %}
-                                <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
-                                    {% csrf_token %}
                                     <tr class="mobile-bag-grid">
                                         <td colspan="1" class="py-3">
                                             <p class="my-0"><strong>Item ID: {{ item.item_id }}</strong></p>
@@ -73,7 +71,6 @@
                                             </div>
                                         </td>
                                     </tr>
-                                </form>
                                     <tr>
                                         <td class="pt-5 text-center">
                                             <a class="remove-item text-danger px-5" id="remove_{{ item.item_id }}">Remove</a>

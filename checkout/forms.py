@@ -8,7 +8,10 @@ class OrderForm(forms.ModelForm):
         fields = ('full_name', 'email', 'phone_number',
                   'street_address1', 'street_address2',
                   'town_or_city', 'postcode', 'county',
-                  'country',)
+                  'country', 'company_name', 'company_slogan',
+                  'company_description', 'company_colors',
+                  'company_look',
+                  )
 
     def __init__(self, *args, **kwargs):
         """
@@ -26,6 +29,11 @@ class OrderForm(forms.ModelForm):
             'county': 'County',
             'postcode': 'Postal Code',
             'country': 'Country',
+            'company_name': 'Logo Name',
+            'company_slogan': 'Slogan or Strapline',
+            'company_description': 'Company Description',
+            'company_colors': 'Preferred Colours',
+            'company_look': 'Look and Feel',
         }
 
         self.fields['full_name'].widget.attrs['autofocus'] = True

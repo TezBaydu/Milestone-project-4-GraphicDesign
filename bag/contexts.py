@@ -13,7 +13,7 @@ def bag_contents(request):
     bag = request.session.get('bag', {})
 
     for item_id, item_data in bag.items():
-        if (item_data):
+        if item_data:
             package = get_object_or_404(Package, pk=item_id)
             total += item_data * package.price
             package_count += item_data
