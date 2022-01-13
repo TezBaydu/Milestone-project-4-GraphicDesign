@@ -44,23 +44,24 @@
                                             <p class="my-0"><strong>Item ID: {{ item.item_id }}</strong></p>
                                             <p class="my-1 text-muted">Company Name: 
                                                 <!-- {{ item.company_name|upper }} -->
-                                                <input class="form-control" type="text" name="company_name" data-item_id="{{ item.company_name }}" id="company_name_{{ item.company_name }}" value="{{ item.company_name }}">
+                                                {{ item.company_name }}
+                                                <input class="form-control" type="text" name="company_name" data-item_id="{{ item.package.company_name }}" id="company_name_{{ item.package.company_name }}" value="{{ item.package.company_name }}">
                                             </p>
                                             <p class="my-1 text-muted">Company Slogan or Strapline: 
                                                 <!-- {{ item.company_slogan|upper }} -->
-                                                <input class="form-control" type="text" name="company_slogan" data-item_id="{{ item.company_slogan }}" id="company_slogan_{{ item.company_slogan }}" value="{{ item.company_slogan }}">
+                                                <input class="form-control" type="text" name="company_slogan" data-item_id="{{ item.package.company_slogan }}" id="company_slogan_{{ item.package.company_slogan }}" value="{{ item.package.company_slogan }}">
                                             </p>
                                             <p class="my-1 text-muted">Company Description: 
                                                 <!-- {{ item.company_description|upper }} -->
-                                                <input class="form-control bag-desc" name="company_description" data-item_id="{{ item.company_description }}" id="company_description_{{ item.company_description }}" value="{{ item.company_description }}" placeholder="{{ item.company_description }}">
+                                                <input class="form-control bag-desc" name="company_description" data-item_id="{{ item.package.company_description }}" id="company_description_{{ item.package.company_description }}" value="{{ item.package.company_description }}">
                                             </p>
                                             <p class="my-1 text-muted">Logo Colours: 
                                                 <!-- {{ item.company_colors|upper }} -->
-                                                <input class="form-control" type="text" name="company_colors" data-item_id="{{ item.company_colors }}" id="company_colors_{{ item.company_colors }}" value="{{ item.company_colors }}">
+                                                <input class="form-control" type="text" name="company_colors" data-item_id="{{ item.package.company_colors }}" id="company_colors_{{ item.package.company_colors }}" value="{{ item.package.company_colors }}">
                                             </p>
                                             <p class="my-1 text-muted">Logo Look and Feel: 
                                                 <!-- {{ item.company_look|upper }} -->
-                                                <input class="form-control" type="text" size=45 name="company_look" data-item_id="{{ item.company_look }}" id="company_look_{{ item.company_look }}" value="{{ item.company_look }}">
+                                                <input class="form-control" type="text" size=45 name="company_look" data-item_id="{{ item.package.company_look }}" id="company_look_{{ item.package.company_look }}" value="{{ item.package.company_look }}">
                                             </p>
                                         </td>
 

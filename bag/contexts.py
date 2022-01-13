@@ -8,34 +8,27 @@ from packages.models import Package
 def bag_contents(request):
 
     bag_items = []
-    grand_total = 0
+    total = 0
+    package_count = 0
     bag = request.session.get('bag', {})
 
-    print(bag)
+    for item_id, item_data in bag.items():
+        if (item_data):
+            package = get_object_or_404(Package, pk=item_id)
+            total += item_data * package.price
+            package_count += item_data
+            bag_items.append({
+                'item_id': item_id,
+                'quantity': item_data,
+                'package': package,
+            })
 
-    for item_id, details in bag.items():
-
-        package = get_object_or_404(Package, pk=item_id)
-        print(item_id)
-        bag_items.append({
-            'item_id': item_id,
-            'package': package,
-            'package.price': package.price,
-            'package.friendly_name': package.friendly_name,
-            'company_name': details["company_name"],
-            'company_slogan': details["company_slogan"],
-            'company_description': details["company_description"],
-            'company_colors': details["company_colors"],
-            'company_look': details["company_look"],
-        })
-        grand_total += package.price
-
-        print(details)
-
-        print(bag)
+    grand_total = total
 
     context = {
         'bag_items': bag_items,
+        'total': total,
+        'package_count': package_count,
         'grand_total': grand_total,
     }
 

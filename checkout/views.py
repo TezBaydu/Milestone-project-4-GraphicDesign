@@ -53,15 +53,16 @@ def checkout(request):
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
             order.save()
-            for item_id, details in bag.items():
+            for item_id, item_data in bag.items():
                 try:
                     package = Package.objects.get(id=item_id)
-                    details = get_object_or_404(CompanyDetails, pk=details)
-                    order_line_item = OrderLineItem(
-                        order=order,
-                        package=package,
-                    )
-                    order_line_item.save()
+                    if(item_data):
+                        order_line_item = OrderLineItem(
+                            order=order,
+                            package=package,
+                            quantity=item_data,
+                        )
+                        order_line_item.save()
                 except Package.DoesNotExist:
                     messages.error(request, (
                         "Package is not in our database. "
@@ -71,7 +72,7 @@ def checkout(request):
                     return redirect(reverse('view_bag'))
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order_number]))
+            return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
@@ -110,7 +111,7 @@ def checkout_success(request, order_number):
     """ Handle successful checkouts """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
-    messages.success(request, f='Order successfully processed ! \
+    messages.success(request, f'Order successfully processed ! \
         Your order number is {order_number}. A confirmation \
            email will be sent to {order.email} ')
 

@@ -40,8 +40,7 @@ class Order(models.Model):
         """
         self.order_total = self.lineitems.aggregate(
             Sum('lineitem_total'))['lineitem_total__sum'] or 0
-        self.grand_total = self.order_total.aggregate(
-            Sum('order_total'))['order_total__sum']
+        self.grand_total = self.order_total
         self.save()
 
     def save(self, *args, **kwargs):
@@ -63,26 +62,17 @@ class OrderLineItem(models.Model):
         on_delete=models.CASCADE, related_name='lineitems')
     package = models.ForeignKey(
         Package, null=False, blank=False, on_delete=models.CASCADE)
+    quantity = models.IntegerField(null=False, blank=False, default=0)
     lineitem_total = models.DecimalField(
         max_digits=6, decimal_places=2,
         null=False, blank=False, editable=False)
-    # company_name = models.CharField(
-    #     max_length=100, null=False, blank=False, default=0)
-    # company_slogan = models.CharField(
-    #     max_length=200, null=False, blank=False, default=0)
-    # company_description = models.CharField(
-    #     max_length=500, null=False, blank=False, default=0)
-    # company_colors = models.CharField(
-    #     max_length=100, null=False, blank=False, default=0)
-    # company_look = models.CharField(
-    #     max_length=100, null=False, blank=False, default=0)
 
     def save(self, *args, **kwargs):
         """
         Override the original save method to set the lineitem total
         and update the order total.
         """
-        self.lineitem_total = self.package.price
+        self.lineitem_total = self.package.price * self.quantity
         super().save(*args, **kwargs)
 
     def __str__(self):
