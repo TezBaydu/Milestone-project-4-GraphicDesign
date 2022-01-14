@@ -33,6 +33,7 @@ def add_to_bag(request, item_id):
         messages.success(
             request, f'Added {package.friendly_name} Logo Package to your bag')
 
+    print(quantity)
     request.session['bag'] = bag
     print(bag)
     return redirect('view_bag')

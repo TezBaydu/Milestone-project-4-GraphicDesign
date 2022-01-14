@@ -10,7 +10,7 @@
 <div class="container bag-hero-image">
     <div class="row">
         <div class="col-12 col-md-6 my-auto text-center">
-            <h2 class="text-light font-weight-bold mt-5">This is Your Bag</h2>
+            <h2 class="bulb-text font-weight-bold mt-5">This is Your Bag</h2>
         </div>
     </div>
 </div>
@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col">
                 <hr>
-                <h2 class="logo-font mb-4">Logo Requests</h2>
+                <h2 class="logo-font mb-4">Logo Request</h2>
                 <hr>
             </div>
         </div>
@@ -31,18 +31,16 @@
                         <table class="table table-sm table-borderless">
                             <thead class="text-black">
                                 <tr>
-                                    <th scope="col">Package Info</th>
-                                    <th scope="col"></th>
+                                    <th scope="col-4 text-center">Package Info</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {% for item in bag_items %}
                                     <tr class="mobile-bag-grid">
-                                        <td colspan="1" class="py-3">
-                                            <p class="my-0"><strong>Item ID: {{ item.item_id }}</strong></p>
+                                        <td colspan="1" class="w-25 px-auto">
                                         </td>
-
-                                        <td colspan="1" class="w-25">
+                                        <td colspan="1" class="w-25 px-auto">
+                                            <p class="my-0"><strong>Item ID: {{ item.item_id }}</strong></p>
                                             {% if item.package.name == "lite" %}
                                                 <div class="card bg-grey text-white">
                                             {% elif item.package.name == "plus" %}
@@ -69,6 +67,8 @@
                                                 <hr class="bg-white"/>
                                                 <h6 class="my-3">£{{ item.package.price }}</h6>
                                             </div>
+                                        </td>
+                                        <td colspan="1" class="w-25 px-auto">
                                         </td>
                                     </tr>
                                     <tr>

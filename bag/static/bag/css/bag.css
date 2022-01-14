@@ -3,6 +3,14 @@
     background-size: contain;
     padding-top: 11em;
     height: 75%;
+    padding-bottom: 40em;
+    width: 75%;
+    mix-blend-mode: luminosity;
+}
+
+.bulb-text {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.39);
 }
 
 .mobile-bag-grid {
@@ -52,5 +60,9 @@
 
     .bag-hero-image {
         height: 55%;
+    }
+
+    .bag-hero-image {
+        padding-bottom: 0;
     }
 }
