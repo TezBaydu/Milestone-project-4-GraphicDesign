@@ -27,20 +27,15 @@ class Order(models.Model):
     grand_total = models.DecimalField(
         max_digits=10, decimal_places=2, null=False, default=0)
     company_name = models.CharField(
-        max_length=100, null=False, blank=False,
-        default='Company Name required')
+        max_length=100, null=False, blank=False)
     company_slogan = models.CharField(
-        max_length=200, null=False, blank=False,
-        default='Company Slogan required')
+        max_length=200, null=False, blank=False)
     company_description = models.CharField(
-        max_length=500, null=False, blank=False,
-        default='Company Description required')
+        max_length=500, null=False, blank=False)
     company_colors = models.CharField(
-        max_length=100, null=False, blank=False,
-        default='Company Colors required')
+        max_length=100, null=False, blank=False)
     company_look = models.CharField(
-        max_length=100, null=False, blank=False,
-        default='Company Look required')
+        max_length=100, null=False, blank=False)
 
     def _generate_order_number(self):
         """

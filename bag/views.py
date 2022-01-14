@@ -23,6 +23,7 @@ def add_to_bag(request, item_id):
 
     # if bag item is empty then apply company details and save to bag
     if item_id in list(bag.keys()):
+    # if not item_id:
         bag[item_id] += quantity
         messages.error(
             request, "You already have an item in the bag and can only order one \
@@ -32,7 +33,7 @@ def add_to_bag(request, item_id):
         bag[item_id] = quantity
         messages.success(
             request, f'Added {package.friendly_name} Logo Package to your bag')
-
+            
     print(quantity)
     request.session['bag'] = bag
     print(bag)
