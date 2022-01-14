@@ -59,6 +59,10 @@
     width: 20rem;
 }
 
+.submit-button {
+  display: grid;
+}
+
 @media (max-width: 767px) {
   .bag-hero-image {
     height: 24em;

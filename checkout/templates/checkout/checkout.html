@@ -9,8 +9,8 @@
 
     <div class="container bag-hero-image">
         <div class="row">
-            <div class="col-12 col-md-6 my-auto text-center">
-                <h2 class="text-light font-weight-bold mt-5">Payment Form</h2>
+            <div class="col-12 col-md-6 my-auto text-left">
+                <h2 class="text-light font-weight-bold mt-5">Logo Details and Payment Form</h2>
                 <p class="text-light my-5">Safe and Secure</p>
             </div>
         </div>
@@ -55,7 +55,18 @@
                             </td>
                         </tr>
                     </div>
+
+                    <div class="row text-black text-left mt-2 px-2">
+                        <div class="col-3 offest-2">
+                            <p class="my-0">Order Total:</p>
+
+                        </div>
+                        <div class="col-3">
+                            <p class="my-0">£{{ total | floatformat:2 }}</p>
+
+                        </div>
                     </div>
+                </div>
             {% endfor %}
             <div class="col">
                 <p class="text-muted">Please fill out the form below to complete your order</p>
@@ -74,18 +85,7 @@
                 </div>
             </div>
 
-                    <hr class="my-2">
-
-                    <div class="row text-black text-right mt-3">
-                        <div class="col-7 offest-2">
-                            <p class="my-0">Order Total:</p>
-                            <p class="my-0">Grand Total:</p>
-                        </div>
-                        <div class="col-3">
-                            <p class="my-0">£{{ total | floatformat:2 }}</p>
-                            <p class="my-0">£{{ grand_total | floatformat:2 }}</p>
-                        </div>
-                    </div>
+            <hr class="my-2">                    
 
     </div>
  
@@ -122,7 +122,7 @@
                     </fieldset>
                     </div>
                 </div>
-            </div>
+                <div class="col-sm-8 col-md-6">
                     <fieldset class="rounded px-0 mb-5">
                         <legend class="fieldset-label regular text-black px-2 w-auto">Payment</legend>
                         <div class="mb-3" id="card-element"></div>
@@ -131,7 +131,7 @@
                     </fieldset>
 
                     <div class="submit-button text-right mt-5 mb-2">
-                        <a href="{% url 'view_bag' %}" class="btn btn-outline-black rounded-0">
+                        <a href="{% url 'view_bag' %}" class="btn btn-outline-black rounded-0 mb-3">
                             <span class="icon">
                                 <i class="fas fa-chevron-left"></i>
                             </span>
@@ -151,6 +151,7 @@
                         </p>
                     </div>
                 </form>
+                </div>
             </div>
 
 
