@@ -132,5 +132,5 @@ def checkout_success(request, order_number):
     context = {
         order: order,
     }
-
+    print(order)
     return render(request, template, context)

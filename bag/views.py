@@ -48,14 +48,13 @@ def remove_from_bag(request, item_id):
     """ Delete package from bag """
     try:
         bag = request.session.get('bag', {})
-        quantity = request.session.get('quantity', {})
 
-        quantity.pop()
         bag.pop(item_id)
-
         messages.success(request, 'Item removed from bag')
 
-        request.session['quantity'] = quantity
+        if "quantity" in request.session:
+            del request.session['quantity']
+
         request.session['bag'] = bag
 
         return HttpResponse(status=200)
