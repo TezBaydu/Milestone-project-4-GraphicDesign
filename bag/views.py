@@ -14,10 +14,10 @@ def view_bag(request):
 def add_to_bag(request, item_id):
     """ Add package and company detail requests to bag """
 
-    quantity = request.session.get("quantity", 0)
     # get package details, post company details and get empty bag
     package = get_object_or_404(Package, pk=item_id)
     bag = request.session.get('bag', {})
+    quantity = request.session.get("quantity", 0)
 
     print(bag)
 
@@ -37,7 +37,6 @@ def add_to_bag(request, item_id):
             request, f'Added {package.friendly_name} Logo Package to your bag')
 
     request.session["quantity"] = quantity
-
 
     request.session['bag'] = bag
 

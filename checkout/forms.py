@@ -33,7 +33,7 @@ class OrderForm(forms.ModelForm):
             'company_slogan': 'Slogan or Strapline',
             'company_description': 'Company Description',
             'company_colors': 'Preferred Colours',
-            'company_look': 'Look and Feel',
+            'company_look': 'Look & Feel e.g. Modern / Minimal / Fun',
         }
 
         # self.fields['full_name'].widget.attrs['autofocus'] = True
