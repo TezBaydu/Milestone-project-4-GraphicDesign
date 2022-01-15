@@ -875,6 +875,12 @@ Field 'id' expected a number but got ('1', {'company_name': 'Checkout success Te
     - These are a variable call in gitpod instance where the Public and Secret Key are accepted but the webhook key is showing a 401 error. After investigation this is stated to be a key call issue however these have been coped and applied several times and still having an issue with error.
     - This is something to address if time allows prior to project submission but have been notified this is 't a huge requirement for the project but is certainly something to have for an actionable purchase in a site.
 
+- Stripe Error 404
+    - Resolved by making PORT 8000 Public
+
+- Stripe Error 500
+    - Resolved as was a typo (usual cause for Error 500) STRIPE_WH_SECRET instead of STRIPE_WH_KEY
+
 # To Do
     - Stripe initiation - Done
 [Temp email site](https://temp-mail.org/en/)
