@@ -870,8 +870,13 @@ Field 'id' expected a number but got ('1', {'company_name': 'Checkout success Te
     - After several Tutor discussions and student discussion the conclusion is due to wanting to update CompanyDetails in the bag and then pulling this thorugh into checkout. As the company_details are in the bag so is updatable it appends it onto the field 'id' and therefore as it is looking for a number it is not identifiable to pull through to checkout_success. However Stripe is accepting the data as is the Admin...it just doesn't push through to the checkout_success page.
     - Due to time constraints I am forced to overlook having a form which is updateable separate to Package and going to revert to omitting CompanyDetails model. This is at commit 88 as a start as I think this is a feature I'd like to resolve in the future.
 
+- Stripe Webhook
+    - Have applied code for Stripe Webhook and issue with key recognition.
+    - These are a variable call in gitpod instance where the Public and Secret Key are accepted but the webhook key is showing a 401 error. After investigation this is stated to be a key call issue however these have been coped and applied several times and still having an issue with error.
+    - This is something to address if time allows prior to project submission but have been notified this is 't a huge requirement for the project but is certainly something to have for an actionable purchase in a site.
+
 # To Do
-    - Stripe initiation
+    - Stripe initiation - Done
 [Temp email site](https://temp-mail.org/en/)
         * Temp mail used: renenag259@latovic.com
         * Temp password
@@ -886,11 +891,10 @@ Field 'id' expected a number but got ('1', {'company_name': 'Checkout success Te
     - Package select when not signed in, redirect to package page after logging in.
 
 # Mentor questions
-- django responsiveness?
-- Edit bag and delete bag
-    - delete function not working...?
-    - bag views.py add def remove for remove javascript to function
+- django install required
 - advice on user profile where images re to be loaded into django admin and this pulls into user profile
+- webhook error
+
 
 
         
