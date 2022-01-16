@@ -19,20 +19,9 @@
     width: 20rem;
 }
 
-.carousel-control-next {
-    background-color: #000;
-}
-
-.carousel-control-prev {
-    background-color: #000;
-}
-
-.carousel {
-    text-align: -webkit-center;
-}
-
-.carousel-caption {
-    background-color: rgba(0, 0, 0, 0.562);
+.order-history {
+    max-height: 416px;
+    overflow-y: auto;
 }
 
 #profile-update-form .form-control {
