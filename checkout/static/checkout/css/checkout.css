@@ -71,6 +71,11 @@
     width: 20rem;
 }
 
+.bg-purple {
+  background-color: #ab10d1 !important;
+  width: 20rem;
+}
+
 .submit-button {
   display: grid;
 }

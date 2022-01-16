@@ -8,6 +8,38 @@
         </button>
     </div>
     <div class="toast-body bg-white">
-        {{ message }}        
+        <div class="row">
+            <div class="col">
+            {{ message }}       
+            <hr class="mt-1 mb-3">
+            </div>
+        </div>
+        {% if grand_total and not on_profile_page %}
+        <div class="bag-notification-wrapper">
+            {% for item in bag_items %}
+                <div class="row">
+                    <div class="col-3 my-1">
+                        {% if item.package.image %}
+                            <img class="w-100 bg-dark" src="{{ item.package.image.url }}" alt="{{ item.package.name }}">
+                        {% else %}
+                            <img class="w-100" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ item.package.name }}">
+                        {% endif %}
+                    </div>
+                </div>
+                    <h6 class="my-3">£{{ item.package.price }}</h6>
+            {% endfor %}
+        </div>
+        <div class="row">
+            <div class="col">
+                <a href="{% url 'checkout' %}" class="btn btn-black btn-block rounded-0">
+                    <span class="text-uppercase">Go To Secure Checkout</span>
+                    <span class="icon">
+                        <i class="fas fa-lock"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+    {% endif %}
     </div>
 </div>
+

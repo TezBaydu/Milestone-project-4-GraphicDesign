@@ -41,6 +41,10 @@
     width: 20rem;
 }
 
+.bg-purple {
+    background-color: #ab10d1 !important;
+    width: 20rem;
+}
 
 @media (max-width: 767px) {
     .mobile-bag-grid {

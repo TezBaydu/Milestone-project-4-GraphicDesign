@@ -23,6 +23,11 @@
     width: 20rem;
 }
 
+.bg-purple {
+    background-color: #ab10d1 !important;
+    width: 20rem;
+}
+
 .carousel-control-next {
     background-color: #000;
 }

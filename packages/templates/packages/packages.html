@@ -34,10 +34,16 @@
                 <div class="card bg-black px-1 pt-3 my-3 mx-3">
             {% elif package.name == "premium" %}
                 <div class="card bg-blue px-1 pt-3 my-3 mx-3">
+            {% elif package.name != "premium" %}
+                <div class="card bg-purple px-1 pt-3 my-3 mx-3">
             {% endif %}
             <div class="row">
                 <div class="col-4">
-                    <img src="{{ package.image.url }}" class="card-img-top w-75 pt-1 mb-3" alt="Chess piece">
+                    {% if package.image %}
+                    <img src="{{ package.image.url }}" class="card-img-top w-75 pt-1 mb-3" alt="{{ package.name }}">
+                    {% else %}
+                    <img class="w-100" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ package.name }}">
+                    {% endif %}
                 </div>
                 <div class="col-8">
                     <h5 class="card-title mt-3 ml-n5">{{ package.friendly_name }}</h5>
