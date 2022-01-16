@@ -4,6 +4,10 @@
     padding-top: 11em;
 }
 
+.product-manage-container {
+    margin-top: 15%;
+}
+
 .bg-grey {
     background-color: #668586 !important;
     width: 20rem;
