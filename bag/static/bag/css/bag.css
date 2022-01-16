@@ -41,6 +41,7 @@
     width: 20rem;
 }
 
+
 @media (max-width: 767px) {
     .mobile-bag-grid {
         display: grid;

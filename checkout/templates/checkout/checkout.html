@@ -7,72 +7,72 @@
 
 {% block content %}
 
-    <div class="container bag-hero-image">
-        <div class="row">
-            <div class="col-12 col-md-6 my-auto text-left">
-                <h2 class="text-light font-weight-bold mt-5">Logo Details and Payment Form</h2>
-                <p class="text-light my-5">Safe and Secure</p>
-            </div>
+<div class="container bag-hero-image">
+    <div class="row">
+        <div class="col-12 col-md-6 text-left">
+            <h2 class="checkout-hero-text text-light font-weight-bold">Logo Details and Payment Form</h2>
+            <p class="text-light my-5">Safe and Secure</p>
         </div>
     </div>
+</div>
 
-    <div class="container mt-3">
-        <div class="row justify-content-center">
-            {% for item in bag_items %}
-                    <div class="col-sm-8 col-md-6 col-lg-5 mb-1">
-                        <tr class="mobile-bag-grid">
-                            <td colspan="1" class="py-3">
-                                <p class="my-0"><strong>Item ID: {{ item.item_id }}</strong></p>
-                            </td>
+<div class="container mt-3">
+    <div class="row">
+        {% for item in bag_items %}
+        <div class="col-sm-8 col-md-6 col-lg-5 mb-1">
+            <tr class="mobile-bag-grid">
+                <td colspan="1" class="py-3">
+                    <p class="my-0"><strong>Item ID: {{ item.item_id }}</strong></p>
+                </td>
 
-                            <td colspan="1" class="w-25">
-                                {% if item.package.name == "lite" %}
-                                    <div class="card bg-grey text-white">
-                                {% elif item.package.name == "plus" %}
-                                    <div class="card bg-black text-white">
-                                {% elif item.package.name == "premium" %}
-                                    <div class="card bg-blue text-white">
-                                {% endif %}
-                                <div class="row">
-                                    <div class="col-4">
-                                        <img src="{{ item.package.image.url }}" class="card-img-top w-75 pt-1 mb-3" alt="Chess piece">
-                                    </div>
-                                    <div class="col-5">
-                                        <h5 class="card-title mt-3 ml-n4">{{ item.package.friendly_name }}</h5>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <h6 class="card-text font-weight-light mb-4">What You'll Get</h6>
-                                    <ul class="pl-0">
-                                        <li class="list-unstyled mb-2"><i class="fas fa-check-circle"></i>  {{ item.package.logo_count_request }} Custom-made Logo Designs</li>
-                                        <li class="list-unstyled mb-2"><i class="fas fa-check-circle"></i>  {{ item.package.quality_request }}</li>
-                                        <li class="list-unstyled mb-2"><i class="fas fa-check-circle"></i>  {{ item.package.support_request }}</li>
-                                        <li class="list-unstyled mb-2"><i class="fas fa-check-circle"></i>  {{ item.package.production_days }} Days Production</li>
-                                    </ul>
-                                    <hr class="bg-white"/>
-                                    <h6 class="my-3">£{{ item.package.price }}</h6>
-                                </div>
-                            </td>
-                        </tr>
-                    </div>
-
-                    <div class="row text-black text-left mt-2 px-2">
-                        <div class="col-3 offest-2">
-                            <p class="my-0">Order Total:</p>
-
+                <td colspan="1" class="w-25">
+                    {% if item.package.name == "lite" %}
+                        <div class="card bg-grey text-white">
+                    {% elif item.package.name == "plus" %}
+                        <div class="card bg-black text-white">
+                    {% elif item.package.name == "premium" %}
+                        <div class="card bg-blue text-white">
+                    {% endif %}
+                    <div class="row">
+                        <div class="col-4">
+                            <img src="{{ item.package.image.url }}" class="card-img-top w-75 pt-1 mb-3" alt="Chess piece">
                         </div>
-                        <div class="col-3">
-                            <p class="my-0">£{{ total | floatformat:2 }}</p>
-
+                        <div class="col-5">
+                            <h5 class="card-title mt-3 ml-n4">{{ item.package.friendly_name }}</h5>
                         </div>
                     </div>
-                </div>
-            {% endfor %}
-            <div class="col">
-                <p class="text-muted">Please fill out the form below to complete your order</p>
-                <form action="{% url 'checkout' %}" method="POST" id="payment-form">
-                    {% csrf_token %}
-                    <div class="col-sm-8 col">
+                    <div class="card-body">
+                        <h6 class="card-text font-weight-light mb-4">What You'll Get</h6>
+                        <ul class="pl-0">
+                            <li class="list-unstyled mb-2"><i class="fas fa-check-circle"></i>  {{ item.package.logo_count_request }} Custom-made Logo Designs</li>
+                            <li class="list-unstyled mb-2"><i class="fas fa-check-circle"></i>  {{ item.package.quality_request }}</li>
+                            <li class="list-unstyled mb-2"><i class="fas fa-check-circle"></i>  {{ item.package.support_request }}</li>
+                            <li class="list-unstyled mb-2"><i class="fas fa-check-circle"></i>  {{ item.package.production_days }} Days Production</li>
+                        </ul>
+                        <hr class="bg-white"/>
+                        <h6 class="my-3">£{{ item.package.price }}</h6>
+                    </div>
+                </td>
+            </tr>
+        </div>
+
+    <div class="row text-black text-left mt-2 px-2">
+        <div class="col-4 offest-2">
+            <p class="my-0">Order Total:</p>
+
+        </div>
+        <div class="col-3">
+            <p class="my-0">£{{ total | floatformat:2 }}</p>
+
+        </div>
+    </div>
+    </div>
+        {% endfor %}
+        <div class="col mt-3">
+            <p class="text-muted">Complete below and aim to be as concise as poss, we may be in contact if we're unsure of anything</p>
+            <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+            {% csrf_token %}
+                <div class="col-sm-8 col-md-12">
                     <fieldset class="rounded py-3 mb-5">
                         <legend class="fieldset-label regular text-black px-2 w-auto">Logo Request Details</legend>
                         {{ order_form.company_name | as_crispy_field }}
@@ -81,24 +81,32 @@
                         {{ order_form.company_colors | as_crispy_field }}
                         {{ order_form.company_look | as_crispy_field }}
                     </fieldset>
-                    </div>
                 </div>
-            </div>
+        </div>
+</div>
+</div>
 
-            <hr class="my-2">                    
+<hr class="my-2">                    
 
- 
-    <div class="container mt-3">
-        <div class="row">
-            <div class="col-sm-8 col-md-5">
+<div class="container text-center mt-5">
+    <div class="row">
+        <div class="col">
+            <h2>Billing Details</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-sm-8 col-md-5">
             <fieldset class="rounded px-3 mb-5">
-                <legend class="fieldset-label regular text-black px-2 w-auto">Details</legend>
+                <legend class="fieldset-label regular text-black px-2 w-auto">Contact Details</legend>
                 {{ order_form.full_name | as_crispy_field }}
                 {{ order_form.email | as_crispy_field }}
                 {{ order_form.phone_number | as_crispy_field }}
             </fieldset>
-            </div>
-            <div  class="col-sm-8 col-md-5">
+        </div>
+        <div  class="col-sm-8 col-md-7">
             <fieldset class="rounded px-3 mb-5">
                 <legend class="fieldset-label regular text-black px-2 w-auto">Address</legend>
                 {{ order_form.street_address1 | as_crispy_field }}
@@ -119,8 +127,9 @@
                     {% endif %}
                 </div>
             </fieldset>
-            </div>
         </div>
+    </div>
+    <div class="row">
         <div class="col-sm-8 col-md-6">
             <fieldset class="rounded px-0 mb-5">
                 <legend class="fieldset-label regular text-black px-2 w-auto">Payment</legend>
@@ -152,14 +161,15 @@
         </form>
         </div>
     </div>
+</div>
     
-    <div id="loading-overlay">
-        <h1 class="text-light logo-font loading-spinner">
-            <span class="icon">
-                <i class="fas fa-3x fa-sync-alt fa-spin"></i>
-            </span>
-        </h1>
-    </div>
+<div id="loading-overlay">
+    <h1 class="text-light logo-font loading-spinner">
+        <span class="icon">
+            <i class="fas fa-3x fa-sync-alt fa-spin"></i>
+        </span>
+    </h1>
+</div>
 
 {% endblock %}
 

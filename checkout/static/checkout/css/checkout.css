@@ -37,10 +37,10 @@
 }
 
 .bag-hero-image {
-  background: url('/media/pay-lightbulb.jpg') no-repeat center top fixed;
+  background: url('/media/pay-lightbulb.jpg') no-repeat center bottom fixed;
   background-size: contain;
   padding-top: 11em;
-  height: 75%;
+  height: 100%;
 }
 
 .checkout-success-image {
@@ -50,6 +50,10 @@
   padding-top: 11em;
   height: 75%;
   margin-top: 10%;
+}
+
+.checkout-hero-text {
+  margin-top: 15%;
 }
 
 .bg-grey {
@@ -90,6 +94,16 @@
     height: 100%;
 }
 
+@media (max-width: 1199px) {
+  .bag-hero-image {
+    background: url('/media/pay-lightbulb.jpg') no-repeat center top fixed;
+    background-size: contain;
+    padding-top: 11em;
+    height: 75%;
+  }
+}
+
+
 @media (max-width: 767px) {
   .bag-hero-image {
     height: 24em;
@@ -97,5 +111,9 @@
 
   .checkout-success-image {
     height: 24em;
+  }
+
+  .checkout-hero-text {
+    margin-top: 0
   }
 }
