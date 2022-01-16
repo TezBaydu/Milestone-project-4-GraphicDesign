@@ -54,6 +54,7 @@ def checkout(request):
             'company_colors': request.POST['company_colors'],
             'company_look': request.POST['company_look'],
         }
+
         order_form = OrderForm(form_data)
         if order_form.is_valid():
             order = order_form.save(commit=False)
