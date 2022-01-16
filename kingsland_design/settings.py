@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     # Other
     'crispy_forms',
     'django_countries',
+    'responsive',
 ]
 
 MIDDLEWARE = [
@@ -64,6 +65,15 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+MIDDLEWARE_CLASS = {
+    'responsive.middleware.ResponsiveMiddleware',
+}
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.request',
+    'responsive.context_processors.device',
+)
 
 ROOT_URLCONF = 'kingsland_design.urls'
 

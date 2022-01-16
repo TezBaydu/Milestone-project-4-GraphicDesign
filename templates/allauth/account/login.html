@@ -8,22 +8,13 @@
 
   
     
-{% block content %}
-<div class="container login-container">
-  {% if device.is_small %}
+{% block inner_content %}
+<div class="container-justify login-container">
     <div class="row">
-      <div class="col login-hero-image my-5">
+      <div class="col-md-6 col-sm-1 login-hero-image">
       </div>
-    </div> 
-    <div class="row">
-      <div class="col my-5 px-5">
-  {% else %}
-    <div class="row">
-      <div class="col-6 login-hero-image">
+      <div class="col-md-6 col-sm-11 my-5 px-5">
 
-      </div>
-      <div class="col-6 my-5 px-5">
-  {% endif %}
 
       <p>Welcome back</p>
       <h1>Login to your Account</h1>
