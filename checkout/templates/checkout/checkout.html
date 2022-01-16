@@ -69,7 +69,7 @@
     </div>
         {% endfor %}
         <div class="col mt-3">
-            <p class="text-muted">Complete below and aim to be as concise as poss, we may be in contact if we're unsure of anything</p>
+            <p class="text-muted">Complete below and aim to be as concise as poss, we may be in contact if we're unsure of anything. <em>* Required field</em></p>
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
             {% csrf_token %}
                 <div class="col-sm-8 col-md-12">
