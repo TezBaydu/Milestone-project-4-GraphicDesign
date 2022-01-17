@@ -5,7 +5,7 @@ This is a confirmation of your order at Kingsland Design. Your order information
 Order Number: {{ order.order_number }}
 Order Date: {{ order.date }}
 
-Order Total: ${{ order.order_total }}
+Order Total: £{{ order.order_total }}
 
 Your order will be worked on and if any issues we will be in contact.
 

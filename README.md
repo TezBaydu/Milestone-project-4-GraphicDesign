@@ -900,6 +900,8 @@ Field 'id' expected a number but got ('1', {'company_name': 'Checkout success Te
 - django install required
 - advice on user profile where images re to be loaded into django admin and this pulls into user profile
 - webhook error
+- Package disappears from orders when deleted or adjusts Totals
+    - Only association is with the pid number in Stripe to find the amount charged however pacakge details with logo request disppaears?
 
 
 
