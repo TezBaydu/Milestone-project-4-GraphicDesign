@@ -66,6 +66,14 @@
                     <a href="{% url 'account_login' %}" class="btn btn-orange w-100 rounded-0">Choose</a>
                     {% endif %}
                 </div>
+                {% if request.user.is_superuser %}
+                <div class="row text-center mt-3">
+                    <small class="ml-3 bg-dark mx-auto px-3 mb-2">
+                        <a class="mr-2" href="{% url 'edit_package' package.id %}">Edit</a> | 
+                        <a class="text-danger ml-2" href="{% url 'delete_package' package.id %}">Delete</a>
+                    </small>
+                </div>
+                {% endif %}
             </div>
         </div>
         {% endfor %}
