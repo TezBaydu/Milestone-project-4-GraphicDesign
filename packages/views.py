@@ -19,14 +19,20 @@ def all_packages(request):
 
 def package_detail(request, package_id):
     """ A view to show individual package details """
+    if not request.user.is_authenticated:
+        messages.info(
+            request, "Sorry, You need to login to make a purchase. \
+            If you're not registered, \
+            please click on the link below to Sign Up!")
+        return redirect(reverse('account_login'))
+    else:
+        package = get_object_or_404(Package, pk=package_id)
 
-    package = get_object_or_404(Package, pk=package_id)
+        context = {
+            'package': package,
+        }
 
-    context = {
-        'package': package,
-    }
-
-    return render(request, 'packages/package_detail.html', context)
+        return render(request, 'packages/package_detail.html', context)
 
 
 @login_required
@@ -43,7 +49,8 @@ def add_package(request):
             messages.success(request, 'Successfully added package!')
             return redirect(reverse('package_detail', args=[package.id]))
         else:
-            messages.error(request, 'Failed to add package. Please ensure the form is valid.')
+            messages.error(request, 'Failed to add package. \
+                Please ensure the form is valid.')
     else:
         form = PackageForm()
 
@@ -57,7 +64,7 @@ def add_package(request):
 
 @login_required
 def edit_package(request, package_id):
-    """ Edit a pacakge """
+    """ Edit a package """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only Admin can do this.')
         return redirect(reverse('home'))
@@ -67,10 +74,12 @@ def edit_package(request, package_id):
         form = PackageForm(request.POST, request.FILES, instance=package)
         if form.is_valid():
             form.save()
-            messages.success(request, f'Successfully updated {package.name} Package!')
+            messages.success(request, f'Successfully \
+                updated {package.name} Package!')
             return redirect(reverse('package_detail', args=[package.id]))
         else:
-            messages.error(request, 'Failed to update package. Please ensure form is valid')
+            messages.error(request, 'Failed to update package. \
+                Please ensure form is valid')
     else:
         form = PackageForm(instance=package)
         messages.info(request, f'Your are editing {package.name}')
