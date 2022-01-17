@@ -7,24 +7,27 @@
 
 {% block content %}
 
-<div class="container-fluid package-hero-image">
-    <div class="row">
-        <div class="col-12 col-md-6 my-auto pt-md-3 text-center">
-            <h4 class="text-light font-weight-bold py-5">“Concision in style, precision in thought, decision in life.”
-            </h4>
-            <p class="text-light text-right mb-5">Victor Hugo</p>
+<div class="container-fluid profile-image">
+    <div class="row py-5">
+        <div class="bg-light row justify-content-center profile-card py-5">
+            <div class="col-lg-12 col-md-9 col-sm-6">
+                <h4 class="text-dark font-weight-bold mb-3"> {{ user }} User</h4>
+                <p class="text-muted mb-0">Email</p>
+                <p>{{ user.email }}</p>
+            </div>
+        </div>
         </div>
     </div>
 </div>
 
-<div class="container">
+<div class="container mb-5">
     <div class="row">
         <div class="col-12 text-center my-5">
-            <h4 class="text-dark font-weight-semibold">{{ user }} This is your Profile</h4>
+            <h4 class="text-dark font-weight-semibold">This is your Profile</h4>
         </div>
     </div>
     <div class="row">
-        <div class="col-12 col-lg-6">
+        <div class="col-12">
             <p class="text-muted">Address Details</p>
             <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                 {% csrf_token %}
@@ -32,8 +35,22 @@
                 <button class="btn btn-black rounded-0 text-uppercase float-right">Update Information</button>
             </form>
         </div>
-        <div class="col-12 col-lg-6">
-        <p class="text-muted">Order Details</p>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-sm-6 my-5 mx-auto">
+            <a href="{% url 'packages' %}" class="btn btn-info w-100 rounded-0 px-5">New Order</a>
+        </div>
+    </div>
+
+    <hr class="my-2">
+
+    <div class="row">
+        <div class="col-4 mx-auto text-center ">
+            <p class="text-muted"><u>Order Details</u></p>
+        </div>
+    </div>
+    <div class="row mx-auto">
+        <div class="col-12">
         <div class="order-history table-responsive">
             <table class="table table-sm table-borderless">
                 <thead>
@@ -50,13 +67,19 @@
                         <td>
                             <a href="{% url 'order_history' order.order_number %}"
                             title="{{ order.order_number }}">
-                            {{ order.order_number|truncatechars:6 }}</a>
+                            {{ order.order_number|truncatechars:12 }}</a>
                         </td>
                         <td>{{ order.date }}</td>
                         <td>
-                            <ul class="list-unstyled">
+                            <ul class="text-capitalize list-unstyled">
                                 {% for item in order.lineitems.all %}
-                                {% if item.package.name == "lite" %}
+                                <li class="list-group-item active">Package: {{ item.package.name }}</li>
+                                <li class="list-group-item">Logo Name: {{ order.company_name }}</li>
+                                <li class="list-group-item">Slogan: {{ order.company_slogan }}</li>
+                                <li class="list-group-item">Company Description: {{ order.company_description }}</li>
+                                <li class="list-group-item">Colours request: {{ order.company_colours }}</li>
+                                <li class="list-group-item">Look & Feel: {{ order.company_look }}</li>
+                                <!-- {% if item.package.name == "lite" %}
                                     <div class="card bg-grey px-1 pt-3 my-3 mx-3">
                                 {% elif item.package.name == "plus" %}
                                     <div class="card bg-black px-1 pt-3 my-3 mx-3">
@@ -66,18 +89,18 @@
                                     <div class="card bg-purple px-1 pt-3 my-3 mx-3">
                                 {% endif %}
                                 <div class="row">
-                                    <div class="col-4">
+                                    <div class="col-3 col-lg-3">
                                         {% if item.package.image %}
                                             <img src="{{ item.package.image.url }}" class="card-img-top w-75 pt-1 mb-3" alt="{{ item.package.name }}">
                                         {% else %}
                                             <img class="w-100" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ item.package.name }}">
                                         {% endif %}
                                     </div>
-                                    <div class="col-8">
-                                        <h5 class="card-title mt-3 ml-n5">{{ item.package.friendly_name }}</h5>
+                                    <div class="col-3 col-lg-2">
+                                        <h5 class="card-title text-light mt-3 ml-n5">{{ item.package.friendly_name }}</h5>
                                     </div>
                                 </div>
-                                <div class="card-body">
+                                <div class="card-body text-light">
                                     <h6 class="card-text font-weight-light mb-4">What You'll Get</h6>
                                     <ul class="pl-0">
                                         <li class="list-unstyled mb-2"><i class="fas fa-check-circle"></i>  {{ item.package.logo_count_request }} Custom-made Logo Designs</li>
@@ -86,7 +109,7 @@
                                         <li class="list-unstyled mb-2"><i class="fas fa-check-circle"></i>  {{ item.package.production_days }} Days Production</li>
                                     </ul>
                                     <hr class="bg-white"/>
-                                    <h6 class="my-3">£{{ item.package.price }}</h6>
+                                    <h6 class="my-3">£{{ item.package.price }}</h6> -->
                                 {% endfor %}
                             </ul>
                         </td>
@@ -95,6 +118,8 @@
                     {% endfor %}
                 </tbody>
             </table>
+        </div>
+        </div>
         </div>
     </div>
 </div>

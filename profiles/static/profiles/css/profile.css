@@ -1,7 +1,15 @@
-.package-hero-image {
-    background: url('/media/form-think.jpg') no-repeat top center fixed;
+.profile-image {
+    background: url('/media/profile.jpg') no-repeat center fixed;
     background-size: cover;
     padding-top: 11em;
+    height: 90%;
+}
+
+.profile-card {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 20%;
+    padding-left: 20%;
 }
 
 .bg-grey {
@@ -41,8 +49,38 @@
     color: #aab7c4;
 }
 
-@media (min-width: 767px) {
-    .package-hero-image {
+.list-group-item.active {
+    z-index: 2;
+    color: #fff;
+    background-color: #000;
+    border-color: #007bff;
+}
+
+@media (max-width: 1199px) {
+    .profile-image {
         height: 75%;
+        margin-top: 10%;
+    }
+
+    .profile-card {
+        margin-top: 10%;
+    }
+}
+
+@media (max-width: 991px) {
+    .profile-image {
+        height: 75%;
+    }
+}
+
+@media (max-width: 767px) {
+    .profile-image {
+        margin-top: 10%;
+        height: 75%;
+    }
+
+    .profile-card {
+        margin-top: 10%;
+        padding: 0;
     }
 }
