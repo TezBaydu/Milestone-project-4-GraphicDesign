@@ -1,0 +1,23 @@
+.contact {
+    margin-top: 10%;
+}
+
+.contact-image {
+    background: url('/media/contact-dot-blue.png') no-repeat top center;
+    background-size: contain;
+    padding-top: 11em;
+    height: 45em;
+}
+
+.step-line {
+    background: url('/media/step-line.png') no-repeat top center;
+    background-size: contain;
+    padding-top: 5em;
+}
+
+.speech-image {
+    background: url('/media/speech-bubble.jpg') no-repeat top center;
+    background-size: contain;
+    padding-top: 11em;
+    height: 45em;
+}

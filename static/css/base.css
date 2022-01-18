@@ -113,10 +113,19 @@ body {
     right: 10px;
 }
 
+.btt-link:hover {
+    background-color: #252060;
+}
+
 .btt-link,
 .update-link,
 .remove-item {
     cursor: pointer;
+    background-color: #fff;
+}
+
+.btt-link .fa-arrow-up:hover {
+    color: #fff !important;
 }
 
 /* Package Form */
