@@ -8,20 +8,21 @@ def enquiries(request):
     """ Enquiry message sent from site """
 
     if request.method == 'POST':
-        form = UserEnquiryForm(request.POST, request.FILES)
-        if form.is_valid():
-            enquiry = form.save()
-            messages.success(request, 'Message sent, We will be in contact with you soon !')
-            return redirect(reverse('enquiry', ))
+        enquiry_form = UserEnquiryForm(request.POST, request.FILES)
+        if enquiry_form.is_valid():
+            enquiry_form = enquiry_form.save()
+            messages.success(
+                request, 'Message sent, We will be in contact with you soon !')
+            return redirect(reverse('enquiries', ))
         else:
-            messages.error(request, 'Failed to sen message. \
+            messages.error(request, 'Failed to send message. \
                 Please ensure the form is valid.')
     else:
-        form = UserEnquiryForm()
+        enquiry_form = UserEnquiryForm()
 
     template = 'enquiries/enquiries.html'
     context = {
-        'form': form,
+        'enquiry_form': enquiry_form,
     }
 
     return render(request, template, context)

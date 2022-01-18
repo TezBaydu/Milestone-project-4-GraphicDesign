@@ -23,9 +23,9 @@
                 {% csrf_token %}
                 <fieldset class="rounded px-3 mb-5">
                     <legend class="fieldset-label small text-black px-2 w-auto"> Contact Form</legend>
-                    {{ form.full_name | as_crispy_field }}
-                    {{ form.email | as_crispy_field }}
-                    {{ form.message | as_crispy_field }}
+                    {{ enquiry_form.full_name | as_crispy_field }}
+                    {{ enquiry_form.email | as_crispy_field }}
+                    {{ enquiry_form.message | as_crispy_field }}
                 </fieldset>
                 <div class="submit-button text-right mt-5 mb-2">
                     <button id="submit-button" class="btn btn-black rounded-0">
