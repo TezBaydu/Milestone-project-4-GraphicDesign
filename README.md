@@ -887,21 +887,23 @@ Field 'id' expected a number but got ('1', {'company_name': 'Checkout success Te
         * Temp mail used: renenag259@latovic.com
         * Temp password
     - Services app
-        * Contact details and form
+        * Contact details and form - Almost Done
     - Deploy to heroku
     - Email notifications
         * To customer - Done
         * To Admin for order update and action
-    - Admin upload images to Django admin and onto user profile
+    - Admin upload images to Django admin and onto user profile - ? POtential to leave but nice to have
 
 # Mentor questions
-- django install required
-- advice on user profile where images are to be loaded into django admin and this pulls into user profile
-- webhook error - Off and On
-- Package disappears from orders when deleted or adjusts Totals
-    - Only association is with the pid number in Stripe to find the amount charged however pacakge details with logo request details disppaears?
 - Contact form not pulling authenticated users
 - Contact form not pulling detailapplied into fields
+- Package disappears from orders when deleted or adjusts Totals
+    - Only association is with the pid number in Stripe to find the amount charged however pacakge details with logo request details disppaears?
+- django install required
+- advice on user profile where images are to be loaded into django admin and this pulls into user profile - Don't think have enough time
+- webhook error - Off and On
+
+
 
 
 

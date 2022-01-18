@@ -15,9 +15,17 @@
     padding-top: 5em;
 }
 
+.steps-row{
+    padding: 8em 5em 8em 5em;
+}
+
 .speech-image {
     background: url('/media/speech-bubble.jpg') no-repeat top center;
     background-size: contain;
     padding-top: 11em;
-    height: 45em;
+    height: 35em;
+}
+
+.contact-container {
+    margin-bottom: 7em;
 }

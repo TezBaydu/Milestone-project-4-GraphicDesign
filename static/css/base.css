@@ -244,13 +244,6 @@ body {
     }
 }
 
-/* login page */
-
-.login-hero-image {
-    background: url('/media/login.jpg');
-    background-size: cover;
-}
-
 .primaryAction {
     width: 75%;
 }
@@ -312,6 +305,25 @@ body {
 	color: #17a2b8;
 }
 
+/* login page */
+
+.login-hero-image {
+    background: url('/media/login.jpg');
+    background-size: cover;
+}
+
+.register-hero-image {
+    background: url('/media/register.jpg') no-repeat;
+    background-size: contain;
+}
+
+.register-quote {
+    margin-top: 13em;
+    margin-bottom: auto;
+}
+
+/* register page */
+
 @media (max-width: 991px) {
     .base-allauth {
         margin-top: 25%;
@@ -321,6 +333,10 @@ body {
 
 @media (max-width: 767px) {
     .login-hero-image {
+        display: none;
+    }
+
+    .register-hero-image {
         display: none;
     }
 }

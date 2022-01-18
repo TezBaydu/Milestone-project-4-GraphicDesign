@@ -20,11 +20,11 @@
         </div>
     </div>
 
-    <div class="row px-5 my-5">
+    <div class="row steps-row">
         <div class="col-md-4 col-sm-10 step-line px-3">
                 <h4>Step 1</h4>
                 <h3>Login / Create Account</h3>
-                <p>This is so we can place your logos into your own personal secure space.</p>
+                <p>This is so you can view your orders in your own personal secure space.</p>
         </div>
         <div class="col-md-4 col-sm-10 step-line px-3">
                 <h4>Step 2</h4>
@@ -43,7 +43,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6 col-sm-11 my-auto pt-md-3">
+        <div class="col-md-6 col-sm-11 my-auto pt-md-3 pl-5">
             <h3 class="text-dark pb-5">Contact Us </h3>
             <hr class="mt-5 border-white">
             <hr class="mt-5 border-white">
@@ -56,19 +56,19 @@
 
 </div>
 
-<div class="container">
+<div class="container contact-container">
     <div class="row">
-        <div class="col-12 col-lg-6">
+        <div class="col-12 col-lg-8 border border-dark rounded">
             <form action="{% url 'enquiries' %}" method="POST" id="enquiry-form">
                 {% csrf_token %}
                 <fieldset class="rounded px-3 mb-5">
-                    <legend class="fieldset-label small text-black px-2 w-auto"> Contact Form</legend>
+                    <legend class="fieldset-label text-black px-2 w-auto py-5"> Contact Form</legend>
                     {{ enquiry_form.full_name | as_crispy_field }}
                     {{ enquiry_form.email | as_crispy_field }}
                     {{ enquiry_form.message | as_crispy_field }}
                 </fieldset>
-                <div class="submit-button text-right mt-5 mb-2">
-                    <button id="submit-button" class="btn btn-black rounded-0">
+                <div class="submit-button text-center mt-5 mb-2">
+                    <button id="submit-button" class="btn-block btn-black rounded-0">
                         <span class="font-weight-bold">Send Email</span>
                         <span class="icon">
                             <i class="far fa-envelope"></i>
