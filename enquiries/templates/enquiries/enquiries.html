@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'enquiries/css/enquiries.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid home-hero-image">
+    <div class="row">
+        <div class="col-lg-6 col-md-8 col-sm-11 my-auto pt-md-3">
+            <h2 class="text-uppercase text-dark pt-5">Kingsland <span class="text-muted text-uppercase">Design</span></h2>
+            <h1 class="display-2 text-dark font-weight-bold py-5">Logo designs for your business</h1>
+            <p class="my-5 text-dark">Kingsland Design produce high quality logos to fit your specific business needs. Over 7 years of high quality logos produced for extremely satisfied customers, we are confident we can work with you to create a logo that is specific and unique to you and your business.</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-lg-6">
+            <form action="{% url 'enquiries' %}" method="POST" id="enquiry-form">
+                {% csrf_token %}
+                <fieldset class="rounded px-3 mb-5">
+                    <legend class="fieldset-label small text-black px-2 w-auto"> Contact Form</legend>
+                    {{ form.full_name | as_crispy_field }}
+                    {{ form.email | as_crispy_field }}
+                    {{ form.message | as_crispy_field }}
+                </fieldset>
+                <div class="submit-button text-right mt-5 mb-2">
+                    <button id="submit-button" class="btn btn-black rounded-0">
+                        <span class="font-weight-bold">Send Email</span>
+                        <span class="icon">
+                            <i class="far fa-envelope"></i>
+                        </span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="btt-button shadow-sm rounded-0 border border-black">
+    <a class="btt-link d-flex h-100">
+        <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+    </a>	
+</div>
+
+{% endblock %}
+
+{% block postload_js %}
+{{ block.super }}
+<script type="text/javascript">
+    $('.btt-link').click(function(e) {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+})
+</script>
+{% endblock %}
