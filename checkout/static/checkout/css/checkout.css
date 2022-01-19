@@ -50,6 +50,7 @@
   padding-top: 11em;
   height: 75%;
   margin-top: 10%;
+  filter: drop-shadow(2px 4px 6px black);
 }
 
 .checkout-hero-text {
