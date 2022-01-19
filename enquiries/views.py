@@ -42,7 +42,7 @@ def enquiries(request):
             )
             mail_admins(
                 f'Enquiry {enquiry_form.enquiry_number} Received',
-                f'Message: {enquiry_form.message}',
+                f'Message: {enquiry_form.message} from {enquiry_form.email}',
                 fail_silently=False,
                 connection=None,
                 html_message=None
