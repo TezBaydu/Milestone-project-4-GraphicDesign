@@ -1,5 +1,7 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
+from django.conf import settings
+from django.core.mail import send_mail, mail_admins
 from .models import UserEnquiry
 from .forms import UserEnquiryForm
 from profiles.models import UserProfile
@@ -20,6 +22,33 @@ def enquiries(request):
             messages.success(
                 request, 'Message sent, We will be in contact with you soon !')
             print(enquiry_form)
+            send_mail(
+                f'Kingsland Design Confirmation for Enquiry \
+                    {enquiry_form.enquiry_number}',
+
+                f'Hello {enquiry_form.full_name}! \
+                    This is a confirmation of your enquiry with Kingsland Design. \
+                        Your message information is below \
+                            and we will be in contact with you soon: \
+                Message: "{enquiry_form.message}" \
+                If you have any questions, \
+                    feel free to contact us at {settings.DEFAULT_FROM_EMAIL}, \
+                Thank you for your enquiry! \
+                Sincerely, \
+                Kingsland Design',
+                settings.DEFAULT_FROM_EMAIL,
+                [f'{enquiry_form.email}'],
+                fail_silently=False,
+            )
+            mail_admins(
+                f'Enquiry {enquiry_form.enquiry_number} Received',
+                f'Message: {enquiry_form.message}',
+                fail_silently=False,
+                connection=None,
+                html_message=None
+            )
+            print(send_mail)
+            print(mail_admins)
             return redirect("home")
         else:
             enquiry_form = UserEnquiryForm()
