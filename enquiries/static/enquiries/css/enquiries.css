@@ -29,3 +29,61 @@
 .contact-container {
     margin-bottom: 7em;
 }
+
+.contact-container .form-control {
+    background-color: #668586;
+    color: #fff;
+}
+
+.contact-card {
+    background-color: #fffcff;
+    text-shadow: none;
+    border-color: #343a40;
+    border-radius: 0.25rem;
+    filter: drop-shadow(2px 4px 6px black);
+}
+
+@media (max-width: 1199px) {
+    .contact-image {
+        margin-top: 14%;
+    }
+
+    .steps-row {
+        padding-top: 0;
+    }
+
+    .speech-image {
+        height: 16em;
+    }
+
+    .contact-container {
+        width: 80%;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .speech-image {
+        height: 20em;
+    }
+
+    .contact-image {
+        margin-top: 14%;
+        margin-right: 6%;
+        margin-left: 1%;
+        margin-bottom: -25%;
+    }
+
+    .steps-row {
+        padding: 2em 3em 4em 3em;
+    }
+
+    .contact-container {
+        width: 90%;
+        margin-top: 2%;
+    }
+
+    .contact-package-link-text {
+        font-size: small;
+    }
+}

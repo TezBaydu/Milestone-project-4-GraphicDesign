@@ -80,7 +80,12 @@
     }
 
     .profile-card {
-        margin-top: 10%;
+        margin-top: -10%;
         padding: 0;
+    }
+
+    .order-history {
+        font-size: 0.6em;
+        font-weight: 700;
     }
 }

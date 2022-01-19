@@ -2,6 +2,7 @@
     background: url('/media/form-think.jpg') no-repeat top center fixed;
     background-size: cover;
     padding-top: 11em;
+    height: 75%;
 }
 
 .product-manage-container {
@@ -44,8 +45,14 @@
     background-color: rgba(0, 0, 0, 0.562);
 }
 
-@media (min-width: 767px) {
-    .package-hero-image {
-        height: 75%;
+@media (max-width: 1199px) {
+    .product-manage-container {
+        margin-top: 30%;
+    }
+}
+
+@media (max-width: 991px) {
+    .product-manage-container {
+        margin-top: 35%;
     }
 }

@@ -339,4 +339,9 @@ body {
     .register-hero-image {
         display: none;
     }
+
+    .base-allauth {
+        margin-top: 45%;
+        margin-bottom: 40%;
+    }
 }

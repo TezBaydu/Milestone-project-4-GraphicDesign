@@ -132,4 +132,8 @@ select option[value=""] {
   .checkout-hero-text {
     margin-top: 0
   }
+
+  .margin-small-left {
+    margin-left: 2%;
+  }
 }
