@@ -63,7 +63,11 @@
             <div class="row text-center mt-3">
                 <small class="ml-3 bg-dark mx-auto px-3 mb-2">
                     <a class="mr-2" href="{% url 'edit_package' package.id %}">Edit</a> | 
-                    <a class="text-danger ml-2" href="{% url 'delete_package' package.id %}">Delete</a>
+                    {% if package.active == True %}
+                        <a class="text-success ml-2" href="{% url 'deactivate_package' package.id %}">Deactivate</a>
+                    {% else %}
+                        <a class="text-danger ml-2" href="{% url 'activate_package' package.id %}">Activate</a>
+                    {% endif %}
                 </small>
             </div>
             {% endif %}

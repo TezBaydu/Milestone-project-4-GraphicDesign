@@ -7,8 +7,10 @@ from .forms import PackageForm
 
 def all_packages(request):
     """ A view to show all packages """
-
-    packages = Package.objects.all()
+    if request.user.is_superuser:
+        packages = Package.objects.all()
+    else:
+        packages = Package.objects.filter(active=True)
 
     context = {
         'packages': packages,
@@ -94,13 +96,27 @@ def edit_package(request, package_id):
 
 
 @login_required
-def delete_package(request, package_id):
-    """ Delete a Package """
+def deactivate_package(request, package_id):
+    """ Deactivate a Package so is not visible \
+        to public or registered users but is still stored in orders. """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only Admin can do this.')
         return redirect(reverse('home'))
 
     package = get_object_or_404(Package, pk=package_id)
-    package.delete()
-    messages.success(request, f'Package {package.name} deleted !')
+    Package.objects.filter(pk=package.pk).update(active=False)
+    messages.success(request, f'Package {package.name} is now Deactivated!')
+    return redirect(reverse('packages'))
+
+
+@login_required
+def activate_package(request, package_id):
+    """ Activate a Package so is visible to public and registered users """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only Admin can do this.')
+        return redirect(reverse('home'))
+
+    package = get_object_or_404(Package, pk=package_id)
+    Package.objects.filter(pk=package.pk).update(active=True)
+    messages.success(request, f'Package {package.name} is now Activated!')
     return redirect(reverse('packages'))

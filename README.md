@@ -774,10 +774,17 @@ For further help and info you can select [Cloning and Forking repositories](http
 
 # Requirements file
 - To Freeze into file: pip3 freeze > requirements.txt
+- To call: pip3 install -r requirements.txt
 
-# Bugs & Issues
-- base.css: not working - project-header in project.html not giving a margin-top - associated to Base.html not in allauth
-    - Has been applied
+# Tips and Reminders
+- CTRL / Command and Left-click on code will pull user into required file
+
+- css not showing images
+    * When this occurs, ensure cache is cleared as a pimary check: windows ctrl-f5 / has since changed and is now CTRL + SHIFT + R all pressed together.
+
+- To create through Django
+    * in terminal type: python3 manage.py startapp (name of folder)
+    * add into settings.py of main project name
 
 - JSON migrations: Best to plan what is to be migrated in advance. This to save the deletion of JSON files and migrations and starting over as I had not updated descriptions for companies:
     * Done by
@@ -796,15 +803,12 @@ For further help and info you can select [Cloning and Forking repositories](http
     * superuser will also be deleted so you will need to re-create the superuser
         1. python3 manage.py createsuperuser
 
-- To create through Django
-    * in terminal type: python3 manage.py startapp (name of folder)
-    * add into settings.py of main project name
+# Bugs & Issues
+- base.css: not working - project-header in project.html not giving a margin-top - associated to Base.html not in allauth
+    - Has been applied
 
 - Structure workflow not quite working as expected and advised through Tutorship to utilise Packages as Orders and they can be placed into a bag under order detail.
     * Having to remove code and re-work migrations in this format
-
-- css not showing images
-    * When this occurs, ensure cache is cleared as a pimary check: windows ctrl-f5
 
 - extra css not locating
     * python manage.py findstatic --verbosity 2 packages.css: code to see if is looking in appropriate directory
@@ -812,18 +816,11 @@ For further help and info you can select [Cloning and Forking repositories](http
         - Have since found base.html not in allauth and have updated.
             * Issue to note - when updating css in static folders these may not at first appear. Requires either a clear cache command (CTRL+F5) or stop server and re-run it.
 
-- Package description
-    * A text was too long for styling and although passed over via JSON this has been amended in Admin
-        * quality-request change from "Downloadable" High Quality content to "Download" High Quality content
-
 - Object set not serializable
     * packages list created but as there was more than one object to pull a list had to be created. This had to sit in [] to be serializable not {} !!
     * even so this wasn't actually needed and was removed altogether and the call made in contexts.py
     * This caused further issues as now no detail was being called and being pulled into bag. Previous calls were stored in session and this was being called instead.
-    * Once cleared it was identificed there was a requirement to update add_to_bag and contexts.py, however another issue arrived where you could only add one of each package at a time. This would confuse user and so site re-design so only 1 package and purchse can be created, edited, deleted at a time. But one purchased it is stored as unique.
-
-- Messages not appearing when pushing items into bag...?! have been thorugh and updated Package, bag-item association not working in views.py
-    * Resolved after updated to Package and clearing site data and re-applying
+    * Once cleared it was identificed there was a requirement to update add_to_bag and contexts.py, however another issue arrived where you could only add one of each package at a time. This would confuse user and so site re-design so only 1 package and purchase can be created, edited, deleted at a time. But one purchased it is stored as unique.
 
 - Adjust Bag
     - Advised to use local storage session for package details
@@ -892,13 +889,13 @@ Field 'id' expected a number but got ('1', {'company_name': 'Checkout success Te
     - Email notifications
         * To customer - Done
         * To Admin for order update and action
-    - Admin upload images to Django admin and onto user profile - ? POtential to leave but nice to have
+    - Admin upload images to Django admin and onto user profile - ? Potential to leave but nice to have
 
 # Mentor questions
-- Contact form not pulling authenticated users
-- Contact form not pulling detailapplied into fields
+- Contact form not pulling authenticated users - Done but fullname needs reviewing
+- Contact form not pulling detail applied into fields - not sure if this is the issue?
 - Package disappears from orders when deleted or adjusts Totals
-    - Only association is with the pid number in Stripe to find the amount charged however pacakge details with logo request details disppaears?
+    - Only association is with the pid number in Stripe to find the amount charged however pacakge details with logo request details disppaears? - Applied boolean to make package inactive rather than deleted so is able to still view in orders if made.
 - django install required
 - advice on user profile where images are to be loaded into django admin and this pulls into user profile - Don't think have enough time
 - webhook error - Off and On
