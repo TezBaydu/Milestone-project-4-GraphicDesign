@@ -92,7 +92,7 @@ the value available to paid users without paying.
 
 5. Safe and Secure payment function
 
-6. Database management allowing for upload and download capability.
+6. Database management allowing for create, read, update and delete capability.
 
 ### Demographic both current and potential
 
@@ -118,18 +118,16 @@ The user is wanting to make a purchase to obtain a business logo
 2. Easily view designs and case studies of design impact.
 3. Be able to navigate to relevant social links.
 4. Be able to make contact for queries.
-5. Be able to create a profile which is editable and deleteable.
+5. Be able to create a profile which is editable.
 6. Be able to view order history.
-7. Be able to donload purchases from website.
 
 #### Designer
 This user is the site owner (or could be employed by the site owner to produce logo designs)
 * The user wants to:
 1. Receive notification of orders with purchase confirmation.
 2. Have some detail on what is being requested to be designed.
-3. Be able to upload designs onto database and assign to customer.
-4. Be able to provide notification when service has been complete.
-5. Be able to receive notification of contact queries directly from website.
+3. Be able to receive notification of contact queries directly from website.
+4. Be able to identify orders from a user to action.
 
 #### Web Developer
 This user is looking for imagery or influence for another project.
@@ -176,15 +174,13 @@ Identifying target audience.
     * Search site for case studies.
     * Understand service steps.
     * Register or login to profile.
-    * Able to create, read, update and delete an order and their profile.
+    * Able to view an order from their profile.
     * Make contact directly or through social sites.
 
 2. Developer
     * Develop online presence through interactive actions on website.
     * Provide logo design ideas.
     * Receive notifications of orders.
-    * Able to upload designs to website and store on secure database.
-    * Confidently ensure logo designs are accessible by Developer and owner only.
 
 ##### Levels of importance
 Below are areas considered for levels of importance and viability
@@ -197,7 +193,8 @@ Below are areas considered for levels of importance and viability
     * Contact portal
     * Profile registration and logging
     * Sales
-    * Order creation, read, update and delete function
+    * Order administration function
+    * Package administration function
 2. Medium
     * Links to social sites
 3. Low
@@ -209,8 +206,8 @@ Below are areas considered for levels of importance and viability
     * Links to social sites
     * Interactivity
     * Sales
-    * Contact Portal
-    * Order creation, read, update and delete function
+    * Package administration function
+    * Order administration function
 2. Medium
     * Contact portal
     * Profile registration and logging
@@ -229,30 +226,33 @@ Below are areas considered for levels of importance and viability
 
 #### Imagery
 1. Colours
-    *   Contrasting bold colours to not take away imagery.
+    *   Contrasting colours for better imagery effect.
 2. Imagery
     * Associations to:
         * Creativity
         * Business
-        * Modern style with no curving corners of buttons or iamges
+        * Modern style with no curving corners of buttons or images
 
 #### Page sections
 1. Home
 2. Login
 3. Registration
 4. Profile
-5. Services
-    * includes Contact form
+5. Contact
+    * includes steps of purchase guide
 6. Case Studies
-7. Order form
-8. Confirmation and payment form
-9. Profile order details
-    * To have download options
+7. Packages
+8. Packages Details
+9. Bag
+10. Checkout
+11. Checkout Success and Order history
+12. Profile  with order details
 *  Potential pages to develop
     1. Other services
         - Stationary
         - Website design
         - Clothes printing
+        - Payment function using Google / ApplePay
 
 
 #### Structure
@@ -283,7 +283,7 @@ Hierarchical structure design for easy user navigation dependant on whether they
 This site has several pages for user to easily identify section associated. Navigation menu dependancy on user being or not being registered. Front end association to back end database and back end association to website for Designer/Developer.
 
 ### Django Framework
-- pip (stands for pip install packages) can be used all kinds of tools within gitpod workspaces. This is used to install the Django framework into this workspace by typing "pip3 install django" into the Terminal. Note pip3 is installing Django for python version 3.
+- pip (stands for pip install packages) can be used in all kinds of tools within gitpod workspaces. This is used to install the Django framework into this workspace by typing "pip3 install django" into the Terminal. Note pip3 is installing Django for python version 3 and django 3.2.9 used for this project.
 - To create a project "django-admin startproject kingsland_design ." was pushed from the terminal
     - This creates project in the current directory with files:
         * __init__.py - Directory to which files can be imported from
@@ -291,24 +291,25 @@ This site has several pages for user to easily identify section associated. Navi
         * urls.py - Contains routing informatyion to type a specific url into address bar and will trigger python function
         * wsgi.py - Contains code to connect python with webserver application
 - Migrations
+    * code used for migrations into django admin: "python3 manage.py makemigrations
     * code used to migrate "python3 manage.py migrate
 
 - Superuser / admin creation
     * code to create an admin / superuser: "python3 manage.py createsuperuser" and then supplying a username, email address and a password
-    * Admin access allows view of all django admin sites, emails, groups, orders, scoial accounts, etc .... in effect all apps imported from [django allauth documentation](https://django-allauth.readthedocs.io/en/latest/installation.html)
+    * Admin access allows view of all django admin sites, emails, groups, orders, social accounts, etc .... in effect all apps imported from [django allauth documentation](https://django-allauth.readthedocs.io/en/latest/installation.html)
 
 - Application Templates
-    * These can be installed via Settings.py to bring in various templates created in Django.
+    * These can be installed via settings.py to bring in various templates created in Django.
     * This project uses user authenticaiton and model backend uploads for superusers.
 
 - Django allauth
     * Install command: pip3 install django-allauth
-    * provides apps for allowing user logins either directly or via social media sites for this project. It can also allow for easier payment, e.g. apple or google pay to make user experience smoother. ---- check this has been done in time for project submission, otherwise caveat this has been installed but not utilised for this project -----
+    * provides apps for allowing user logins either directly or via social media sites for this project. It can also allow for easier payment, e.g. apple or google pay to make user experience smoother. This has been installed but not utilised for this project.
 
 - Email authentication
     Allauth account allows for email verification but as created using superuser the verification has to be done via admin account in django.
 
-### [Database](AWS)
+### [Database](AWS) -- UPDATE--
 - AWS used to store data under database name ""
     * Collections to store specific data:
         * 
@@ -359,15 +360,21 @@ This site has several pages for user to easily identify section associated. Navi
         * Login
         * Register
         * Case Studies
-        * Service
+        * Packages
         * Contact
-        * Order form
     - Leading member to
         * Case Studies
-        * Service
+        * Packages
         * Contact
         * Profile
-        * Order form
+        * Sign Out
+    - Leading Admin to
+        * Package Management
+        * Case Studies
+        * Packages
+        * Contact
+        * Profile
+        * Sign Out
 4. Projects
     - Images of previous projects displayed
         * These lead to case studies page when selected
@@ -401,9 +408,9 @@ This site has several pages for user to easily identify section associated. Navi
 1. Hero image
 
 2. Input fields.
-    - Full name
-    - Email (to be used as unique username)
-    - Password
+    - Email - Displayed twice for confirmation
+    - Username
+    - Password - Displayed twice for confirmation
 
 3. Register button if details correct.
     - Data is passed through to AWS
@@ -419,9 +426,7 @@ This site has several pages for user to easily identify section associated. Navi
 2. Welcome flash message.
 
 3. Profile details - associated to database.
-    - Edit account function
-        * This to include ability to update password
-    - Delete account function
+    - Edit profile details function
 
 4. Orders - associated to database.
     - Historic orders
@@ -435,24 +440,19 @@ This site has several pages for user to easily identify section associated. Navi
 
 3. Orders - associated to database.
     - Historic orders
-        * shows detailed requests
-        * If completed images of logos
-        * Download options
-    - Ability to create a new order
+        * shows detail of requests
 
 
-### Order Form
-1. Data obtained from form updates.
+### Bag
+1. Packages obtained selection
 
-2. Package selections made here.
+2. Stored in Bag throughout site
 
-3. Submit button
-    * If registered, directs to confirmation and payment page.
-    * If not registered, directs to registration page.
+3. Ability to checkout from within Bag anywhere in site
 
 [Back to top ⇧](#introduction)
     
-### Service and Contact page
+### Contact page
 1. Hero-image
 
 2. Steps on how to use service
@@ -460,13 +460,10 @@ This site has several pages for user to easily identify section associated. Navi
 3. Contact section
     - Full name
     - Email
-    - Subject
     - Message
     - Submit button
 
-2. Associated to EmailJS ---- ? ------
-
-3. Email to Developer/Designer and Customer Auto Reply with appropriate message and link to site.
+4. Email to Developer/Designer and Customer Auto Reply with appropriate message.
 
 
 ### Case Studies page
@@ -479,18 +476,17 @@ This site has several pages for user to easily identify section associated. Navi
 4. Option to create order
 
 
-### Payment page
+### Checkout
 1. Hero image
-    - highlighting safety and secure purchase
+    - highlighting safe and secure purchase
 
-2. Confirmation of order details being submitted.
-    - Edit button option if incorrect leading user back to order creation section
-
-3. Confirmation of order package being purchased
+2. Confirmation of order package being purchased
     - Option to select another package if incorrect
 
-4. Form to obtain payment details
+3. Form to obtain payment details
     - Submit button to lead to Stripe payment process
+
+4. Logo request details obtained detailing requirements
 
 [Back to top ⇧](#introduction)
 
@@ -612,7 +608,7 @@ This site has several pages for user to easily identify section associated. Navi
 
 ## Deployment
 
-### Gitpod to GitHub commits
+### Gitpod to GitHub commits --UPDATE--
 
 To help with controlling versions you can commit to GitHub via Gitpod.
 Once you are able to view the repository in Gitpod this is done by:
@@ -640,7 +636,7 @@ Once you are able to view the repository in Gitpod this is done by:
         * requirements.txt-  Lists the requirements to deploy
         * Procfile (capital P)
 
-#### Heroku deployment
+#### Heroku deployment --UPDATE--
 
 - An account will need to be registered with Heroku to deploy projects and create applications.To begin deployment:
     1. Once registered you can select "Create new app".
@@ -662,7 +658,7 @@ Once you are able to view the repository in Gitpod this is done by:
     16. Select "View" button to launch the app.
     17. As this is connected to GitHub, Heroku will obtain changes when these are pushed to the GitHub repository.
 
-#### DEBUG
+#### DEBUG --CHECK / UPDATE--
 - Ensure within app.py change "debug=True" to "debug=False"
 
 ### GitHub deployment
@@ -727,39 +723,13 @@ For further help and info you can select [Cloning and Forking repositories](http
 
 [Back to top ⇧](#introduction)
 
-# Re-Plan:
-    - Choose Package (choice of 3)
-    - pushes to package detail
-        * This could contain a form for details
-        * On submit it pushes to a bag area
-        * This allows for several selections if required
-            - for any interim sales companies who may have several clients they may represent
-    - Package detail to have push to checkout
-        * checkout to have payment details and personal details
-
-# Session detail delete
-    - To delete data as part of testing this can be done by selecting:
-        * right click screen
-        * click inspect
-        * select Application
-        * select Cookies
-        * Right click session ID
-        * select delete
-    - To delete storagte from site datae
-        * right click screen
-        * click inspect
-        * select Application
-        * select Storage
-        * right hand pane select 'Clear site data'
-
 # Django responsive design
     - django-responsive2 0.1.3 installed for responsive s=designs using django
         * pip3 install django-responsive2
 [django-responsive2](https://django-responsive2.readthedocs.io/en/latest/readme.html#)
-        * Applied and adjusted into settings but responsive adjustment not working
-        * worth a try....!
+        * Applied and adjusted into settings but responsive adjustment not required for this project
 
-# Stripe
+# Stripe --UPDATE--
 [TempMail](https://temp-mail.org/ ) 
 - Email : gekil23029@tinydef.com
 - Full Name: ge kil
@@ -768,13 +738,13 @@ For further help and info you can select [Cloning and Forking repositories](http
 
 * Stripe is a digital platform to allow for payments on eCommerce stores
     * JS code is applied to base.html to allow for Stripes fraud detection features
-    * API Keys STRIPE_PUBLIC_KEY  and STRIPE_SECRET_KEY - are required and are applied in Gitpod workspace variables
+    * API Keys STRIPE_PUBLIC_KEY, STRIPE_SECRET_KEY and STRIPE_WH_KEY - required and are applied in Gitpod workspace variables
 
-* Remember pip3 install stripe when coming back into project
 
-# Requirements file
+# Requirements file --UPDATE--
 - To Freeze into file: pip3 freeze > requirements.txt
 - To call: pip3 install -r requirements.txt
+- requires update as instructed by Code-----------------
 
 # Tips and Reminders
 - CTRL / Command and Left-click on code will pull user into required file
@@ -803,102 +773,42 @@ For further help and info you can select [Cloning and Forking repositories](http
     * superuser will also be deleted so you will need to re-create the superuser
         1. python3 manage.py createsuperuser
 
-# Bugs & Issues
-- base.css: not working - project-header in project.html not giving a margin-top - associated to Base.html not in allauth
-    - Has been applied
+- Session detail delete
+    - To delete data as part of testing this can be done by selecting:
+        * right click screen
+        * click inspect
+        * select Application
+        * select Cookies
+        * Right click session ID
+        * select delete
+    - To delete storage from site datae
+        * right click screen
+        * click inspect
+        * select Application
+        * select Storage
+        * right hand pane select 'Clear site data'
 
+- [Deleting migrations](https://simpleisbetterthancomplex.com/tutorial/2016/07/26/how-to-reset-migrations.html)
+
+- Stripe Error 404
+    - Resolved by making PORT 8000 Public so Stripe is able to connect
+
+[Temp email site](https://temp-mail.org/en/)
+    * Temp mail used: renenag259@latovic.com
+    * Temp password
+
+# Bugs & Issues --UPDATE--
 - Structure workflow not quite working as expected and advised through Tutorship to utilise Packages as Orders and they can be placed into a bag under order detail.
     * Having to remove code and re-work migrations in this format
-
-- extra css not locating
-    * python manage.py findstatic --verbosity 2 packages.css: code to see if is looking in appropriate directory
-    issue with packages extra css not being found. To update base.css to ensure this doesn't delay project any further.
-        - Have since found base.html not in allauth and have updated.
-            * Issue to note - when updating css in static folders these may not at first appear. Requires either a clear cache command (CTRL+F5) or stop server and re-run it.
-
-- Object set not serializable
-    * packages list created but as there was more than one object to pull a list had to be created. This had to sit in [] to be serializable not {} !!
-    * even so this wasn't actually needed and was removed altogether and the call made in contexts.py
-    * This caused further issues as now no detail was being called and being pulled into bag. Previous calls were stored in session and this was being called instead.
-    * Once cleared it was identificed there was a requirement to update add_to_bag and contexts.py, however another issue arrived where you could only add one of each package at a time. This would confuse user and so site re-design so only 1 package and purchase can be created, edited, deleted at a time. But one purchased it is stored as unique.
-
-- Adjust Bag
-    - Advised to use local storage session for package details
-            - New template created for edit but failed help requested from tutor Support
-            - Advised to set up CompanyDetails in packages models in order to identify companyu details intialised and if adjusted these can be compared to for update
-            - Subsequently advised other approach to iterate over bag local storage session could have worked
-            - Code has become very complex for bag view and feels like a week and a half of work has been wasted
-    - Highlighting an already edited bag can be re-edited and this adds to the Company Details admin. This is not a major issue as the function to edit is workable and potential this can be looked into but have spent over 1 and a half weeks just on this...potential coding to improve.
-
-- CompanyDetails
-    - Sku not appearing in Admin?
-        * Attempted adding uuid logo_request_number but not appearing - Done - applied def save function in packages models
-
-    - Initiate pacakge app in line for use similar to bag - Done
-    - Remove package - Done - Improvements to have an extra warning to remove but not covered
-
-- Bag session store
-    - Even when applying a model for CompanyDetails (The details associated to each logo request) the details do not store in bag when the user signs out.
-        * Potential improvement to make to site in future
-
-- Getting lots of errors which may stem from settings
-    * had run pip3 freeze > requirements.txt and this has pulled a much larger list from somewhere....? but hve no idea....could be because of the amount of times this file hs been shared.
 
 - django install
     When installing django, ensure it is done using command pips install django==3.2.9, django 3.4 version isn't applicable to **KWARGS. Boutique Ado project states django version used is 3.3.
 
-- django install after initial access
-    * Slack solution : Run 'pip3 install -r requirements.txt' in terminal
-
-[Deleting migrations](https://simpleisbetterthancomplex.com/tutorial/2016/07/26/how-to-reset-migrations.html)
-
-- checkout_success error
-    - TypeError at /checkout/
-Field 'id' expected a number but got ('1', {'company_name': 'Checkout success Test5', 'company_slogan': 'Checkout success Test5', 'company_description': 'Checkout success Test5', 'company_colors': 'Checkout success Test5', 'company_look': 'Checkout success Test5', 'logo_request_number': '8D715DB6E62E436596DF4C963C372C82'}).
-    - /workspace/Milestone-project-4-GraphicDesign/checkout/views.py, line 36, in checkout
-                    package = Package.objects.get(id=item_id) 
-    - contexts.py appends logo detail (CompanyDetail) onto bag_items and when called into OrderLineItem in Checkout as company_details it looks like it is appending this detail to the field id causing an error....Potential aim to use Logo Request Number in CompanyDetails or is this barking up the wrong tree....?
-
-- settings.py Django SECRET_KEY
+- settings.py Django SECRET_KEY --UPDATE--
     - Ensure Secret key is placed into gitpod environment to call prior to submission
 
-- Site Overhaul
-    - When attempting to checkout the following error occurs due to the field id being treated as a list: TypeError: Field 'id' expected a number but got {'company_name': 'Company change', 'company_slogan': 'Company change', 'company_description': 'Company change', 'company_colors': 'Company change', 'company_look': 'Company change', 'logo_request_number': 'AE5594F2C61345EB937B926DBB079AA9'}
-    - After several Tutor discussions and student discussion the conclusion is due to wanting to update CompanyDetails in the bag and then pulling this thorugh into checkout. As the company_details are in the bag so is updatable it appends it onto the field 'id' and therefore as it is looking for a number it is not identifiable to pull through to checkout_success. However Stripe is accepting the data as is the Admin...it just doesn't push through to the checkout_success page.
-    - Due to time constraints I am forced to overlook having a form which is updateable separate to Package and going to revert to omitting CompanyDetails model. This is at commit 88 as a start as I think this is a feature I'd like to resolve in the future.
-
-- Stripe Webhook
-    - Have applied code for Stripe Webhook and issue with key recognition.
-    - These are a variable call in gitpod instance where the Public and Secret Key are accepted but the webhook key is showing a 401 error. After investigation this is stated to be a key call issue however these have been coped and applied several times and still having an issue with error.
-    - This is something to address if time allows prior to project submission but have been notified this is 't a huge requirement for the project but is certainly something to have for an actionable purchase in a site.
-
-- Stripe Error 404
-    - Resolved by making PORT 8000 Public
-
-- Stripe Error 500
-    - Resolved as was a typo (usual cause for Error 500) STRIPE_WH_SECRET instead of STRIPE_WH_KEY
-
 # To Do
-
-[Temp email site](https://temp-mail.org/en/)
-        * Temp mail used: renenag259@latovic.com
-        * Temp password
-    - Services app
-        * Contact details and form - Almost Done
     - Deploy to heroku
-    - Email notifications
-        * To customer - Done
-        * To Admin for order update and action
-    - Admin upload images to Django admin and onto user profile - ? Potential to leave but nice to have
-
-# Mentor questions
-- Contact form not pulling authenticated users - Done but fullname needs reviewing
-- Contact form not pulling detail applied into fields - not sure if this is the issue?
-- Package disappears from orders when deleted or adjusts Totals
-    - Only association is with the pid number in Stripe to find the amount charged however pacakge details with logo request details disppaears? - Applied boolean to make package inactive rather than deleted so is able to still view in orders if made.
-- django install required
-- advice on user profile where images are to be loaded into django admin and this pulls into user profile - Don't think have enough time
-- webhook error - Off and On
 
 
 
