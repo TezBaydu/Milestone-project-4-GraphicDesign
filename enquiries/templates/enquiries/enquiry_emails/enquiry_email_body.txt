@@ -1,9 +1,9 @@
-Hello {{ enquiries.full_name }}!
+Hello {{ enquiry_form.full_name }}!
 
 This is a confirmation of your enquiry with Kingsland Design. 
 Your message information is below and we will be in contact with you soon:
 
-Message: "{{ enquiries.message }}"
+Message: "{{ enquiry_form.message }}"
 
 If you have any questions, feel free to contact us at {{ contact_email }}.
 

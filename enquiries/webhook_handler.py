@@ -16,15 +16,15 @@ class EnquiryWH_Handler:
     def __init__(self, request):
         self.request = request
 
-    def _send_confirmation_email(self, enquiries):
+    def _send_confirmation_email(self, enquiry_form):
         """Send the user a confirmation email"""
-        cust_email = enquiries.email
+        cust_email = enquiry_form.email
         subject = render_to_string(
             'enquiries/enquiry_emails/enquiry_email_subject.txt',
-            {'enquiries': enquiries})
+            {'enquiry_form': enquiry_form})
         body = render_to_string(
             'enquiries/enquiry_emails/enquiry_email_body.txt',
-            {'enquiries': enquiries,
+            {'enquiry_form': enquiry_form,
              'contact_email': settings.DEFAULT_FROM_EMAIL})
 
         send_mail(
@@ -34,7 +34,7 @@ class EnquiryWH_Handler:
             [cust_email]
         )
 
-        self._send_confirmation_email(enquiries)
+        self._send_confirmation_email(enquiry_form)
 
     def handle_event(self, event):
         """
@@ -44,4 +44,4 @@ class EnquiryWH_Handler:
             content=f'Unhandled webhook received: {event["type"]}',
             status=200)
 
-        self._send_confirmation_email(enquiries)
+        self._send_confirmation_email(event)

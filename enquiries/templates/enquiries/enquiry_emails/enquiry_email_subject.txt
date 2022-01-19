@@ -1,1 +1,1 @@
-Kingsland Design Confirmation for Enquiryr {{ enquiries.enquiry_number }}
+Kingsland Design Confirmation for Enquiry {{ enquiry_form.enquiry_number }}
