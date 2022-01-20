@@ -748,7 +748,7 @@ Once you are able to view the repository in Gitpod this is done by:
             3. Connect your manage.py file to your postgres database
             4. Then use this command to load your data from the db.json file into postgres: python3 manage.py loaddata db.json
     9. Create superuser to login
-        - python3 manage.py createsuperuser
+        - python3 manage.py createsuperuser / heroku run python3 manage.py createsuperuser to run it locally
     10. Create a Procfile to let django know gunicorn is to be used as the webserver app.
     11. In terminal login to heroku
         * heroku login -i and apply login and password details for heroku
