@@ -938,6 +938,10 @@ For further help and info you can select [Cloning and Forking repositories](http
     - payment succeeded Stripe Test card number: 4242424242424242 04/24 242 42424
     -payment failed Stripe Test card number: 4000002500003155 04/24 242 42424
 
+- Stripe webhook after deployment to Heroku
+    * Stripe will only allow a single webhook endpoint associated with a synchronous webhook event.
+    * Therefore have disabled the local host in Stripe to enable the webhook deployed by heroku app.
+
 - Package HTML
     - Looks unfactored due to elif's, if /div's applied error would appear in code.
     * Works with or without closing divs but have removed due to potential of additional packages being applied.
