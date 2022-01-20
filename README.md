@@ -373,7 +373,12 @@ This site has several pages for user to easily identify section associated. Navi
 
     - Applying Media files
         - In settings remeber to chache settings with a date in the distant future so browsers can store cache for a long time and improve performance for users.
-        
+        - ensure to commit
+        - In S3 media files can now be obtained directly there.
+        - Go to S3 in objects overview and create folder called media
+        - Then click upload and then Add media, select your files and the Next
+        - Under Manage Public Permissions - Grant public access to these objects, Next and then upload
+        - Images should now be viewable in your heroku application
 
 ### Django connection with AWS S3 bucket
     - In Gitpot workspace install
