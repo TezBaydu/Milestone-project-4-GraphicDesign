@@ -644,6 +644,32 @@ Once you are able to view the repository in Gitpod this is done by:
     1. Once registered you can select "Create new app".
     2. Provide a unique app name in all lowercase letters but individual words are to be separated with a "-" and no spaces.
     3. Select region closest to you, in this case Europe.
+    4. Resources tab, within add-ons search for Heroku Postgres.
+        - Hobby Dev - Free version used in this instance
+    5. To use this Postgres gitpod workspace will need two installations:
+        - pip3 install dj_database_url
+        - pip3 install psycopg2-binary
+        * then frezze requirements: pip3 freeze > requirements.txt
+    6. Then in gitpod workspace settings.py
+        - import dj_database_url
+        - Comment DATABASES default configuration
+        - Replace DATABSES CONFIGURATION WITH
+            * 'default': dj_database_url.parse(""" Apply database url from heroku within Settings-Config Vars )
+    7. This should now allow saves and migrations to Heroku
+        - This will be visible by applying the code python3 manage.py showmigrations in the terminal and all will be in-marked.
+        - At this point apply python3 manage.py migrate to have all migrations set up
+    8. Fixtures/Database loading/transfer
+        - If you have fixtures, these can also be loaded into Heroku also by applying codes.
+            * Ensure companies.json is applied prior to projects.json
+            python3 manage.py loaddata companies / projects / packages
+        - If you don;t have fixtures and have updated directly into another databse following the below code can help to import relational data
+            1. Make sure your manage.py file is connected to your mysql database
+            2. Use this command to backup your current database and load it into a db.json file: python3 manage.py dumpdata --exclude auth.permission --exclude contenttypes > db.json
+            3. Connect your manage.py file to your postgres database
+            4. Then use this command to load your data from the db.json file into postgres: python3 manage.py loaddata db.json
+    9. Create superuser to login
+        - python3 manage.py createsuperuser
+
     4. Automatic deployment can be done via the GitHub repository where this project is stored.
     5. Select connect to GitHub button and when pressed make sure your GitHub profile is displayed and then add your repository name in "repo-name" field and click search.
     6. Once the repository is found, click "Connect" to connect to this app.
