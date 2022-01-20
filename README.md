@@ -371,6 +371,10 @@ This site has several pages for user to easily identify section associated. Navi
             - Ensure to download and save csv file to obtain keys to apply to django app
     - Once applied Django can now be connected to it.
 
+    - Applying Media files
+        - In settings remeber to chache settings with a date in the distant future so browsers can store cache for a long time and improve performance for users.
+        
+
 ### Django connection with AWS S3 bucket
     - In Gitpot workspace install
         * pip3 install boto3
