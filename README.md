@@ -309,11 +309,80 @@ This site has several pages for user to easily identify section associated. Navi
 - Email authentication
     Allauth account allows for email verification but as created using superuser the verification has to be done via admin account in django.
 
-### [Database](AWS) -- UPDATE--
+### [Database](AWS)
 - AWS used to store data under database name ""
-    * Collections to store specific data:
-        * 
+    * Collections to store specific static data:
+- Create AWS account
+- go to aws.amazon.com
+- select AWS management console
+- Apply S3 bucket
+    - Create a new bucket used to store files
+    - name same as heroku app
+    - allow public access and acknowledge current settings.
+    - create bucket
+    - within bucket go to properties and enable static website hosting applying a random site url
+    - Then go to permissions tab and set up a CORS configuration to set up connection between heroku app and the bucket
+        - Apply this code:
+        * [
+    {
+        "AllowedHeaders": [
+            "Authorization"
+        ],
+        "AllowedMethods": [
+            "GET"
+        ],
+        "AllowedOrigins": [
+            "*"
+        ],
+        "ExposeHeaders": []
+    }
+    ]
 
+    - Then go to Bucket Policy and select policy generator to setup a security policy for the bucket.
+    - Policy type is S3 Bucket Policy
+    - In principal get all by inputting *
+    - in Actions select Get Object
+    - then copy the Amazon Resource Name (ARN) from S3 and apply to policy generator
+    - Press Add Statement then generate policy and copy onto Bucket Policy in S3
+        * apply /* on end of Resource name to allow access to all respiurces in the bucket
+    - Go to Access Control list, enable ACL access so is editable and check list objects for Everyone
+
+- Create Group, Access Policy and assign user for bucket access
+    - Access Identity and Access MAnagement (IAM)
+    - Create Group
+        - Select User Group
+        - Name the group associated to appropriate bucket as reference
+        - Create Group
+    - Create Policy
+        - Select Policies
+        - Select Create Policy and navigate to JSON tab
+        - Select Import Managed Policy for pre-built access to S3
+        - Search for S3 and select AmazonS3FullAccesss Policy and Import
+        - Obtain the bucket ARM from S3
+        - Paste after Resource in this format: "Resource": [
+                "arn:aws:s3:::kingsland-design",
+                "arn:aws:s3:::kingsland-design/*"
+                ]
+            -   The /* adds another rule for all files/folders in the bucket
+        - Click Next to review Policy, name it and select Create Policy. This can now be attached to the group.
+    - Create User
+        - Apply appropriate uername: i.e. "project"-staticfiles-user, give programmatic access and select Next.
+            - You can now apply User to the group
+            - Ensure to download and save csv file to obtain keys to apply to django app
+    - Once applied Django can now be connected to it.
+
+### Django connection with AWS S3 bucket
+    - In Gitpot workspace install
+        * pip3 install boto3
+        * pip3 install django-storages
+    - then freeze into requirements.txt so they are also stored in heroku upon deployment
+    - then apply 'storage' to INSTALLED_APPS in settings
+    - then update settings with way to access keys through the os.environ.
+    - With csv download obtain keys to update heroku in config vars using same naming conventions as settings
+        - also set the USE_AWS in config vars as True to know to use the AWS configuration when depliyed to Heroku.
+    - If you have DISABLE STATIC, delete this in config vars so this can be obtained now from S3.
+    - Create a custom_storages.py and apply command code to apply static files into appropriate named folders (i.e. static and media)
+    - Once applied committing to github will push an automatic deployment to Heroku.
 
 ### Consistency
 
@@ -638,7 +707,7 @@ Once you are able to view the repository in Gitpod this is done by:
         * requirements.txt-  Lists the requirements to deploy
         * Procfile (capital P)
 
-#### Heroku deployment --UPDATE--
+#### Heroku deployment
 
 - An account will need to be registered with Heroku to deploy projects and create applications.To begin deployment:
     1. Once registered you can select "Create new app".
