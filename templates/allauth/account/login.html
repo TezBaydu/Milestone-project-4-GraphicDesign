@@ -43,22 +43,24 @@
       <div class="row justify-content-center">
         <form class="login my-5" method="POST" action="{% url 'account_login' %}">
           {% csrf_token %}
-          {{ form.as_p }}
+          {{ form|crispy }}
           {% if redirect_field_value %}
-          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}">
           {% endif %}
+      
+        <div class="row justify-content-center my-5">
+          <button class="primaryAction btn-success btn-lg" type="submit">{% trans "Sign In" %}</button>
+        </div>
+        </form>
       </div>
       <div class="row justify-content-end pr-5">
         <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
       </div>
-      <div class="row justify-content-center my-5">
-        <button class="primaryAction btn-success btn-lg" type="submit">{% trans "Sign In" %}</button>
-      </div>
 
       <p class="my-5 text-center">{% blocktrans %}Don't have an account yet?, then please
         <a href="{{ signup_url }}">sign up</a>!{% endblocktrans %}</p>
+
       {% endif %}
-      </form>
     </div>
   </div>
 </div>
