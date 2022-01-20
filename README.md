@@ -824,7 +824,11 @@ For further help and info you can select [Cloning and Forking repositories](http
 
 - Package HTML
     - Looks unfactored due to elif's, if /div's applied error would appear in code.
-    * Works with or without closing divs but have removed due to potential of additional packages being applied. 
+    * Works with or without closing divs but have removed due to potential of additional packages being applied.
+
+- Checkout_Success HTML
+    - Errors however design is due to package bing shown and elif's afe causing faults. Acceptable levels of errors as site works as required and if attempting to apply design becomes unsuitable.
+
 
 
 -
@@ -833,6 +837,22 @@ For further help and info you can select [Cloning and Forking repositories](http
 - Deploy to heroku
 - settings.py Django SECRET_KEY --UPDATE--
     -  Ensure Secret key is placed into gitpod environment to call prior to submission
+- HTML Test - Done prior to Heroku deployment notes in bugs & Issues
+- CSS Test - Done prior to Heroku deployment all clear
+- Javascript Test   - Done prior to Heroku deployment
+    - JSHINT: By default, JSHint gives you warnings if you use new ES6 features that might not run on systems that don't support them.
+        * There are two ways to silence those warnings:
+        1. If you click "CONFIGURE" you can click to turn on the checkbox next to "New JavaScript features (ES6)".
+        2. You can add a comment line like this at the top of your file: // jshint esversion: 6
+        * Have gone with Option 1
+    - checkout, stripe_elements.js has a var Stripe unused but this is called in the 1st linr calling the #id.
+        * This was found by searching for Stripe in documentation to see where else used.
+- Pylint Test - Done prior to Heroku deployment
+    - Main Issues: found errors with Exceptions and import of checkout.settings ---UPDATE---
+    - Other issues associated to migrations or auto applied and advised can be ignored as auto generated. Also does not affect final outcome of project.
+- PEP8 - Does it need this test with pylint in action...? --UPDATE--
+- RGB Colour blindness Test - Done prior to Heroku deployment with no issues
+
 
 
 
