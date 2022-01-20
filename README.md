@@ -682,28 +682,21 @@ Once you are able to view the repository in Gitpod this is done by:
         - Initialise git connection
             * heroku git:remote -a kingsland-design
         - push to heroku
-            * git push heroku master
-    15. Within heroku it can automatically connect with github repository with Deploy section.
-        - Automatic Deploys, use the github repository to connect to
-        - Set Automatic deplys
-
-
-
-    4. Automatic deployment can be done via the GitHub repository where this project is stored.
-    5. Select connect to GitHub button and when pressed make sure your GitHub profile is displayed and then add your repository name in "repo-name" field and click search.
-    6. Once the repository is found, click "Connect" to connect to this app.
-    7. For thie project DO NOT PRESS "ENABLE AUTOMATIC DEPLOYS" YET !!
-        - This is because there are sections in files not deployed to GITHUB that need to be manually enabled first.
-    8. Select "Settings".
-    9. Select "Reveal Config Vars".
-    10. Sections within env.py file are added to this section.
-    11. WARNING: Ensure requirements.txt & Procfile are added to repository prior to Heroku deployment or Heroku will not see these when connecting.
-    12. Within Heroku you should now be able to safely press the "Enable Automatic Deploys" button. Select Deploy section to view.
-    13. Select "ENABLE AUTOMATIC DEPLOYS".
-    14. Select "Deploy Branch" after selecting which version you wish to deploy. Then Wait for Heroku to load all files.
-    15. Once done you should see "Your app was successfully deployed" and a "View" button.
-    16. Select "View" button to launch the app.
-    17. As this is connected to GitHub, Heroku will obtain changes when these are pushed to the GitHub repository.
+            * git push heroku master (This may not work - however please follow the next steps as deploying in github will allow commits to heroku too)
+    16. Automatic deployment can be done via the GitHub repository where this project is stored.
+        - Select connect to GitHub button and when pressed make sure your GitHub profile is displayed and then add your repository name in "repo-name" field and click search.
+        - Once the repository is found, click "Connect" to connect to this app.
+        - For thie project press "ENABLE AUTOMATIC DEPLOYS" 
+        - Select "Settings".
+        - Select "Reveal Config Vars".
+        - Sections within env.py file are added to this section.
+        - WARNING: Ensure requirements.txt & Procfile are added to repository prior to Heroku deployment or Heroku will not see these when connecting.
+        - Within Heroku you should now be able to safely press the "Enable Automatic Deploys" button. Select Deploy section to view.
+        - Select "ENABLE AUTOMATIC DEPLOYS".
+        - Select "Deploy Branch" after selecting which version you wish to deploy. Then Wait for Heroku to load all files.
+        - Once done you should see "Your app was successfully deployed" and a "View" button.
+        - Select "View" button to launch the app.
+        - As this is connected to GitHub, Heroku will obtain changes when these are pushed to the GitHub repository.
 
 #### DEBUG --CHECK / UPDATE--
 - Ensure within app.py change "debug=True" to "debug=False"
