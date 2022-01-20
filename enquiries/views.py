@@ -25,7 +25,8 @@ def enquiries(request):
                     {enquiry_form.enquiry_number}',
 
                 f'Hello {enquiry_form.full_name}! \
-                    This is a confirmation of your enquiry with Kingsland Design. \
+                    This is a confirmation of your enquiry with \
+                        Kingsland Design. \
                         Your message information is below \
                             and we will be in contact with you soon: \
                 Message: "{enquiry_form.message}" \
