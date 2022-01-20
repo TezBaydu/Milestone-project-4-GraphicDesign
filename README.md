@@ -813,7 +813,12 @@ For further help and info you can select [Cloning and Forking repositories](http
     10. To note: old workspace:  https://crimson-cephalopod-9658p8le.ws-eu27.gitpod.io/
     11. New Workspace: [Should not be the one above]
     12. If using gitpod variables --UPDATE-- Commit and send another in checkout(note env.py removed as this was in SETTINGS...)
-    * Credit to Jim Morel - Code Institute Community Executive - Posted in Code Institute slack channel
+    * Credit to Jim Morel - Code Institute Community Executive - Posted in Code Institute slack channel 7th Dec 2021
+
+- Stripe payment succeeded test webhook
+    - This will always show as error in Stripe, if this occurs at checkout there is a coding issue however this has passed the checkout test.
+    - payment succeeded Stripe Test card number: 4242424242424242 04/24 242 42424
+    -payment failed Stripe Test card number: 4000002500003155 04/24 242 42424
 
 
 

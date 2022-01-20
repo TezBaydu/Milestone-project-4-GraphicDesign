@@ -1,8 +1,7 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.conf import settings
 from django.core.mail import send_mail, mail_admins
-from .models import UserEnquiry
 from .forms import UserEnquiryForm
 from profiles.models import UserProfile
 
