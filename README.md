@@ -746,7 +746,7 @@ For further help and info you can select [Cloning and Forking repositories](http
 # Requirements file --UPDATE--
 - To Freeze into file: pip3 freeze > requirements.txt
 - To call: pip3 install -r requirements.txt
-- requires update as instructed by Code-----------------
+
 
 # Tips and Reminders
 - CTRL / Command and Left-click on code will pull user into required file
@@ -795,7 +795,7 @@ For further help and info you can select [Cloning and Forking repositories](http
 - Stripe Error 404
     - Resolved by making PORT 8000 Public so Stripe is able to connect
 
-[Temp email site](https://temp-mail.org/en/)
+[Temp email site](https://temp-mail.org/en/) --UPDATE--
     * Temp mail used: renenag259@latovic.com
     * Temp password
 
@@ -829,14 +829,13 @@ For further help and info you can select [Cloning and Forking repositories](http
 - Checkout_Success HTML
     - Errors however design is due to package bing shown and elif's afe causing faults. Acceptable levels of errors as site works as required and if attempting to apply design becomes unsuitable.
 
-
-
--
-
 # To Do
 - Deploy to heroku
-- settings.py Django SECRET_KEY --UPDATE--
-    -  Ensure Secret key is placed into gitpod environment to call prior to submission
+- Ensure within app.py change "debug=True" to "debug=False"
+- Data model
+- Browser Testing
+- Testing document
+
 - HTML Test - Done prior to Heroku deployment notes in bugs & Issues
 - CSS Test - Done prior to Heroku deployment all clear
 - Javascript Test   - Done prior to Heroku deployment
