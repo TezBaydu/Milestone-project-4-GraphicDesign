@@ -21,7 +21,6 @@ def enquiries(request):
             enquiry_form = enquiry_form.save()
             messages.success(
                 request, 'Message sent, We will be in contact with you soon !')
-            print(enquiry_form)
             send_mail(
                 f'Kingsland Design Confirmation for Enquiry \
                     {enquiry_form.enquiry_number}',
@@ -47,8 +46,6 @@ def enquiries(request):
                 connection=None,
                 html_message=None
             )
-            print(send_mail)
-            print(mail_admins)
             return redirect("home")
         else:
             enquiry_form = UserEnquiryForm()

@@ -809,9 +809,10 @@ For further help and info you can select [Cloning and Forking repositories](http
     6. Re-create the workspace by clicking on the Gitpod button from your repository.
     7. Re-create env.py file into new workspace.
     8. Re-install packages from requirements.txt: pip3 install -r requirements.txt
-    9. As database is new due to a new workspace superuser , migrations and fixtures will need will need to be recreated / reloaded
+    9. As database is new due to a new workspace migrations (python3 manage.py makemigrations and python3 manage.py migrate), superuser (python3 manage.py createsuperuser) and fixtures (python3 manage.py loaddata companies.json and then projects.json and packages.json) will need will need to be recreated / reloaded
     10. To note: old workspace:  https://crimson-cephalopod-9658p8le.ws-eu27.gitpod.io/
     11. New Workspace: [Should not be the one above]
+    12. If using gitpod variables --UPDATE-- Commit and send another in checkout(note env.py removed as this was in SETTINGS...)
     * Credit to Jim Morel - Code Institute Community Executive - Posted in Code Institute slack channel
 
 
