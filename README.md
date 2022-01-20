@@ -683,6 +683,9 @@ Once you are able to view the repository in Gitpod this is done by:
             * heroku git:remote -a kingsland-design
         - push to heroku
             * git push heroku master
+    15. Within heroku it can automatically connect with github repository with Deploy section.
+        - Automatic Deploys, use the github repository to connect to
+        - Set Automatic deplys
 
 
 
