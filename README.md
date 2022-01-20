@@ -442,6 +442,8 @@ This site has several pages for user to easily identify section associated. Navi
     - Historic orders
         * shows detail of requests
 
+4. Orders to still show even for inactive packages
+
 
 ### Bag
 1. Packages obtained selection
