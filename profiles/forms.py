@@ -29,9 +29,7 @@ class UserProfileForm(forms.ModelForm):
             'default_company_look': 'Look & Feel e.g. Modern / Minimal / Fun',
         }
 
-        # self.fields['full_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
-            # if field != 'country':
             if self.fields[field].required:
                 placeholder = f'{placeholders[field]} *'
             else:

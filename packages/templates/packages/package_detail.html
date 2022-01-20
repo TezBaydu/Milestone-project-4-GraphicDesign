@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'packages/css/packages.css' %}">
+<link rel="stylesheet" href="{% static 'packages/css/packages.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -27,55 +27,64 @@
 
 <div class="container text-white">
     <div class="row justify-content-around my-5">
-            {% if package.name == "lite" %}
-                <div class="card bg-grey px-1 pt-3 my-3 mx-3">
+        {% if package.name == "lite" %}
+        <div class="card bg-grey px-1 pt-3 my-3 mx-3">
             {% elif package.name == "plus" %}
-                <div class="card bg-black px-1 pt-3 my-3 mx-3">
-            {% elif package.name == "premium" %}
+            <div class="card bg-black px-1 pt-3 my-3 mx-3">
+                {% elif package.name == "premium" %}
                 <div class="card bg-blue px-1 pt-3 my-3 mx-3">
-            {% elif package.name != "premium" %}
-                <div class="card bg-purple px-1 pt-3 my-3 mx-3">
-            {% endif %}
-            <div class="row">
-                <div class="col-4">
-                    {% if package.image %}
-                        <img src="{{ package.image.url }}" class="card-img-top w-75 pt-1 mb-3" alt="{{ package.name }}">
-                    {% else %}
-                        <img class="w-100" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ package.name }}">
-                    {% endif %}
+                    {% elif package.name != "premium" %}
+                    <div class="card bg-purple px-1 pt-3 my-3 mx-3">
+                        {% endif %}
+                        <div class="row">
+                            <div class="col-4">
+                                {% if package.image %}
+                                <img src="{{ package.image.url }}" class="card-img-top w-75 pt-1 mb-3"
+                                    alt="{{ package.name }}">
+                                {% else %}
+                                <img class="w-100" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ package.name }}">
+                                {% endif %}
+                            </div>
+                            <div class="col-8">
+                                <h5 class="card-title mt-3 ml-n5">{{ package.friendly_name }}</h5>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-text font-weight-light mb-4">What You'll Get</h6>
+                            <ul class="pl-0">
+                                <li class="list-unstyled mb-2"><i class="fas fa-check-circle"></i>
+                                    {{ package.logo_count_request }} Custom-made Logo Designs</li>
+                                <li class="list-unstyled mb-2"><i class="fas fa-check-circle"></i>
+                                    {{ package.quality_request }}</li>
+                                <li class="list-unstyled mb-2"><i class="fas fa-check-circle"></i>
+                                    {{ package.support_request }}</li>
+                                <li class="list-unstyled mb-2"><i class="fas fa-check-circle"></i>
+                                    {{ package.production_days }} Days Production</li>
+                            </ul>
+                            <hr class="bg-white" />
+                            <h6 class="my-3">£{{ package.price }}</h6>
+                        </div>
+                        {% if request.user.is_superuser %}
+                        <div class="row text-center mt-3">
+                            <small class="ml-3 bg-dark mx-auto px-3 mb-2">
+                                <a class="mr-2" href="{% url 'edit_package' package.id %}">Edit</a> |
+                                {% if package.active == True %}
+                                <a class="text-success ml-2"
+                                    href="{% url 'deactivate_package' package.id %}">Deactivate</a>
+                                {% else %}
+                                <a class="text-danger ml-2" href="{% url 'activate_package' package.id %}">Activate</a>
+                                {% endif %}
+                            </small>
+                        </div>
+                        {% endif %}
+                    </div>
                 </div>
-                <div class="col-8">
-                    <h5 class="card-title mt-3 ml-n5">{{ package.friendly_name }}</h5>
-                </div>
             </div>
-            <div class="card-body">
-                <h6 class="card-text font-weight-light mb-4">What You'll Get</h6>
-                <ul class="pl-0">
-                    <li class="list-unstyled mb-2"><i class="fas fa-check-circle"></i>  {{ package.logo_count_request }} Custom-made Logo Designs</li>
-                    <li class="list-unstyled mb-2"><i class="fas fa-check-circle"></i>  {{ package.quality_request }}</li>
-                    <li class="list-unstyled mb-2"><i class="fas fa-check-circle"></i>  {{ package.support_request }}</li>
-                    <li class="list-unstyled mb-2"><i class="fas fa-check-circle"></i>  {{ package.production_days }} Days Production</li>
-                </ul>
-                <hr class="bg-white"/>
-                <h6 class="my-3">£{{ package.price }}</h6>
-            </div>
-            {% if request.user.is_superuser %}
-            <div class="row text-center mt-3">
-                <small class="ml-3 bg-dark mx-auto px-3 mb-2">
-                    <a class="mr-2" href="{% url 'edit_package' package.id %}">Edit</a> | 
-                    {% if package.active == True %}
-                        <a class="text-success ml-2" href="{% url 'deactivate_package' package.id %}">Deactivate</a>
-                    {% else %}
-                        <a class="text-danger ml-2" href="{% url 'activate_package' package.id %}">Activate</a>
-                    {% endif %}
-                </small>
-            </div>
-            {% endif %}
         </div>
     </div>
 </div>
-<div class="container mb-5">
 
+<div class="container mb-5">
     <form class="form" action="{% url 'add_to_bag' package.id %}" method="POST">
         {% csrf_token %}
         <div class="form-row">

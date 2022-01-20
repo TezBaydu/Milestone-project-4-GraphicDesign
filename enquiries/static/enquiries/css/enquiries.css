@@ -15,7 +15,7 @@
     padding-top: 5em;
 }
 
-.steps-row{
+.steps-row {
     padding: 8em 5em 8em 5em;
 }
 
@@ -60,7 +60,6 @@
         width: 80%;
     }
 }
-
 
 @media (max-width: 767px) {
     .speech-image {

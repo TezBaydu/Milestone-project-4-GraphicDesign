@@ -14,18 +14,11 @@ def view_bag(request):
 def add_to_bag(request, item_id):
     """ Add package and company detail requests to bag """
 
-    # get package details, post company details and get empty bag
     package = get_object_or_404(Package, pk=item_id)
     bag = request.session.get('bag', {})
     quantity = request.session.get("quantity", 0)
 
-    print(bag)
-
-    # if bag item is empty then apply company details and save to bag
-    # if item_id in list(bag.keys()):
-    # if not item_id:#
     if quantity >= 1:
-        # bag[item_id] += quantity
         messages.error(
             request, "You already have an item in the bag and can only order one \
                  at a time. Please edit your bag or if details are good,\

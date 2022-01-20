@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'enquiries/css/enquiries.css' %}">
+<link rel="stylesheet" href="{% static 'enquiries/css/enquiries.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -13,46 +13,49 @@
         <div class="col-md-6 col-sm-11 my-auto pt-md-3">
             <h3 class="text-dark pt-5">Decisions, decisions </h3>
             <hr class="mt-5 border-white">
-            <p class="my-5">The path of running your business is difficult enough, choosing a logo to fit what you and your business represent can help to motivate and encourage your customers and your business.</p>
+            <p class="my-5">The path of running your business is difficult enough, choosing a logo to fit what you and
+                your business represent can help to motivate and encourage your customers and your business.</p>
             <hr class="mt-5 border-white">
             <p class="my-5">We can help start you off with only a few clicks </p>
-
         </div>
     </div>
 
     <div class="row steps-row">
         <div class="col-md-4 col-sm-10 step-line px-3">
-                <h4>Step 1</h4>
-                <h3>Login / Create Account</h3>
-                <p>This is so you can view your orders in your own personal secure space.</p>
+            <h4>Step 1</h4>
+            <h3>Login / Create Account</h3>
+            <p>This is so you can view your orders in your own personal secure space.</p>
         </div>
         <div class="col-md-4 col-sm-10 step-line px-3">
-                <h4>Step 2</h4>
-                <h3>Choose your Package</h3>
-                <p>Choose a package after which you will be asked a series of short questions to help us understand what kind of logo you would like.</p>
+            <h4>Step 2</h4>
+            <h3>Choose your Package</h3>
+            <p>Choose a package after which you will be asked a series of short questions to help us understand what
+                kind of logo you would like.</p>
         </div>
         <div class="col-md-4 col-sm-10 step-line px-3">
-                <h4>Step 3</h4>
-                <h3>Logo’s to you </h3>
-                <p>Once you make your purchase, await your logos to be sent to you within the designated time.</p>
+            <h4>Step 3</h4>
+            <h3>Logo’s to you </h3>
+            <p>Once you make your purchase, await your logos to be sent to you within the designated time.</p>
         </div>
     </div>
     <div class="row justify-content-center mb-5">
         <div class="col-md-8">
-            <h2 class="text-center contact-package-link-text">Select <a href="{% url 'packages' %}">here</a> for your perfect logo or if you still have questions, don’t hesitate to contact us by completing the form below.</h2>
+            <h2 class="text-center contact-package-link-text">Select <a href="{% url 'packages' %}">here</a> for your
+                perfect logo or if you still have questions, don’t hesitate to contact us by completing the form below.
+            </h2>
         </div>
     </div>
     <div class="row pt-5">
         <div class="col-md-6 col-sm-11 my-auto pt-md-3 pl-5">
             <h3 class="text-dark">Contact Us </h3>
             <hr class="mt-5 border-white">
-            <p class="pt-3">If you have any questions, contact us using the form below and someone will be in touch. </p>
+            <p class="pt-3">If you have any questions, contact us using the form below and someone will be in touch.
+            </p>
 
         </div>
         <div class="col-md-4 col-sm-11 pt-md-3 speech-image">
         </div>
     </div>
-
 </div>
 
 <div class="container contact-container">
@@ -82,7 +85,7 @@
 <div class="btt-button shadow-sm rounded-0 border border-black">
     <a class="btt-link d-flex h-100">
         <i class="fas fa-arrow-up mx-auto my-auto"></i>
-    </a>	
+    </a>
 </div>
 
 {% endblock %}
@@ -90,8 +93,11 @@
 {% block postload_js %}
 {{ block.super }}
 <script type="text/javascript">
-    $('.btt-link').click(function(e) {
-        window.scrollTo({top: 0, behavior: 'smooth'});
-})
+    $('.btt-link').click(function (e) {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    })
 </script>
 {% endblock %}

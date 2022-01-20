@@ -87,7 +87,7 @@ body {
 
 .btn-black:hover {
     background-color: #dc7000;
-    color:black;
+    color: black;
 }
 
 .btn-outline-black {
@@ -157,12 +157,12 @@ body {
 }
 
 .shadow-sm {
-    box-shadow: 0 0.125rem 1.25rem rgba(0,0,0,1.075)!important;
+    box-shadow: 0 0.125rem 1.25rem rgba(0, 0, 0, 1.075) !important;
 }
 
 
 /* -- Media Queries --*/
-  
+
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
         position: fixed;
@@ -197,30 +197,30 @@ body {
     .social-links li a i {
         margin: 0;
     }
-    
+
 }
 
 @media (max-width: 767px) {
     .social-links {
-    padding-top: 0;
-    justify-content: center;
-    text-align: center;
+        padding-top: 0;
+        justify-content: center;
+        text-align: center;
     }
 
     .social-links li a i {
-    width: 33px;
-    height: 33px;
-    padding: 9px 0px;
-    border-radius: 50%;
-    font-size: 12px;
-    line-height: 15px;
-    text-align: center;
-    color: #ffffff;
-    background: #000000;
-    transition: all 0.35s ease-in-out;
-    margin-top: 5px;
-    margin-left: 0;
-    margin-right: 0;
+        width: 33px;
+        height: 33px;
+        padding: 9px 0px;
+        border-radius: 50%;
+        font-size: 12px;
+        line-height: 15px;
+        text-align: center;
+        color: #ffffff;
+        background: #000000;
+        transition: all 0.35s ease-in-out;
+        margin-top: 5px;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .list-inline-item:not(:last-child) {
@@ -273,8 +273,7 @@ body {
 
 .allauth-form-inner-content button,
 .allauth-form-inner-content input[type='submit'] {
-	/* btn */
-	display: inline-block;
+    display: inline-block;
     font-weight: 400;
     color: #fff;
     text-align: center;
@@ -289,20 +288,18 @@ body {
     font-size: 1rem;
     line-height: 1.5;
     border-radius: 0;
-
-    /* standard bootstrap btn transitions */
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 .allauth-form-inner-content button:hover,
-.allauth-form-inner-content input[type='submit']:hover {	
-	color: #fff;
+.allauth-form-inner-content input[type='submit']:hover {
+    color: #fff;
     background-color: #dc7000;
     border-color: #222;
 }
 
 .allauth-form-inner-content a {
-	color: #17a2b8;
+    color: #17a2b8;
 }
 
 /* login page */
