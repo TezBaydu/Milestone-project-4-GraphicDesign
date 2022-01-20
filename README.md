@@ -798,17 +798,30 @@ For further help and info you can select [Cloning and Forking repositories](http
     * Temp password
 
 # Bugs & Issues --UPDATE--
-- Structure workflow not quite working as expected and advised through Tutorship to utilise Packages as Orders and they can be placed into a bag under order detail.
-    * Having to remove code and re-work migrations in this format
-
 - django install
     When installing django, ensure it is done using command pips install django==3.2.9, django 3.4 version isn't applicable to **KWARGS. Boutique Ado project states django version used is 3.3.
+    * Due to Gitpod update a new Gitpod Full Template has been produced to use and needs to be updated by following below. This is being done prior to deploymant or code testing.
+    1. From the project directory, run this command:  curl https://raw.githubusercontent.com/Code-Institute-Org/gitpod-full-template/main/.gitpod.dockerfile > .gitpod.dockerfile  which will overwrite the old Dockerfile with the working one.
+    2. Open your corrupted requirements.txt file in Gitpod, select and copy the contents.
+    3. Visit https://lechien73.github.io/reqfix/ and paste in the corrupted requirements file. Click Submit
+    4. In the results panel, copy the cleaned requirements and paste them into your requirements.txt file back in Gitpod and save.
+    5. Add, commit and push everything to your GitHub repository.
+    6. Re-create the workspace by clicking on the Gitpod button from your repository.
+    7. Re-create env.py file into new workspace.
+    8. Re-install packages from requirements.txt: pip3 install -r requirements.txt
+    9. As database is new due to a new workspace superuser , migrations and fixtures will need will need to be recreated / reloaded
+    10. To note: old workspace:  https://crimson-cephalopod-9658p8le.ws-eu27.gitpod.io/
+    11. New Workspace: [Should not be the one above]
+    * Credit to Jim Morel - Code Institute Community Executive - Posted in Code Institute slack channel
 
-- settings.py Django SECRET_KEY --UPDATE--
-    - Ensure Secret key is placed into gitpod environment to call prior to submission
+
+
+-
 
 # To Do
-    - Deploy to heroku
+- Deploy to heroku
+- settings.py Django SECRET_KEY --UPDATE--
+    -  Ensure Secret key is placed into gitpod environment to call prior to submission
 
 
 
