@@ -678,6 +678,12 @@ Once you are able to view the repository in Gitpod this is done by:
         * heroku config:set DISABLE_COLLECTSTATIC=1 --app kingsland-design (-app kingsland-design part applied if heroku has more than one app)
     13. Apply hostname in ALLOWED_HOSTS in settings.py
         - Also apply localhost so can be stored in local host too
+    14. To push to heroku
+        - Initialise git connection
+            * heroku git:remote -a kingsland-design
+        - push to heroku
+            * git push heroku master
+
 
 
     4. Automatic deployment can be done via the GitHub repository where this project is stored.
