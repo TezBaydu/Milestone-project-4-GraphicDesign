@@ -1,0 +1,1 @@
+web: gunicorn kingsland_design.wsgi:application

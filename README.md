@@ -655,6 +655,8 @@ Once you are able to view the repository in Gitpod this is done by:
         - Comment DATABASES default configuration
         - Replace DATABSES CONFIGURATION WITH
             * 'default': dj_database_url.parse(""" Apply database url from heroku within Settings-Config Vars )
+            * or apply settings if statement to pull the DATABASE_URL, else to use rhe db.sqlite3 option
+            - ensure to pip3 install gunicorn to act as webserver and pip3 freeze > requirements.txt in terminal.
     7. This should now allow saves and migrations to Heroku
         - This will be visible by applying the code python3 manage.py showmigrations in the terminal and all will be in-marked.
         - At this point apply python3 manage.py migrate to have all migrations set up
@@ -669,6 +671,14 @@ Once you are able to view the repository in Gitpod this is done by:
             4. Then use this command to load your data from the db.json file into postgres: python3 manage.py loaddata db.json
     9. Create superuser to login
         - python3 manage.py createsuperuser
+    10. Create a Procfile to let django know gunicorn is to be used as the webserver app.
+    11. In terminal login to heroku
+        * heroku login -i and apply login and password details for heroku
+    12. Disable Static files when deploying by:
+        * heroku config:set DISABLE_COLLECTSTATIC=1 --app kingsland-design (-app kingsland-design part applied if heroku has more than one app)
+    13. Apply hostname in ALLOWED_HOSTS in settings.py
+        - Also apply localhost so can be stored in local host too
+
 
     4. Automatic deployment can be done via the GitHub repository where this project is stored.
     5. Select connect to GitHub button and when pressed make sure your GitHub profile is displayed and then add your repository name in "repo-name" field and click search.
