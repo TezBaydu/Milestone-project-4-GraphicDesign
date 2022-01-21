@@ -1,5 +1,5 @@
 <h1 align="center" id = "introduction">
-     <a href="" target="_blank"><img src="" alt="Blank!"/></a>
+     <a href="https://kingsland-design.herokuapp.com/" target="_blank"><img src="media/kingsland-5.jpg" alt="Blank!"/></a>
      Project Kingsland
 </h1>
 
@@ -75,7 +75,7 @@ the value available to paid users without paying.
 6. [Credits and Acknowledgements](#Credits-and-Acknowledgements)
 
 ***
-![Responsiveness]()
+![Responsiveness](media/kingsland-responsive.JPG)
 ***
 
 ## UX
@@ -222,7 +222,7 @@ Below are areas considered for levels of importance and viability
 #### Influence
 1. A couple of friends who are graphic designers.
 2. Image of logo from 1st Milestone project (Council Culture):
-    * ![Council Culture]()
+    * ![Council Culture](media/cc-1.jpg)
 
 #### Imagery
 1. Colours
@@ -271,10 +271,10 @@ Data schema from django-extensions used to produce data model and site associati
 - Designed in [Figma]()
 
 - Desktop version
-![Desktop wireframe]()
+![Desktop wireframe](media/wireframe-desktop.JPG)
 
 - Mobile version
-![Mobile wireframe]()
+![Mobile wireframe](media/wireframe-mobile.JPG)
 
 
 
@@ -426,7 +426,7 @@ This site has several pages for user to easily identify section associated. Navi
 
 - Back to top button when scrolling passed top point
 
-*![Kingsland Palette]()
+*![Kingsland Palette](media/kingsland-colours.png)
 
 [Back to top ⇧](#introduction)
 
@@ -708,7 +708,7 @@ Once you are able to view the repository in Gitpod this is done by:
 6. Log into GitHub
     - Locate repository
     - You should be able to see the latest and history of commits in code section at top right of table of files list.
-    * ![git-commits]()
+    * ![git-commits](media/kingsland-design-commits.JPG)
 
 ### Deploying via GitHub Pages / Heroku
 
@@ -824,27 +824,6 @@ For further help and info you can select [Cloning and Forking repositories](http
 
 [Back to top ⇧](#introduction)
 
-## Credits and Acknowledgements
-
-- [Code Institute](https://codeinstitute.net/)
-    * Tutor Support have been amazing !!
-    * Seun Owoni Koko for her enthusiasm, guidance and support
-    * Slack channel
-
-- [Codepen](https://codepen.io/)
-    * Excellent source to view and test code
-
-- [Stack overflow](https://stackoverflow.com/)
-    * For the general queries that have happpened and the various solutions as guidance
-
-- Website Designers
-    * For their help in testing Mac version and advice on design
-
-- Friends and Family
-    * For their patience, advice and support
-
-[Back to top ⇧](#introduction)
-
 # Django responsive design
     - django-responsive2 0.1.3 installed for responsive s=designs using django
         * pip3 install django-responsive2
@@ -939,8 +918,29 @@ For further help and info you can select [Cloning and Forking repositories](http
 - Checkout_Success HTML
     - Errors however design is due to package bing shown and elif's afe causing faults. Acceptable levels of errors as site works as required and if attempting to apply design becomes unsuitable.
 
+## Credits and Acknowledgements
+
+- [Code Institute](https://codeinstitute.net/)
+    * Tutor Support have been amazing !!
+    * Seun Owoni Koko for her enthusiasm, guidance and support
+    * Slack channel
+        * Especially Emmett and Abi Harrison_alumni
+
+- [Codepen](https://codepen.io/)
+    * Excellent source to view and test HTML, CSS & JavaScript code
+
+- [Stack overflow](https://stackoverflow.com/)
+    * For the general queries that have happpened and the various solutions as guidance
+
+- Website Designers
+    * For their help in testing Mac version and advice on design
+
+- Friends and Family
+    * For their patience, advice and support
+
+[Back to top ⇧](#introduction)
+
 # To Do
-- Data model
 - Browser Testing
 - Testing document
 
