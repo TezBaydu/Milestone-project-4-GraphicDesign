@@ -619,6 +619,8 @@ This site has several pages for user to easily identify section associated. Navi
 
 - [Bootstrapcdn](https://www.bootstrapcdn.com)
 
+- [Temp email site](https://temp-mail.org/en/)
+
 - [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x)
 
 - [cdnjs](https://cdnjs.com)
@@ -847,21 +849,11 @@ For further help and info you can select [Cloning and Forking repositories](http
 [django-responsive2](https://django-responsive2.readthedocs.io/en/latest/readme.html#)
         * Applied and adjusted into settings but responsive adjustment not required for this project
 
-# Stripe --UPDATE--
-[TempMail](https://temp-mail.org/ ) 
-- Email : gekil23029@tinydef.com
-- Full Name: ge kil
-- Country: United Kingdom
-- password: c0d%5Tr16E
-
+# Stripe
 * Stripe is a digital platform to allow for payments on eCommerce stores
     * JS code is applied to base.html to allow for Stripes fraud detection features
-    * API Keys STRIPE_PUBLIC_KEY, STRIPE_SECRET_KEY and STRIPE_WH_KEY - required and are applied in Gitpod workspace variables
-
-
-# Requirements file --UPDATE--
-- To Freeze into file: pip3 freeze > requirements.txt
-- To call: pip3 install -r requirements.txt
+    * API Keys STRIPE_PUBLIC_KEY, STRIPE_SECRET_KEY and STRIPE_WH_KEY - required and are applied in Gitpod and/or Heroku (production-deployment) workspace variables.
+        - Note when using Test-Strip and applying endpoint url's Stripe will only work with one endpoint associated to a single source, even if it has differing url's so one has to be used at a time. Currently this is associated to the heroku endopint url as is in production
 
 
 # Tips and Reminders
@@ -911,10 +903,6 @@ For further help and info you can select [Cloning and Forking repositories](http
 - Stripe Error 404
     - Resolved by making PORT 8000 Public so Stripe is able to connect
 
-[Temp email site](https://temp-mail.org/en/) --UPDATE--
-    * Temp mail used: renenag259@latovic.com
-    * Temp password
-
 # Bugs & Issues --UPDATE--
 - django install
     When installing django, ensure it is done using command pips install django==3.2.9, django 3.4 version isn't applicable to **KWARGS. Boutique Ado project states django version used is 3.3.
@@ -950,7 +938,6 @@ For further help and info you can select [Cloning and Forking repositories](http
     - Errors however design is due to package bing shown and elif's afe causing faults. Acceptable levels of errors as site works as required and if attempting to apply design becomes unsuitable.
 
 # To Do
-- Email Django
 - Data model
 - Browser Testing
 - Testing document

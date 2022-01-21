@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.core.mail import send_mail
+from django.core.mail import send_mail, mail_admins
 from django.template.loader import render_to_string
 from django.conf import settings
 
@@ -33,6 +33,14 @@ class StripeWH_Handler:
             settings.DEFAULT_FROM_EMAIL,
             [cust_email]
         )
+        mail_admins(
+                f'Order {order.order_number} Received from {order.email}',
+                f'Order {order.order_number} placed. For {order.package}. \
+                    Please view admin for further details',
+                fail_silently=False,
+                connection=None,
+                html_message=None
+            )
 
     def handle_event(self, event):
         """
