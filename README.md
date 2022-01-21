@@ -260,7 +260,7 @@ Below are areas considered for levels of importance and viability
 Hierarchical structure design for easy user navigation dependant on whether they are or are not registered.
 Data schema from django-extensions used to produce data model and site associations.
 [django-extansions Graph Modelling](https://django-extensions.readthedocs.io/en/latest/graph_models.html)
-![Site Structure](media/grilled-salmon-steak.jpg)
+![Site Structure]("{{ MEDIA_URL }}grilled-salmon-steak.jpg")
 
 [Back to top ⇧](#introduction)
 
