@@ -140,7 +140,6 @@
 {{ block.super }}
 
 <script>
-    // Remove item and reload on click
     $('.remove-item').click(function (e) {
         var csrftoken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
@@ -148,11 +147,11 @@
         var details = {
             'csrfmiddlewaretoken': csrftoken
         };
-        console.log('is delete working?')
+        console.log('is delete working?');
         $.post(url, details)
             .done(function () {
                 location.reload();
             });
-    })
+    });
 </script>
 {% endblock %}
