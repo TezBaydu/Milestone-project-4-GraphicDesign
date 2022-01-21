@@ -2,7 +2,7 @@
 <h1>
 
 <h2 align="center">
-    <a href="" target="_blank">Kingsland Website</a>
+    <a href="https://kingsland-design.herokuapp.com/" target="_blank">Kingsland Website</a>
 </h2>
 
 <h3 align="center">
@@ -25,22 +25,29 @@
     - [Navigation bar](#Navigation-bar)
     - [Scroll Top button](#Scroll-Top-button)
     - [Footer](#Footer)
-    - [Locations section](#Locations-section)
-        * [Read More](#Read-More)
-        * [Map Markers](#Map-Markers)
-        * [Interest Cards](#Interest-Cards)
-    - [Contact section](#Contact-section)
-    - [Email format](#Email-format)
+    - [Page Tests](#Page-tests)
+        * [Home](#Home)
+        * [Register](#Register)
+        * [Login](#Login)
+        * [Case Studies](#Case-Studies)
+        * [Packages and Detail](#Packages-and-Package-Detail)
+        * [Bag](#Bag)
+        * [Checkout and Detail](#Checkout-and-Order-Detail)
+        * [Checkout Email](#Checkout-email-confirmations)
+        * [Stripe Checkout](#Checkout-payment-succeeded-in-Stripe)
+        * [Profile](#Profile)
+        * [Package Admin](#Package-Admin)
+        * [Contact](#Contact-Page)
+        * [Contact Emails](#Contact-emails)
 5. [Device testing](#Device-testing)
 6. [Colour blindness testing](#Colour-blindness-testing)
     - [Protanopia](#Protanopia)
     - [Deuteranopia](#Deuteranopia)
 7. [Browser testing](#Browser-testing)
 8. [User testing](#User-testing)
-    - [Bugs and Issues](#Bugs-and-Issues)
 
 ## Commits
-- Over 180 commits
+- Over 175 commits
 - Commits made in as many instances as possible however there have been instances where code had to be revised but when passed certain stages of development it was thought best to carry the commits instead of branching.
 
 [Back to top ⇧](#top)
@@ -61,7 +68,7 @@ The user is wanting to design ideas for logos
 3. Be able to navigate to relevant social links.
     - Always an option to select from fixed footer.
 4. Be able to make contact for queries and newsletter sign up.
-    - Easy to gain contact via navbar of from link in footer.
+    - Easy to gain contact via navbar from link in footer.
     - Immediate contact made through auto notification.
     - Email notification sent to user contact has been made.
 
@@ -81,7 +88,7 @@ The user is wanting to make a purchase to obtain a business logo
 4. Be able to create a profile which is editable.
     - Profile is created upon registration.
     - Profile will hold editable details.
-    - User name and email is non editable to ensure orders are associated to origin user source
+    - Username and email is non editable to ensure orders are associated to origin user source
 5. Ability to make a purchase
     - Bag store and checkout function on registration.
     - Secure payment system utilising Stripe facility.
@@ -90,7 +97,7 @@ The user is wanting to make a purchase to obtain a business logo
     - Profile holds order history.
     - Shows summary but has link to order detail and reference number.
 7. Be able to make contact for queries and newsletter sign up.
-    - Easy to gain contact via navbar of from link in footer.
+    - Easy to gain contact via navbar from link in footer.
     - Immediate contact made through auto notification.
     - Email notification sent to user contact has been made.
     - Username and email updated if registered.
@@ -100,7 +107,7 @@ This user is the site owner (or could be employed by the site owner to produce l
 
 * The user wants to:
 1. Receive notification of orders with purchase confirmation.
-    - Once purchases are made details are stored in admin and email notification sent to Designer.
+    - Once purchases are made, details are stored in admin and email notification sent to Designer.
 2. Have some detail on what is being requested to be designed.
     - Some detail on emails but to view Admin for full instruction.
 3. Be able to receive notification of contact queries directly from website.
@@ -117,8 +124,8 @@ This user is looking for imagery or influence for another project.
     - Various links to other pages.
 2. Be able to make contact with Developer/Site Owner.
     - Able to make contact through contact / enquiry page of site.
-3. Have an opportunity to clone site if wanting to use content.
-    - Readme can be shared which has secure details of ability to colne repository
+3. Have an opportunity to clone or fork site if wanting to use content.
+    - Readme can be shared which has secure details of ability to clone or fork repository
 4. Option to access repository if authorised
     1. Find how the website was created.
         - [README.md](https://github.com/TezBaydu/Milestone-Project-4-GraphicDesign#introduction) file created detailing why and how website was created.
@@ -157,7 +164,7 @@ This user is looking for imagery or influence for another project.
                 - ![HTML5 test](media/html-checkout.JPG)
             * Checkout Success
                 - ![HTML5 test](media/html-checkout-success.JPG)
-                    * Errors due to if statements to call associated package.
+                    * Errors due to django if statements to call associated package.
                     * Acceptable as functional in front end.
             * Contact 
                 - ![HTML5 test](media/html-contact.JPG)
@@ -166,7 +173,7 @@ This user is looking for imagery or influence for another project.
             * Login
                 - ![HTML5 test](media/html-login.JPG)
             * Register
-                - ![HTML5 test](media/html-packages-register.JPG)   
+                - ![HTML5 test](media/html-register.JPG)   
 
 ### CSS3
 - [CSS code checker](https://jigsaw.w3.org/css-validator/)
@@ -292,7 +299,7 @@ This user is looking for imagery or influence for another project.
 #### Packages and Package Detail
 - Packages available images and text
     * Packages separated
-    * admin view to have edit or deactivate/actovate button
+    * admin view to have edit or deactivate/activate button
         - This so it can be viewed or not by public
     * Ability to select in isolation and consider prior to adding to Bag
     ![Packages test](media/packages.gif)
@@ -353,7 +360,7 @@ For use by Admin if new packages or services become available
     * Price
     * Select Image
     * Option to make active
-        - Potential amdin may want to view prior to public view activation
+        - Potential admin may want to view prior to public view activation
     * Cancel button
     * Add Package Button
     * Lead on to view Package applied
@@ -368,7 +375,7 @@ For use by Admin if new packages or services become available
 #### Contact Page
 - Information of steps on how to order
     * Appealing and clear images
-- Cintact form
+- Contact form
     * Contact fields are editable
     * All fields are required
     * Email field requires email format
@@ -413,7 +420,9 @@ For use by Admin if new packages or services become available
     * Unable to test without making a purchase
     * Have been advised by Friends who own Macs design and interactivity was fine
     * Images below
+        - Safari
     * ![Safari browser test](media/safari.jpeg)
+        - Safari new silicone Mac
     * ![Safari new Silicone Mac browser test](media/safari-new-silicone-mac.jpeg)
 
 [Back to top ⇧](#top)
@@ -426,7 +435,7 @@ For use by Admin if new packages or services become available
 [Back to top ⇧](#top)
 
 <h2 align="center">
-    <a href="" target="_blank">Kingsland Website</a>
+    <a href="https://kingsland-design.herokuapp.com/" target="_blank">Kingsland Website</a>
 </h2>
 
 <h3 align="center">

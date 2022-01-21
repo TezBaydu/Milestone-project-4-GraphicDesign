@@ -4,7 +4,7 @@
 </h1>
 
 <h2 align="center">
-    <a href="" target="_blank">Kingsland Website</a>
+    <a href="https://kingsland-design.herokuapp.com/" target="_blank">Kingsland Website</a>
 </h2>
 
 <div>
@@ -45,17 +45,17 @@ the value available to paid users without paying.
 2. [Features](#Features)
     - [Django Framework](#Django-Framework)
     - [Database](#Database)
+    - [Django Connection](#Django-connection-with-AWS-S3-bucket)
     - [Consistency](#Consistency)
     - [Home](#Home-page)
     - [Login](#Login-page)
     - [Registration](#Registration-page)
     - [Profile](#Profile-page)
     - [Order Details](#Order-Details)
-    - [Order Form](#Order-Form)
-    - [Service and Contact](#Service-and-Contact-page)
-    - [Browse](#Browse-page)
-    - [Recipe view from browse page](#Recipe-view-from-browse-page)
-    - [Recipe view from profile page](#Recipe-view-from-profile-page)
+    - [Bag](#Bag)
+    - [Information and Contact](#Contact-page)
+    - [Case Studies](#Case-Studies-page)
+    - [Checkout](#Checkout)
 3. [Technologies Used](#Technologies-Used)
 4. [Testing](#Testing) / [Test detail file](https://github.com/TezBaydu/Milestone-project-4-GraphicDesign/blob/main/TEST.md)
     - [Commits](#Commits)
@@ -69,9 +69,14 @@ the value available to paid users without paying.
     - [Gitpod commits](#Gitpod-to-GitHub-commits)
     - [Deploying via GitHub Pages or Heroku](#Deploying-via-GitHub-Pages-/-Heroku)
         - [Heroku deployment](#Heroku-deployment)
+        - [Emails](#Emails)
         - [GitHub deployment](#GitHub-deployment)
     - [Forking](#Forking-repository)
     - [Cloning](#Cloning-a-repository)
+6. [Django Design](#Django-responsive-design)
+7. [Stripe](#Stripe)
+8. [Tips and Reminders](#Tips-and-Reminders)
+9. [Bugs and Issues](#Bugs-and-Issues)
 6. [Credits and Acknowledgements](#Credits-and-Acknowledgements)
 
 ***
@@ -230,7 +235,7 @@ Below are areas considered for levels of importance and viability
     * Associations to:
         * Creativity
         * Business
-        * Modern style with no curving corners of buttons or images
+        * Modern style with no curving corners of buttons or images unless necessary
 
 #### Page sections
 1. Home
@@ -242,10 +247,14 @@ Below are areas considered for levels of importance and viability
 6. Case Studies
 7. Packages
 8. Packages Details
-9. Bag
-10. Checkout
-11. Checkout Success and Order history
-12. Profile  with order details
+9. Add Package
+    * Admin only
+10. Edit Package
+    * Admin only
+11. Bag
+12. Checkout
+13. Checkout Success and Order details
+14. Profile  with order history summary
 *  Potential pages to develop
     1. Other services
         - Stationary
@@ -267,7 +276,7 @@ Data schema from django-extensions used to produce data model and site associati
 
 ### Wireframe
 
-- Designed in [Figma]()
+- Designed in [Figma](https://www.figma.com/files/team/1036770792444594249/milestone-project-4-graphicdesign?fuid=936699399740643630)
 
 - Desktop version
 ![Desktop wireframe](media/wireframe-desktop.JPG)
@@ -310,7 +319,7 @@ This site has several pages for user to easily identify section associated. Navi
     Allauth account allows for email verification but as created using superuser the verification has to be done via admin account in django.
 
 ### [Database](AWS)
-- AWS used to store data under database name ""
+- AWS Amazon used to store data under database name "kingsland-design"
     * Collections to store specific static data:
 - Create AWS account
 - go to aws.amazon.com
@@ -372,7 +381,7 @@ This site has several pages for user to easily identify section associated. Navi
     - Once applied Django can now be connected to it.
 
     - Applying Media files
-        - In settings remeber to chache settings with a date in the distant future so browsers can store cache for a long time and improve performance for users.
+        - In settings remeber to cache settings with a date in the distant future so browsers can store cache for a long time and improve performance for users.
         - ensure to commit
         - In S3 media files can now be obtained directly there.
         - Go to S3 in objects overview and create folder called media
@@ -381,17 +390,17 @@ This site has several pages for user to easily identify section associated. Navi
         - Images should now be viewable in your heroku application
 
 ### Django connection with AWS S3 bucket
-    - In Gitpot workspace install
-        * pip3 install boto3
-        * pip3 install django-storages
-    - then freeze into requirements.txt so they are also stored in heroku upon deployment
-    - then apply 'storage' to INSTALLED_APPS in settings
-    - then update settings with way to access keys through the os.environ.
-    - With csv download obtain keys to update heroku in config vars using same naming conventions as settings
-        - also set the USE_AWS in config vars as True to know to use the AWS configuration when depliyed to Heroku.
-    - If you have DISABLE STATIC, delete this in config vars so this can be obtained now from S3.
-    - Create a custom_storages.py and apply command code to apply static files into appropriate named folders (i.e. static and media)
-    - Once applied committing to github will push an automatic deployment to Heroku.
+- In Gitpod workspace install
+    * pip3 install boto3
+    * pip3 install django-storages
+- then freeze into requirements.txt so they are also stored in heroku upon deployment
+- then apply 'storage' to INSTALLED_APPS in settings
+- then update settings with way to access keys through the os.environ.
+- With csv download obtain keys to update heroku in config vars using same naming conventions as settings
+    - also set the USE_AWS in config vars as True to know to use the AWS configuration when deployed to Heroku.
+- If you have DISABLE STATIC, delete this in config vars so this can be obtained now from S3.
+- Create a custom_storages.py and apply command code to apply static files into appropriate named folders (i.e. static and media)
+- Once applied committing to github will push an automatic deployment to Heroku.
 
 ### Consistency
 
@@ -491,7 +500,7 @@ This site has several pages for user to easily identify section associated. Navi
     - Password - Displayed twice for confirmation
 
 3. Register button if details correct.
-    - Data is passed through to AWS
+    - Data is passed through to Admin Database
 
 4. Warning if detail format incorrect.
 
@@ -501,7 +510,7 @@ This site has several pages for user to easily identify section associated. Navi
 ### Profile page
 1. For members logged in only, non members will not be able to view.
 
-2. Welcome flash message.
+2. Welcome message popup.
 
 3. Profile details - associated to database.
     - Edit profile details function
@@ -635,6 +644,7 @@ This site has several pages for user to easily identify section associated. Navi
 - [JS Hint JavaScript validator](https://jshint.com/)
 
 - [PEP8](http://pep8online.com/)
+ * Used to verification otherwise flake8 utilised to identify errors
 
 - [Gif Compessor](https://www.freeconvert.com/gif-compressor)
 
@@ -650,7 +660,7 @@ This site has several pages for user to easily identify section associated. Navi
 
 ### Commits
 
-- Over 180 commits
+- Over 175 commits
 
 ### Code Testing
 - HTML 
@@ -724,13 +734,13 @@ Once you are able to view the repository in Gitpod this is done by:
     5. To use this Postgres gitpod workspace will need two installations:
         - pip3 install dj_database_url
         - pip3 install psycopg2-binary
-        * then frezze requirements: pip3 freeze > requirements.txt
+        * then freeze requirements: pip3 freeze > requirements.txt
     6. Then in gitpod workspace settings.py
         - import dj_database_url
         - Comment DATABASES default configuration
         - Replace DATABSES CONFIGURATION WITH
-            * 'default': dj_database_url.parse(""" Apply database url from heroku within Settings-Config Vars )
-            * or apply settings if statement to pull the DATABASE_URL, else to use rhe db.sqlite3 option
+            * 'default': dj_database_url.parse(""Apply database url from heroku within Settings-Config Vars"")
+            * or apply settings if statement to pull the DATABASE_URL, else to use the db.sqlite3 option
             - ensure to pip3 install gunicorn to act as webserver and pip3 freeze > requirements.txt in terminal.
     7. This should now allow saves and migrations to Heroku
         - This will be visible by applying the code python3 manage.py showmigrations in the terminal and all will be in-marked.
@@ -739,7 +749,7 @@ Once you are able to view the repository in Gitpod this is done by:
         - If you have fixtures, these can also be loaded into Heroku also by applying codes.
             * Ensure companies.json is applied prior to projects.json
             python3 manage.py loaddata companies / projects / packages
-        - If you don;t have fixtures and have updated directly into another databse following the below code can help to import relational data
+        - If you don't have fixtures and have updated directly into another database following the below code can help to import relational data
             1. Make sure your manage.py file is connected to your mysql database
             2. Use this command to backup your current database and load it into a db.json file: python3 manage.py dumpdata --exclude auth.permission --exclude contenttypes > db.json
             3. Connect your manage.py file to your postgres database
@@ -774,11 +784,11 @@ Once you are able to view the repository in Gitpod this is done by:
         - As this is connected to GitHub, Heroku will obtain changes when these are pushed to the GitHub repository.
 
 ### Emails
-    - Emails to be sent have been utilised via gmail.
-    - Keys applied to Heroku deployment config vars and settings updated to point to this area
+- Emails to be sent have been utilised via gmail.
+- Keys applied to Heroku deployment config vars and settings updated to point to this area
 
 ### GitHub deployment
-- Not attempted for this site but referenced here in case required in future
+- Not attempted for this site but referenced here in case required for future reference
 
 1. Log into GitHub and look for [https://github.com/TezBaydu/Milestone-project-4-GraphicDesign] or create an account.
 2. Click on settings and ensure repository name is selected to Milestone-project-4-GraphicDesign.
@@ -819,16 +829,16 @@ For further help and info you can select [Cloning and Forking repositories](http
 [Back to top ⇧](#introduction)
 
 # Django responsive design
-    - django-responsive2 0.1.3 installed for responsive s=designs using django
-        * pip3 install django-responsive2
+- django-responsive2 0.1.3 installed for responsive s=designs using django
+    * pip3 install django-responsive2
 [django-responsive2](https://django-responsive2.readthedocs.io/en/latest/readme.html#)
-        * Applied and adjusted into settings but responsive adjustment not required for this project
+    * Applied and adjusted into settings but responsive adjustment not required for this project
 
 # Stripe
 * Stripe is a digital platform to allow for payments on eCommerce stores
     * JS code is applied to base.html to allow for Stripes fraud detection features
     * API Keys STRIPE_PUBLIC_KEY, STRIPE_SECRET_KEY and STRIPE_WH_KEY - required and are applied in Gitpod and/or Heroku (production-deployment) workspace variables.
-        - Note when using Test-Strip and applying endpoint url's Stripe will only work with one endpoint associated to a single source, even if it has differing url's so one has to be used at a time. Currently this is associated to the heroku endopint url as is in production
+        - Note when using Test-Stripe and applying endpoint url's Stripe will only work with one endpoint associated to a single source, even if it has differing url's so one has to be used at a time. Currently this is associated to the heroku endopint url as is in production
 
 
 # Tips and Reminders
@@ -846,14 +856,14 @@ For further help and info you can select [Cloning and Forking repositories](http
         1. Delete all files from Companies and Projects in Admin
         2. Delete db.sqlite3 file in DATABASE.md
         3. Delete all files in migrations folder except __init__.py
-        4. Ensure you update JSON files, views.py, models.py and amdin.py prior to actions below
+        4. Ensure you update JSON files, views.py, models.py and admin.py prior to actions below
         5. python3 manage.py makemigrations --dry-run: This is useful to see if there are any requirements i.e. install pillow for images.
         if ok
         6. python3 manage.py makemigrations
         if ok
         7. python3 manage.py migrate --plan: This is useful to see and make sure you are only migrating app in particular, otherwise state the file after to ensure this is the only one captured.
         if ok
-        8. python3 manage.oy migrate (name of file if applicable)
+        8. python3 manage.py migrate (name of file if applicable)
         9. python3 manage.py loaddata companies.json and then projects.json
     * superuser will also be deleted so you will need to re-create the superuser
         1. python3 manage.py createsuperuser
@@ -880,7 +890,7 @@ For further help and info you can select [Cloning and Forking repositories](http
 
 # Bugs & Issues
 - django install
-    When installing django, ensure it is done using command pips install django==3.2.9, django 3.4 version isn't applicable to **KWARGS. Boutique Ado project states django version used is 3.3.
+    When installing django, ensure it is done using command pips install django==3.2.9, django 3.4 version isn't applicable to **KWARGS.
     * Due to Gitpod update a new Gitpod Full Template has been produced to use and needs to be updated by following below. This is being done prior to deploymant or code testing.
     1. From the project directory, run this command:  curl https://raw.githubusercontent.com/Code-Institute-Org/gitpod-full-template/main/.gitpod.dockerfile > .gitpod.dockerfile  which will overwrite the old Dockerfile with the working one.
     2. Open your corrupted requirements.txt file in Gitpod, select and copy the contents.
@@ -892,7 +902,7 @@ For further help and info you can select [Cloning and Forking repositories](http
     8. Re-install packages from requirements.txt: pip3 install -r requirements.txt
     9. As database is new due to a new workspace migrations (python3 manage.py makemigrations and python3 manage.py migrate), superuser (python3 manage.py createsuperuser) and fixtures (python3 manage.py loaddata companies.json and then projects.json and packages.json) will need will need to be recreated / reloaded
     10. To note: old workspace:  https://crimson-cephalopod-9658p8le.ws-eu27.gitpod.io/
-    11. New Workspace: [Should not be the one above]
+    11. New Workspace: [https://tezbaydu-milestoneprojec-srk0365muon.ws-eu27.gitpod.io/]
     12. If using gitpod variables Commit and send another request in checkout
     * Credit to Jim Morel - Code Institute Community Executive - Posted in Code Institute slack channel 7th Dec 2021
 
