@@ -950,8 +950,7 @@ For further help and info you can select [Cloning and Forking repositories](http
     - Errors however design is due to package bing shown and elif's afe causing faults. Acceptable levels of errors as site works as required and if attempting to apply design becomes unsuitable.
 
 # To Do
-- Deploy to heroku
-- Ensure within app.py change "debug=True" to "debug=False"
+- Email Django
 - Data model
 - Browser Testing
 - Testing document
