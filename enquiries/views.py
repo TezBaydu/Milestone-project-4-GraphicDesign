@@ -59,7 +59,6 @@ def enquiries(request):
                 'full_name': profile.default_full_name,
                 'email': profile.user.email,
             })
-            print(enquiry_form)
         else:
             enquiry_form = UserEnquiryForm()
 

@@ -204,5 +204,5 @@ else:
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
 
 ADMINS = (
-  ('Kingsland Design', 'kingslanddesign@example.com'),
+  ('Kingsland Design', 'tezcode1111@gmail.com'),
 )
