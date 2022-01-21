@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django_countries',
     'responsive',
     'storages',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -206,3 +207,8 @@ else:
 ADMINS = (
   ('Kingsland Design', 'tezcode1111@gmail.com'),
 )
+
+GRAPH_MODELS = {
+  'all_applications': True,
+  'group_models': True,
+}

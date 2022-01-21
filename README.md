@@ -257,9 +257,10 @@ Below are areas considered for levels of importance and viability
 
 #### Structure
 
-Hierarchical structure design for easy user navigation dependant on whether they are or are not registered:
-
-![Site Structure]()
+Hierarchical structure design for easy user navigation dependant on whether they are or are not registered.
+Data schema from django-extensions used to produce data model and site associations.
+[django-extansions Graph Modelling](https://django-extensions.readthedocs.io/en/latest/graph_models.html)
+![Site Structure](media/grilled-salmon-steak.jpg)
 
 [Back to top ⇧](#introduction)
 
@@ -690,7 +691,7 @@ This site has several pages for user to easily identify section associated. Navi
 
 ## Deployment
 
-### Gitpod to GitHub commits --UPDATE--
+### Gitpod to GitHub commits
 
 To help with controlling versions you can commit to GitHub via Gitpod.
 Once you are able to view the repository in Gitpod this is done by:
@@ -778,8 +779,9 @@ Once you are able to view the repository in Gitpod this is done by:
         - Select "View" button to launch the app.
         - As this is connected to GitHub, Heroku will obtain changes when these are pushed to the GitHub repository.
 
-#### DEBUG --CHECK / UPDATE--
-- Ensure within app.py change "debug=True" to "debug=False"
+### Emails
+    - Emails to be sent have been utilised via gmail.
+    - Keys applied to Heroku deployment config vars and settings updated to point to this area
 
 ### GitHub deployment
 - Not attempted for this site but referenced here in case required in future
@@ -903,7 +905,7 @@ For further help and info you can select [Cloning and Forking repositories](http
 - Stripe Error 404
     - Resolved by making PORT 8000 Public so Stripe is able to connect
 
-# Bugs & Issues --UPDATE--
+# Bugs & Issues
 - django install
     When installing django, ensure it is done using command pips install django==3.2.9, django 3.4 version isn't applicable to **KWARGS. Boutique Ado project states django version used is 3.3.
     * Due to Gitpod update a new Gitpod Full Template has been produced to use and needs to be updated by following below. This is being done prior to deploymant or code testing.
@@ -918,7 +920,7 @@ For further help and info you can select [Cloning and Forking repositories](http
     9. As database is new due to a new workspace migrations (python3 manage.py makemigrations and python3 manage.py migrate), superuser (python3 manage.py createsuperuser) and fixtures (python3 manage.py loaddata companies.json and then projects.json and packages.json) will need will need to be recreated / reloaded
     10. To note: old workspace:  https://crimson-cephalopod-9658p8le.ws-eu27.gitpod.io/
     11. New Workspace: [Should not be the one above]
-    12. If using gitpod variables --UPDATE-- Commit and send another in checkout(note env.py removed as this was in SETTINGS...)
+    12. If using gitpod variables Commit and send another request in checkout
     * Credit to Jim Morel - Code Institute Community Executive - Posted in Code Institute slack channel 7th Dec 2021
 
 - Stripe payment succeeded test webhook
@@ -955,7 +957,7 @@ For further help and info you can select [Cloning and Forking repositories](http
 - Pylint Test - Done prior to Heroku deployment
     - Main Issues: found errors with Exceptions and import of checkout.settings ---UPDATE---
     - Other issues associated to migrations or auto applied and advised can be ignored as auto generated. Also does not affect final outcome of project.
-- PEP8 - Does it need this test with pylint in action...? --UPDATE--
+- PEP8 - Does it need this test with pylint in action...? YES
 - RGB Colour blindness Test - Done prior to Heroku deployment with no issues
 
 
