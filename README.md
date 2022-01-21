@@ -134,10 +134,9 @@ This user is looking for imagery or influence for another project.
 
 * They want to be able to:
 1. Have easy navigation.
-2. Find how the website was created.
-3. Be able to see sources for design.
-4. Be able to make contact with Developer/Site Owner.
-5. Have an opportunity to clone site if wanting to use content.
+2. Be able to make contact with Developer/Site Owner.
+3. Have an opportunity to clone site if wanting to use content.
+4. Option to access repository if authorised
 
 [Back to top ⇧](#introduction)
 
@@ -591,7 +590,7 @@ This site has several pages for user to easily identify section associated. Navi
 - Django
     * A high level web framework used to encourage rapid development and pragmatic design
 
-- [AWS-Amazon Web Service)](https://aws.amazon.com/)
+- [AWS-Amazon Web Service](https://aws.amazon.com/)
 
 - [Heroku](https://www.heroku.com)
 
@@ -611,8 +610,7 @@ This site has several pages for user to easily identify section associated. Navi
 
 - [Google fonts](https://fonts.google.com)
 
-- [Figma]()
-    * [project wireframe]
+- [Figma](https://www.figma.com/files/team/1036770792444594249/milestone-project-4-graphicdesign?fuid=936699399740643630)
 
 - [Random Key Generator](https://randomkeygen.com)
 
@@ -626,11 +624,9 @@ This site has several pages for user to easily identify section associated. Navi
 
 - [cdnjs](https://cdnjs.com)
 
-- [EmailJS](https://www.emailjs.com)
-
 - [Codepen](https://codepen.io)
 
-- [Am I responsive](http://ami.responsivedesign.is)
+- [multi-mockup](https://techsini.com/multi-mockup/index.php)
 
 - [HTML code checker](https://validator.w3.org)
 
@@ -641,8 +637,6 @@ This site has several pages for user to easily identify section associated. Navi
 - [PEP8](http://pep8online.com/)
 
 - [Gif Compessor](https://www.freeconvert.com/gif-compressor)
-
-- [Browser site testing - BrowserStack](http://browserstack.com)
 
 - [RGBlind chrome extension]
 
@@ -656,7 +650,7 @@ This site has several pages for user to easily identify section associated. Navi
 
 ### Commits
 
-- Over --?-- commits
+- Over 180 commits
 
 ### Code Testing
 - HTML 
@@ -670,7 +664,7 @@ This site has several pages for user to easily identify section associated. Navi
    
 ### Device testing
 
-- [Am I responsive](http://ami.responsivedesign.is)
+- [multi-mockup](https://techsini.com/multi-mockup/index.php)
 
 ### Colour blindness testing
 

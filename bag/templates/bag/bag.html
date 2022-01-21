@@ -139,7 +139,7 @@
 {% block postload_js %}
 {{ block.super }}
 
-<script type="text/javascript">
+<script>
     // Remove item and reload on click
     $('.remove-item').click(function (e) {
         var csrftoken = "{{ csrf_token }}";

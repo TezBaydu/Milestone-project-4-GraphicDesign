@@ -13,7 +13,8 @@
 1. [Commits](#Commits)
 2. [User Story testing](#User-Story-testing)
     - [Browsers](#Browsers)
-    -[Members](#Members)
+    -[Customers](#Customers)
+    -[Designer](#Designer)
     - [Web Developer](#Web-Developer)
 3. [Code testing](#Code-testing)
     - [HTML5](#HTML5)
@@ -39,73 +40,94 @@
     - [Bugs and Issues](#Bugs-and-Issues)
 
 ## Commits
-- Over 130 commits
-- Commits made in as many instances as possible
+- Over 180 commits
+- Commits made in as many instances as possible however there have been instances where code had to be revised but when passed certain stages of development it was thought best to carry the commits instead of branching.
 
 [Back to top ⇧](#top)
 
 ## User Story testing
 
 ### Browsers
-The user is wanting to find dining ideas
+The user is wanting to design ideas for logos
 
 * This user wants to:
 1. Be able to navigate through the website easily.
-    - Collapsible fixed nav menu for user to see more of screen and be able to navigate when required.
+    - Responsive collapsible fixed nav menu for user to see more of screen and be able to navigate when required.
     - Various links to other pages.
-2. Learn about various recipes.
-    - Cards clearly showing detail of recipes.
-    - Good use of ingredients and method side by side design.
-    - Easy filter options for recipe types.
-    - Easy to find sepcific foods with search bar.
+2. View designs of other projects.
+    - Logos linked to relevant case study at home page.
+    - Designs used in various formats.
+    - Easy filter options for each case study.
 3. Be able to navigate to relevant social links.
     - Always an option to select from fixed footer.
 4. Be able to make contact for queries and newsletter sign up.
-    - Easy to gain contact.
-    - Immediate contact made through auto notification. 
+    - Easy to gain contact via navbar of from link in footer.
+    - Immediate contact made through auto notification.
+    - Email notification sent to user contact has been made.
 
-### Members
-The user is wanting to find, store and share dining ideas
+### Customers
+The user is wanting to make a purchase to obtain a business logo
 *   This user wants to:
 1. Be able to navigate through the website easily.
-    - Collapsible fixed nav menu for user to see more of screen and be able to navigate when required.
+    - Responsive collapsible fixed nav menu for user to see more of screen and be able to navigate when required.
     - Various links to other pages.
     - Able to login from nav bar.
     - Local data can store login details even though password is not passed through to database.
-2. Learn about various recipes.
-    - Browse options easy to discover various recipes
+2. Easily view designs and case studies of design impact.
+    - Logos linked to relevant case study at home page.
+    - Easy filter options for each case study.
 3. Be able to navigate to relevant social links.
     - Always an option to select from fixed footer.
-4. Be able to make contact for queries, technical issues and newsletter sign up.
-    - Easy to gain contact.
-    - Immediate contact made through auto notification. 
-5. Be able to create, read, update and delete their profile and recipe data.
-    - Ability to perform CRUD functions from Profile page.
-    - Depending on selection these lead user to create their recipe
-        * Upon creation, they may not like the look of the recipe and so do not want it made public or shared with other members.
-    - Easy editing options allow for changes.
-    - Delete function is readily available for each recipe but warning message is displayed prior to acceptance.
-    - Delete Account function is readily available too but warning message is displayed prior to acceptance.
-        * Recipes are held on database, in case ex-member wishes to return.
-        * Details can be removed if requested via contact page
-    - Profile is editable aside from email which is main session of use.
+4. Be able to create a profile which is editable.
+    - Profile is created upon registration.
+    - Profile will hold editable details.
+    - User name and email is non editable to ensure orders are associated to origin user source
+5. Ability to make a purchase
+    - Bag store and checkout function on registration.
+    - Secure payment system utilising Stripe facility.
+    - Warnings showing failure if values are incorrect.
+6. Be able to view order history.
+    - Profile holds order history.
+    - Shows summary but has link to order detail and reference number.
+7. Be able to make contact for queries and newsletter sign up.
+    - Easy to gain contact via navbar of from link in footer.
+    - Immediate contact made through auto notification.
+    - Email notification sent to user contact has been made.
+    - Username and email updated if registered.
+
+### Designer
+This user is the site owner (or could be employed by the site owner to produce logo designs)
+
+* The user wants to:
+1. Receive notification of orders with purchase confirmation.
+    - Once purchases are made details are stored in admin and email notification sent to Designer.
+2. Have some detail on what is being requested to be designed.
+    - Some detail on emails but to view Admin for full instruction.
+3. Be able to receive notification of contact queries directly from website.
+    - Email notification received when queries are made showing customer message.
+4. Be able to identify orders from a user to action.
+    - Email notification shows reference to order where full details can be obtained from Admin.
 
 ### Web Developer
 This user is looking for imagery or influence for another project.
 
 * They want to be able to:
 1. Have easy navigation.
-    - Collapsible fixed nav menu for user to see more of screen and be able to navigate when required.
+    - Responsive collapsible fixed nav menu for user to see more of screen and be able to navigate when required.
     - Various links to other pages.
-
-2. Find how the website was created.
-    - [README.md](https://github.com/TezBaydu/Milestone-Project-4-GraphicDesign#introduction) file created detailing why and how website was created.
-    - Contact form can also be used for General enquiries.
-3. Be able to make contact with Developer.
-    - Contact form can be used for general enquiries.
-    - [README.md Deployment](https://github.com/TezBaydu/Milestone-Project-4-GraphicDesign#Deployment) has description of cloning and forking and therefore contact can be made via GitHub.
-4. Have an opportunity to clone site if wanting to use content.
-    - [README.md Cloning](https://github.com/TezBaydu/Milestone-Project-4-GraphicDesign#Cloning-a-repository) has description of cloning.
+2. Be able to make contact with Developer/Site Owner.
+    - Able to make contact through contact / enquiry page of site.
+3. Have an opportunity to clone site if wanting to use content.
+    - Readme can be shared which has secure details of ability to colne repository
+4. Option to access repository if authorised
+    1. Find how the website was created.
+        - [README.md](https://github.com/TezBaydu/Milestone-Project-4-GraphicDesign#introduction) file created detailing why and how website was created.
+        - Contact form can also be used for General enquiries.
+    2. Be able to make contact with Developer.
+        - Contact form can be used for general enquiries.
+        - [README.md Deployment](https://github.com/TezBaydu/Milestone-Project-4-GraphicDesign#Deployment) has description of cloning and forking and therefore contact can be made via GitHub.
+    3. Have an opportunity to clone site if wanting to use content.
+        - [README.md Cloning](https://github.com/TezBaydu/Milestone-Project-4-GraphicDesign#Cloning-a-repository) has description of cloning.
 
 [Back to top ⇧](#top)
 
