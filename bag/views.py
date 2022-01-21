@@ -25,7 +25,7 @@ def add_to_bag(request, item_id):
                       proceed to purchase. ")
     else:
         bag[item_id] = 1
-        quantity += 1
+        quantity == 1
         messages.success(
             request, f'Added {package.friendly_name} Logo Package to your bag')
 

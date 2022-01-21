@@ -35,7 +35,7 @@ class StripeWH_Handler:
         )
         mail_admins(
                 f'Order {order.order_number} Received from {order.email}',
-                f'Order {order.order_number} placed. For {order.item.package.friendly_name}. \
+                f'Order {order.order_number} placed. \
                     Please view admin for further details',
                 fail_silently=False,
                 connection=None,
