@@ -914,9 +914,12 @@ For further help and info you can select [Cloning and Forking repositories](http
 
 ## Credits and Acknowledgements
 
+- Logos and case study images
+    * Terry Downs - Accomplished graphic Designer who's interest is site for own work purposes.
+
 - [Code Institute](https://codeinstitute.net/)
-    * Tutor Support have been amazing !!
-    * Seun Owoni Koko for her enthusiasm, guidance and support
+    * Tutor Support
+    * Seun Owoni Koko for her guidance and support
     * Slack channel
         * Especially Emmett and Abi Harrison_alumni
 
@@ -933,44 +936,4 @@ For further help and info you can select [Cloning and Forking repositories](http
     * For their patience, advice and support
 
 [Back to top ⇧](#introduction)
-
-# To Do
-- Browser Testing
-- Testing document
-
-- HTML Test - Done prior to Heroku deployment notes in bugs & Issues
-- CSS Test - Done prior to Heroku deployment all clear
-- Javascript Test   - Done prior to Heroku deployment
-    - JSHINT: By default, JSHint gives you warnings if you use new ES6 features that might not run on systems that don't support them.
-        * There are two ways to silence those warnings:
-        1. If you click "CONFIGURE" you can click to turn on the checkbox next to "New JavaScript features (ES6)".
-        2. You can add a comment line like this at the top of your file: // jshint esversion: 6
-        * Have gone with Option 1
-    - checkout, stripe_elements.js has a var Stripe unused but this is called in the 1st linr calling the #id.
-        * This was found by searching for Stripe in documentation to see where else used.
-- Pylint Test - Done prior to Heroku deployment
-    - Main Issues: found errors with Exceptions and import of checkout.settings ---UPDATE---
-    - Other issues associated to migrations or auto applied and advised can be ignored as auto generated. Also does not affect final outcome of project.
-- PEP8 - Does it need this test with pylint in action...? YES
-- RGB Colour blindness Test - Done prior to Heroku deployment with no issues
-
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
 

@@ -233,18 +233,18 @@ This user is looking for imagery or influence for another project.
 - Test 
     * Responsive hover on click.
     * Links.
-![Navbar test]()
+![Navbar test](media/navbar.gif)
 
 ### Scroll Top button
 - Test 
     * Button appears on scroll down and when pressed scrolls user to top
-![Scroll Top button test]()
+![Scroll Top button test](media/scroll-button.gif)
 
 ### Footer
 - Test 
     * Social links change on hover
     * Social links lead to associated sites
-![Footer social links test]()
+![Footer social links test](media/footer-links.gif)
 
 [Back to top ⇧](#top)
 
@@ -252,7 +252,7 @@ This user is looking for imagery or influence for another project.
 #### Home
 - Image
     * Nav links to other pages
-    ![Home Page test]()
+    ![Home Page test](media/home.gif)
 
 [Back to top ⇧](#top)
 
@@ -264,7 +264,7 @@ This user is looking for imagery or influence for another project.
     * Password hidden
     * Link to login if already registered
     * Message success popup
-    ![Register Page test]()
+    ![Register Page test](media/register.gif)
 
 
 #### Login
@@ -276,7 +276,7 @@ This user is looking for imagery or influence for another project.
     * Warning if incorrect
     * Link to Register if not a member
     * Message success popup
-    ![Login Page test]()
+    ![Login Page test](media/login.gif)
 
 [Back to top ⇧](#top)
 
@@ -287,7 +287,7 @@ This user is looking for imagery or influence for another project.
     * Buttons to link to different porjects
     * Description at bottom
     * Link to Packages
-    ![Case Studies test]()
+    ![Case Studies test](media/projects.gif)
 
 #### Packages and Package Detail
 - Packages available images and text
@@ -295,7 +295,7 @@ This user is looking for imagery or influence for another project.
     * admin view to have edit or deactivate/actovate button
         - This so it can be viewed or not by public
     * Ability to select in isolation and consider prior to adding to Bag
-    ![Packages test]()
+    ![Packages test](media/packages.gif)
 
 [Back to top ⇧](#top)
 
@@ -306,116 +306,115 @@ This user is looking for imagery or influence for another project.
     * Unable to choose another package as one is already selected
         - Popup message stating error and reason
     * Ability to remove and apply a different Package
-    ![Bag test](assets/test-files/element-files/browsePage.gif)
+    ![Bag test](media/bag.gif)
+
+#### Checkout and Order Detail
+- Chosen Package
+- Logo request details
+- Billing and contact details
+    * Option to save details to profile
+- Payment method
+    * Error if fails
+    * Success to show popup message and order details
+    ![Checkout test](media/checkout.gif)
+
+#### Checkout email confirmations
+- Email to customer confirming order
+- Email to Admin confirming order has been made
+![Checkout email test](media/checkout-emails.gif)
+
+#### Checkout payment succeeded in Stripe
+![Stripe payment success](media/stripe-payment-succeeded.JPG)
+
+#### Order in Admin
+![Order in Admin](media/admin-order.JPG)
 
 #### Profile
 - Profile details
-    * First name
-    * Last name
+    * username
     * Email
-    * Edit account button
-    * Delete Account button - with warning if selected
-_ Recipe details
-    * Public Recipes
-        - View, Edit and Delete Options. Delete to have warning.
-    * Private Recipes
-        - View, Edit and Delete Options. Delete to have warning.
-    ![Profile Page test](assets/test-files/element-files/profilePage.gif)
-
-#### Edit Profile
-- Ability to amend profile details
-    * Cannot amend email as this is used as a username.
-        - This can be deleted however
-    ![Edit Profile Page test](assets/test-files/element-files/EditProfilePage.gif)
+    * ability to update name, number and address
+- Order Summary details
+    * Order number linked to Order details
+    ![Profile Page test](media/profile.gif)
 
 [Back to top ⇧](#top)
 
-#### Create Recipe
-- Recipe fields
+#### Package Admin
+For use by Admin if new packages or services become available
+- Add Package
     * Name
-    * Description
-    * Image (url image address)
-    * Recipe type
-    * Serves
-    * Prep time
-    * Cook time
-    * Ready time (sum of pre and cook times)
-    * Ingredients
-        - Food
-        - Quantity
-        - Size
-        - Weight (g)
-        - Volume (lb)
-    * Method steps
-    * Public / Privcy switch
-    * Save button
+    * Sku
+    * Friendly Name
+    * Logo Count request
+    * Quality Request
+    * Support request
+    * Production Days
+    * Price
+    * Select Image
+    * Option to make active
+        - Potential amdin may want to view prior to public view activation
     * Cancel button
-        - Warning if cancelling updates will be lost
-    ![Create Recipe Page test](assets/test-files/element-files/createRecipePage.gif)
-
-#### Edit Recipe
-- Recipe fields update with data previously entered
-    * Update of info updates relevant fields
-    ![Edit Recipe Page test](assets/test-files/element-files/editRecipePage.gif)
-
+    * Add Package Button
+    * Lead on to view Package applied
+    ![Add Package test](media/package-add.gif)
+- Edit Package
+    Ability to edit fields and add an image
+    ![Edit Package test](media/package-edit.gif)
+    ![Edited Package in group test](media/package-edit-ingroup.gif)
 
 [Back to top ⇧](#top)
 
 #### Contact Page
-- Image
-    * Appealing
-- Fields
+- Information of steps on how to order
+    * Appealing and clear images
+- Cintact form
     * Contact fields are editable
     * All fields are required
     * Email field requires email format
     * Submit button works
     * Pop up appears to show success
-    * Contact fields text is removed
+    * Contact fields updated with user detail if registered
     * Position returns to Home after submission
-    - ![Contact Page test](assets/test-files/element-files/contactPage.gif)
+    - ![Contact Page test](media/contact.gif)
 
-[Back to top ⇧](#top)
-
-#### Email format
-- Test
-    * When email is submitted an email is sent to the developer with message from user
-    * Auto reply to user stating an email has been received and they will be contacted
-    * Email to have a link to the site
-    - ![Email format test](assets/test-files/element-files/contactEmailLink.gif)
+#### Contact emails
+- Email to customer confirming enquiry has been made
+- Email to Designer / Admin confirming an enquiry has been made with subject and a contact email
+    - ![Customer and Admin Contact Email test](media/contact-emails.gif)
 
 [Back to top ⇧](#top)
 
 ### Device testing
-- [amiresponsive](http://ami.responsivedesign.is/)
+- [multi-mockup](https://techsini.com/multi-mockup/index.php)
     * Device styles and responsiveness for Mobile, Tablet and Desktop
-    ![Device responsive test](assets/test-files/element-files/responsiveDesignTest.gif)
+    ![Device responsive test](media/device-responsive.gif)
 
 [Back to top ⇧](#top)
 
 ### Colour blindness testing
 
 #### Protanopia
-- ![Protanopia test](assets/test-files/element-files/Protanopia.gif)
+- ![Protanopia test](media/protanopia.gif)
 
 #### Deuteranopia
-- ![Deuteranopia test](assets/test-files/element-files/Deuteranopia.gif)
+- ![Deuteranopia test](media/deuteranopia.gif)
 
 [Back to top ⇧](#top)
 
 ### Browser testing
 - Microsoft Edge browser testing
-    * ![Microsoft Edge browser test](assets/test-files/element-files/Edge.gif)
+    * ![Microsoft Edge browser test](media/microsoft-edge.gif)
 
 - Firefox browser testing
-    * ![Firefox browser test](assets/test-files/element-files/Firefox.gif)
-    * Nav design circle issue
-        - identified d-block was the problem and have isolated in css
-        ![Firefox error](assets/test-files/element-files/FirefoxNavError.JPG)
-        ![Firefox fix](assets/test-files/element-files/FirefoxNavFix.JPG)
+    * ![Firefox browser test](media/firefox.gif)
 
 - Safari browser testing
     * Unable to test without making a purchase
     * Have been advised by Friends who own Macs design and interactivity was fine
+    * Images below
+    * ![Safari browser test](media/safari.jpeg)
+    * ![Safari new Silicone Mac browser test](media/safari-new-silicone-mac.jpeg)
 
 [Back to top ⇧](#top)
 
